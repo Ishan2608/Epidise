@@ -1,27 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root{
+    --prim-dark: #242E49;
+    --prim-light: #D0E4FF;
+    --prim-light2: #E7F0FF;
+    --nav-bg: #F4F7FF;
+    --btn-prim: #1264FF;
+    --border-color1: gray;
+    --dark-bg-light-txt: #8E94A4;
+}
+
 *{
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
+    border: 1px solid var(--border-color1);
 }
 
 
 body{
-    height: 100vh;
     padding: 10px 10px;
-    overflow-x: hidden;
     font-family: "Roboto", serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
     font-variation-settings:100;
+    max-width: 1400px;
+    /* overflow-x: hidden; */
+}
+
+main, section, header, footer, article{
+    padding: 20px 20px;
+}
+
+.flex-col-even-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-col-even-stretch{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.flex-row-even-center{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flex-row-even-stretch{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
 }
 
 input, select{
     padding: 10px 15px;
     border-radius: 20px;
-    border: 1px solid grey;
+    border: 1px solid var(--border-color1);
 }
 
 textarea{
@@ -85,7 +126,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     font-size: 18px;
-    background-color: #F4F7FF;
+    background-color: var(--nav-bg);
     margin-bottom: 10px;
 }
 
@@ -114,7 +155,7 @@ nav .menu ul li a{
 input, select{
     padding: 10px 15px;
     border-radius: 20px;
-    border: 1px solid grey;
+    border: 1px solid var(--border-color1);
 }
 
 textarea{
@@ -128,7 +169,7 @@ textarea{
     height: 10%;
     width: 100%;
     border: none;
-    background-color: blue;
+    background-color: var(--btn-prim);
     color: white;
     font-weight: bold;
 }
@@ -139,21 +180,34 @@ textarea{
 
 .contact-container {
     height: 90%;
-    display: grid;
-    grid-template-columns: 68% 30%;
+    background-color: var(--prim-light2);
+    display: flex;
     justify-content: space-evenly;
     gap: 20px;
-    padding: 20px 20px;
-    background-color: #E7F0FF;
+    flex-wrap: wrap;
 }
 
 .contact-container .contact-info{
+    width: 68%;
+    flex: 1;
     padding: 20px 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: start;
 
+}
+
+.contact-container .contact-form{
+    width: 31%;
+    /* min-width: 500px; */
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
 }
 
 .contact-container .contact-info .text-area{
@@ -171,24 +225,18 @@ textarea{
     display: flex;
     gap: 10px;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
 }
 
 .contact-info .support-sections .support-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     width: 30%;
 }
 
 
-
-.contact-container .contact-form{
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    gap: 20px;
-}
 
 .contact-container .contact-form .head-grp p{
     margin-top: 5px;
@@ -232,7 +280,7 @@ form{
 }
 
 .phone-grp{
-    border: 1px solid gray;
+    border: 1px solid var(--border-color1);
     border-radius: 20px;
     display: flex;
     flex-wrap: nowrap;
@@ -248,11 +296,87 @@ form{
 .phone-grp input{
     flex: 1;
     margin-left: 10px;
-    border-left: 1px solid gray;
+    border-left: 1px solid var(--border-color1);
 }
 
 .contact-form p.terms-msg{
     text-align: center;
     width: 80%;
     margin: 0 auto;
+}
+
+section.contact-vision{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+section.contact-vision > div{
+    border-radius: 20px;
+    padding: 40px 20px;
+}
+
+section.contact-vision .left{
+    width: 73%;
+    background-color: var(--prim-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+section.contact-vision .left *{
+    width: 75%;
+}
+
+section.contact-vision .left p{
+    color: #8E94A4;
+}
+
+section.contact-vision .left h1{
+    color: white;
+}
+
+section.contact-vision .left h1 .highlight{
+    color: var(--btn-prim);
+}
+
+section.contact-vision .right{
+    width: 25%;
+    background-color: var(--prim-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+section.contact-vision .right .txt-area h1{
+    color: var(--prim-dark);
+    margin-bottom: 10px;
+}
+
+section.contact-vision .right .graphic{
+    width: 80px;
+    height: 80px;
+    background-color: black;
+}
+
+section.download-btns{
+    background-color: var(--prim-light);
+}
+
+section.download-btns .wrapper{
+    padding: 20px 0px;
+    gap: 20px;
+}
+
+section.download-btns .wrapper .download-btn-container{
+    padding: 10px 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
