@@ -15,7 +15,7 @@
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
-    border: 1px solid var(--border-color1);
+    /* border: 1px solid var(--border-color1); */
 }
 
 
@@ -102,6 +102,7 @@ textarea{
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    gap: 10px;
 }
 
 .txt-xl{
@@ -170,12 +171,16 @@ nav .menu ul{
 nav .menu ul li{
     height: 100%;
 }
-nav .menu ul li a{
+a.nav-link{
     display: inline-block;
     height: 100%;
     text-decoration: none;
     padding: 10px 20px;
     color: black;
+}
+
+a.nav-link.active{
+    font-weight: bolder;
 }
 
 input, select{
@@ -423,8 +428,12 @@ footer div.footer-head{
 
 footer .links-container{
     height: 55%;
-    /* background-color: white; */
 }
+
+footer .links-container div{
+    width: 25%;
+}
+
 
 footer .footer-bottom{
     height: 10%;
