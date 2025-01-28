@@ -6,6 +6,7 @@
     --prim-light2: #E7F0FF;
     --nav-bg: #F4F7FF;
     --btn-prim: #1264FF;
+    --btn-prim-hover: #104cbd;
     --border-color1: gray;
     --dark-bg-light-txt: #8E94A4;
 }
@@ -31,6 +32,16 @@ body{
 
 main, section, header, footer, article{
     padding: 20px 20px;
+    border-radius: 20px;
+}
+
+footer{
+    background-color: var(--prim-dark);
+    color: white;
+}
+
+.full-height{
+    height: 100vh;
 }
 
 .flex-col-even-center{
@@ -76,6 +87,21 @@ textarea{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.para-card-container{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.para-card{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
 }
 
 .txt-xl{
@@ -221,19 +247,8 @@ textarea{
     width: 50%;
 }
 
-.contact-info .support-sections{
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    align-items: stretch;
-}
-
 .contact-info .support-sections .support-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    width: 30%;
+    width: 28%;
 }
 
 
@@ -261,13 +276,14 @@ form{
 }
 
 .icon-grp{
+    display: block;
     position: relative;
 }
 
-.icon-grp i{
+.icon-grp span{
     width: 20px;
     height: 20px;
-    background-color: black;
+    color: black;
     position: absolute;
     top: 50%;
     left: 15px;
@@ -364,11 +380,14 @@ section.contact-vision .right .graphic{
 }
 
 section.download-btns{
-    background-color: var(--prim-light);
+    padding: 20px 0px;
 }
 
 section.download-btns .wrapper{
+    width: 100%;
     padding: 20px 0px;
+    border-radius: 20px;
+    background-color: var(--prim-light);
     gap: 20px;
 }
 
@@ -387,4 +406,44 @@ section.download-btns .wrapper .download-btn-container{
 section.download-btns .wrapper .download-btn-container .d-btn{
     width: 200px;
     height: auto;
+}
+
+footer{
+    gap: 10px;
+}
+
+
+footer div.footer-head{
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+footer .links-container{
+    height: 55%;
+    /* background-color: white; */
+}
+
+footer .footer-bottom{
+    height: 10%;
+}
+
+footer .footer-bottom button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--btn-prim);
+    color: white;
+}
+
+footer .footer-bottom button:hover{
+    background-color: var(--btn-prim-hover);
+    cursor: pointer;
 }
