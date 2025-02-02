@@ -7,7 +7,8 @@
     --nav-bg: #F4F7FF;
     --btn-prim: #1264FF;
     --btn-prim-hover: #104cbd;
-    --light-gray: gray;
+    --dark-gray: gray;
+    --light-gray: rgb(209, 209, 209);
     --dark-bg-light-txt: #8E94A4;
 }
 
@@ -34,7 +35,17 @@ main, section, header, footer, article {
     border-radius: 20px;
 }
 
+.hero{
+    height: 90vh;
+    padding: 30px 20px;
+    background-color: var(--light-gray);
+}
 
+@media (max-width: 500px){
+    .hero{
+        height: auto;
+    }
+}
 
 footer {
     background-color: var(--prim-dark);
@@ -64,18 +75,26 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .flex-row-even-stretch {
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.flex-row-start{
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
 
 input, select {
     padding: 10px 15px;
     border-radius: 20px;
-    border: 1px solid var(--light-gray);
+    border: 1px solid var(--dark-gray);
 }
 
 textarea {
@@ -115,12 +134,20 @@ input:focus, select:focus, textarea:focus {
     gap: 10px;
 }
 
+.txt-xl2{
+    font-size: 56px;
+}
+
 .txt-xl {
     font-size: 3rem; /* 48px */
 }
 
+.txt-lg2{
+    font-size: 40px;
+}
+
 .txt-lg {
-    font-size: 3rem; /* 48px */
+    font-size: 2rem; /* 32px */
 }
 
 .txt-md {
@@ -308,12 +335,14 @@ a.nav-link.active {
 /* Home Page */
 /* --------------------------------- */
 
+/* Quote Section */
+
 section.quote {
     text-align: center;
 }
 
 section.quote h1 span.light {
-    color: var(--light-gray);
+    color: var(--dark-gray);
 }
 
 section.quote h1 span i.round-icon {
@@ -332,6 +361,8 @@ section.quote h1 span i.round-icon {
 #telehealth-icon {
     background-color: rgb(150, 241, 253);
 }
+
+/* Features Section */
 
 section.feature-cards {
     display: flex;
@@ -408,6 +439,116 @@ section.feature-cards .feature.only-head {
     }
 }
 
+
+/* Diseases Section */
+
+section.diseases{
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+section.diseases .text-area{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 20px 0px;
+}
+
+section.diseases .text-area h1{
+    font-weight: 500;
+    margin-bottom: 10px;
+    flex: 3;
+    min-width: 340px;
+}
+
+section.diseases .text-area .para{
+    padding: 20px 0px;
+    font-size: 14px;
+    min-width: 200px;
+    max-width: 300px;
+    flex: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+}
+
+.round-icon-container{
+    height: fit-content;
+    width: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.round-icon-container.ques-ico-cont{
+    background-color: white;
+    padding: 7px;
+}
+
+.round-icon-container.check-cont{
+    background-color: rgb(152, 172, 197);
+    padding: 6px;
+}
+
+.disease-card{
+    flex: 1;
+    min-width: 120px;
+}
+
+.disease-card .disease{
+    padding: 25px 12px;
+    gap: 10px;
+}
+
+.disease-card .disease .disease-name{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .disease-card .disease .disease-name,
+    .round-icon-container.check-cont{
+        font-size: 16px;
+    }
+    .round-icon-container.check-cont{
+        padding: 4px;
+    }
+}
+
+@media (max-width: 545px) {
+    section.diseases .text-area h1{
+        min-width: fit-content;
+    }
+    .diseases .text-area .para{
+        font-size: 12px;
+        min-width: fit-content;
+    }
+    .disease-card{
+        padding: 0;
+    }
+    .disease-card .disease{
+        padding: 10px 0px;
+        gap: 2px;
+    }
+    .disease-card .disease .disease-name,
+    .round-icon-container.check-cont{
+        font-size: 12px;
+        font-weight: 300;
+        padding: 2px;
+    }
+    .round-icon-container.check-cont{
+        padding: 4px;
+    }
+}
 
 /* --------------------------------- */
 /* Contact Us Page */
@@ -510,7 +651,7 @@ form {
 }
 
 .phone-grp {
-    border: 1px solid var(--light-gray);
+    border: 1px solid var(--dark-gray);
     border-radius: 20px;
     display: flex;
     flex-wrap: nowrap;
@@ -526,7 +667,7 @@ form {
 .phone-grp input {
     flex: 1;
     margin-left: 10px;
-    border-left: 1px solid var(--light-gray);
+    border-left: 1px solid var(--dark-gray);
 }
 
 .contact-form p.terms-msg {
@@ -536,6 +677,7 @@ form {
 }
 
 section.contact-vision {
+    padding: 20px 0px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -555,10 +697,11 @@ section.contact-vision .left {
     justify-content: space-around;
     align-items: center;
     gap: 20px;
+    padding: 40px 10px;
 }
 
 section.contact-vision .left * {
-    width: 90%;
+    width: 84%;
 }
 
 section.contact-vision .left p {
@@ -580,6 +723,7 @@ section.contact-vision .right {
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
+    gap: 30px;
 }
 
 section.contact-vision .right .txt-area h1 {
@@ -693,8 +837,12 @@ footer .footer-bottom button:hover {
 }
 
 @media (max-width: 768px) {
-    .txt-xl, .txt-lg {
+    .txt-xl2, .txt-xl, .txt-lg2 {
         font-size: 2rem; /* 32px */
+    }
+
+    .txt-lg{
+        font-size: 28px;
     }
 
     .txt-md {
@@ -741,7 +889,7 @@ footer .footer-bottom button:hover {
 }
 
 @media (max-width: 480px) {
-    .txt-xl, .txt-lg {
+    .txt-xl2, .txt-xl, .txt-lg2  {
         font-size: 1.5rem; /* 24px */
     }
 
