@@ -35,15 +35,13 @@ main, section, header, footer, article {
     border-radius: 20px;
 }
 
-.hero{
-    height: 90vh;
-    padding: 30px 20px;
-    background-color: var(--light-gray);
+.full-height{
+    min-height: 90vh;
 }
 
 @media (max-width: 500px){
     .hero{
-        height: auto;
+        min-height: auto;
     }
 }
 
@@ -55,6 +53,7 @@ footer {
 
 .full-height {
     height: 100vh;
+    max-height: fit-content;
 }
 
 .flex-col-even-center {
@@ -335,6 +334,45 @@ a.nav-link.active {
 /* Home Page */
 /* --------------------------------- */
 
+/* Hero Section */
+
+.hero{
+    padding: 30px 20px;
+    background-image: linear-gradient(to bottom, rgb(218, 217, 217), white);
+    text-align: center;
+}
+
+.hero h1{
+    padding: 30px 0px;
+}
+
+.hero .btns{
+    width: fit-content;
+    margin: auto;
+    padding: 20px 10px;
+    gap: 20px;
+}
+
+.hero .btns button{
+    color: white;
+    background-color: black;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 10px 18px;
+}
+
+.hero .btns button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.hero .mockups{
+    border: 1px solid black;
+    background-color: white;
+    height: 70vh;
+}
+
 /* Quote Section */
 
 section.quote {
@@ -342,7 +380,7 @@ section.quote {
 }
 
 section.quote h1 span.light {
-    color: var(--dark-gray);
+    color: #AFAFAF;
 }
 
 section.quote h1 span i.round-icon {
@@ -386,6 +424,20 @@ section.feature-cards .feature {
     background-color: #8E94A4;
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
+
+#f1{
+    background-color: #e5f1d5;
+}
+#f2{
+    background-color: #D2DEF2;
+}
+#f3{
+    background-color: #E8FFFF;
+}
+#f4{
+    background-color: #F2F5F9;
+}
+
 
 section.feature-cards .feature.ico-head-div {
     justify-content: space-between;
@@ -443,7 +495,8 @@ section.feature-cards .feature.only-head {
 /* Diseases Section */
 
 section.diseases{
-    background-color: var(--light-gray);
+    /* background-color: var(--light-gray); */
+    background-color: #F8F8F8;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -495,7 +548,7 @@ section.diseases .text-area .para{
 }
 
 .round-icon-container.check-cont{
-    background-color: rgb(152, 172, 197);
+    background-color: #DAE4F4;
     padding: 6px;
 }
 
@@ -548,6 +601,12 @@ section.diseases .text-area .para{
     .round-icon-container.check-cont{
         padding: 4px;
     }
+}
+
+/* App Features */
+
+section.app-features{
+    background-color: #F2F5F9;
 }
 
 /* --------------------------------- */
