@@ -90,6 +90,10 @@ footer {
     align-items: center;
 }
 
+.hidden{
+    display: none;
+}
+
 input, select {
     padding: 10px 15px;
     border-radius: 20px;
@@ -103,6 +107,11 @@ textarea {
     height: 110px;
 }
 
+button:hover,
+#submit:hover{
+    cursor: pointer;
+}
+
 /* Focus state for input, select, and textarea */
 input:focus, select:focus, textarea:focus {
     border-color: var(--btn-prim); /* Change border color on focus */
@@ -114,6 +123,7 @@ input:focus, select:focus, textarea:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 0;
 }
 
 .para-card-container {
@@ -323,10 +333,6 @@ a.nav-link.active {
     background-color: var(--btn-prim);
     color: white;
     font-weight: bold;
-}
-
-#submit:hover {
-    cursor: pointer;
 }
 
 
@@ -824,6 +830,99 @@ section.download-btns .wrapper .download-btn-container .d-btn {
     width: 200px;
     height: auto;
 }
+
+/* App Features */
+
+.app-features{
+    padding: 30px 30px;
+}
+
+.app-features .toggle-area .toggle-btns{
+    width: fit-content;
+    background-color: var(--light-gray);
+    padding: 5px 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+}
+
+
+.app-features .toggle-area .toggle-btns button{
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 12px;
+    font: 14px;
+    font-weight: 300;
+    margin: 0;
+}
+
+.app-features .toggle-area .toggle-btns button.active-toggle{
+    background-color: white;
+    font-weight: bold;
+}
+
+.app-feature-list{
+    padding: 20px 10px;
+
+}
+
+.app-feature-list h1{
+    padding: 10px 0px;
+}
+
+.app-feature-list .app-f-cont{
+    /* background-color: #8E94A4; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+    width: 60%;
+}
+
+.app-feature-list .app-f-cont .stack{
+    gap: 10px;
+}
+
+.app-feature-list .app-f-cont .stack .app-f{
+    flex: 1;
+    min-width: 180px;
+    padding: 8px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.app-f .app-feature-ico-cont{
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    aspect-ratio: 1;
+    padding: 10px 10px;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.app-f p{
+    font-size: 12px;
+}
+
+.learn-more-cont .learn-more:hover{
+    cursor: pointer;
+}
+
+.learn-more{
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--btn-prim);
+}
+
+/* Footer */
 
 footer {
     gap: 10px;

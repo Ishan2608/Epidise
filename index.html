@@ -1,311 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+      integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
-    <link rel="stylesheet" href="public/css/styles.css">
+    <link rel="stylesheet" href="public/css/styles.css" />
 
     <title>Epidise</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Desktop and Tablet Navigation -->
     <nav>
-        <div class="logo-container mid-center">
-            <a id="nav-logo-txt" href="index.html"> Epidise </a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li class="menu-item">
-                    <a class="nav-link active" href="index.html">Home</a>
-                </li>
-                <li class="menu-item">
-                    <a class="nav-link" href="about-us.html">About Us</a>
-                </li>
-                <li class="menu-item">
-                    <a class="nav-link" href="contact-us.html">Contacts Us</a>
-                </li>
-            </ul>
-        </div>
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+      <div class="logo-container mid-center">
+        <a id="nav-logo-txt" href="index.html"> Epidise </a>
+      </div>
+      <div class="menu">
+        <ul>
+          <li class="menu-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="about-us.html">About Us</a>
+          </li>
+          <li class="menu-item">
+            <a class="nav-link" href="contact-us.html">Contacts Us</a>
+          </li>
+        </ul>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
-
 
     <!-- Mobile Navigation -->
     <div class="body-overlay" id="body-overlay"></div>
     <div class="mobile-nav" id="mobile-nav">
-        <div class="mobile-nav-header">
-            <span class="close-btn" id="close-btn">&times;</span>
-        </div>
-        <ul class="mobile-nav-menu">
-            <li class="menu-item">
-                <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="menu-item">
-                <a class="nav-link" href="about-us.html">About Us</a>
-            </li>
-            <li class="menu-item">
-                <a class="nav-link" href="contact-us.html">Contact Us</a>
-            </li>
-        </ul>
+      <div class="mobile-nav-header">
+        <span class="close-btn" id="close-btn">&times;</span>
+      </div>
+      <ul class="mobile-nav-menu">
+        <li class="menu-item">
+          <a class="nav-link active" href="index.html">Home</a>
+        </li>
+        <li class="menu-item">
+          <a class="nav-link" href="about-us.html">About Us</a>
+        </li>
+        <li class="menu-item">
+          <a class="nav-link" href="contact-us.html">Contact Us</a>
+        </li>
+      </ul>
     </div>
 
-
     <header class="hero">
-        <h1 class="txt-xl2">
-            The place where 
-            <span class="special-highlight">
-                doctors
-            </span>
-            listen to you
-        </h1>
+      <h1 class="txt-xl2">
+        The place where
+        <span class="special-highlight"> doctors </span>
+        listen to you
+      </h1>
 
-        <p class="sub-heading txt-md">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, totam?
-        </p>
+      <p class="sub-heading txt-md">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, totam?
+      </p>
 
-        <div class="btns flex-row-even-center">
-            <button>
-                <i class="fa-brands fa-apple"></i>
-                Download
-            </button>
+      <div class="btns flex-row-even-center">
+        <button>
+          <i class="fa-brands fa-apple"></i>
+          Download
+        </button>
 
-            <button>
-                <i class="fa-brands fa-google-play"></i>
-                Download
-            </button>
-        </div>
+        <button>
+          <i class="fa-brands fa-google-play"></i>
+          Download
+        </button>
+      </div>
 
-        <div class="mockups">
-            <img src="" alt="">
-        </div>
-
+      <div class="mockups">
+        <img src="" alt="" />
+      </div>
     </header>
 
     <section class="quote">
-        <h1 class="txt-xl2">
-            <span class="dark">
-                We're revolutionizing healthcare 
-                <i id="drug-icon" class="round-icon"></i> 
-                delivery
-            </span>
-            <span class="light">
-                by bringing
-            </span>
-            <span class="dark">
-                expertise 
-                <i id="hour-glass-icon" class="round-icon"></i>
-            </span>
-            <span class="light">
-                to your doorstep through our
-            </span>
-            <span class="dark">
-                advanced 
-                <i id="telehealth-icon" class="round-icon"></i>
-                telehealth
-            </span>
-            <span class="dark">
-                platform.
-                <i id="platform-icon" class="round-icon"></i>
-            </span>
-        </h1>
+      <h1 class="txt-xl2">
+        <span class="dark">
+          We're revolutionizing healthcare
+          <i id="drug-icon" class="round-icon"></i>
+          delivery
+        </span>
+        <span class="light"> by bringing </span>
+        <span class="dark">
+          expertise
+          <i id="hour-glass-icon" class="round-icon"></i>
+        </span>
+        <span class="light"> to your doorstep through our </span>
+        <span class="dark">
+          advanced
+          <i id="telehealth-icon" class="round-icon"></i>
+          telehealth
+        </span>
+        <span class="dark">
+          platform.
+          <i id="platform-icon" class="round-icon"></i>
+        </span>
+      </h1>
     </section>
 
     <section class="feature-cards">
-        <div class="feature ico-head-div" id="f1">
-            <div class="ico-text-h">
-                <i></i> 
-                <br/>
-                <h2>Ultimate Flexibility</h2>
-            </div>
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam quas laborum dignissimos sunt et
-            </p>
+      <div class="feature ico-head-div" id="f1">
+        <div class="ico-text-h">
+          <i></i>
+          <br />
+          <h2>Ultimate Flexibility</h2>
         </div>
-        <div class="feature only-head" id="f2">
-            <h2 class="feature-heading-bottom">Aligned to your brand</h2>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam quas
+          laborum dignissimos sunt et
+        </p>
+      </div>
+      <div class="feature only-head" id="f2">
+        <h2 class="feature-heading-bottom">Aligned to your brand</h2>
+      </div>
+      <div class="feature ico-head-div" id="f3">
+        <div class="ico-text-h">
+          <i></i>
+          <br />
+          <h2>Plug & Play Option</h2>
         </div>
-        <div class="feature ico-head-div" id="f3">
-            <div class="ico-text-h">
-                <i></i> 
-                <br/>
-                <h2>Plug & Play Option</h2>
-            </div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur sit ducimus quae eaque vitae,
-            </p>
-        </div>
-        <div class="feature only-head" id="f4">
-            <h2 class="feature-heading-bottom">Aligned to your brand</h2>
-        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur
+          sit ducimus quae eaque vitae,
+        </p>
+      </div>
+      <div class="feature only-head" id="f4">
+        <h2 class="feature-heading-bottom">Aligned to your brand</h2>
+      </div>
     </section>
 
     <section class="diseases">
-        
-        <div class="text-area">
-            <h1 class="txt-lg2">Customizable to your unique patient pathways </h1>
-            
-            <div class="para">
-                <span class="round-icon-container ques-ico-cont">
-                    <i class="fa-solid fa-question"></i>
-                </span>
-                <p>
-                    Take patient experience to the next level effortlessly with API driven technology designed for your business
-                </p>
-            </div>
-        
-        </div>
+      <div class="text-area">
+        <h1 class="txt-lg2">Customizable to your unique patient pathways</h1>
 
-        <div class="cards-area flex-row-even-center">
-            <div class="disease-card flex-col-even-stretch">
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-            </div>
-            <div class="disease-card flex-col-even-stretch">
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-            </div>
-            <div class="disease-card flex-col-even-stretch">
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-                <div class="disease flex-row-start">
-                    <span class="round-icon-container check-cont">
-                        <i class="fa-solid fa-check"></i>
-                    </span>
-                    <h4 class="disease-name">Lorem, ipsum.</h4>
-                </div>
-            </div>
+        <div class="para">
+          <span class="round-icon-container ques-ico-cont">
+            <i class="fa-solid fa-question"></i>
+          </span>
+          <p>
+            Take patient experience to the next level effortlessly with API
+            driven technology designed for your business
+          </p>
         </div>
+      </div>
 
+      <div class="cards-area flex-row-even-center">
+        <div class="disease-card flex-col-even-stretch">
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+        </div>
+        <div class="disease-card flex-col-even-stretch">
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+        </div>
+        <div class="disease-card flex-col-even-stretch">
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+          <div class="disease flex-row-start">
+            <span class="round-icon-container check-cont">
+              <i class="fa-solid fa-check"></i>
+            </span>
+            <h4 class="disease-name">Lorem, ipsum.</h4>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Our Vision and Join Our Team Section -->
     <section class="contact-vision">
-        <div class="left">
-            <h1 class="txt-lg2">
-                Our vision is to empower individuals with  
-                <span class="highlight"> personalized  </span> skincare solutions
-            </h1>
-            <p>
-                We are committed to pushing the boundaries of what is possible in the field of healthcare, using technology and AI to develop innovative solutions that are tailored to each individual's unique needs and preferences.
-            </p>
+      <div class="left">
+        <h1 class="txt-lg2">
+          Our vision is to empower individuals with
+          <span class="highlight"> personalized </span> skincare solutions
+        </h1>
+        <p>
+          We are committed to pushing the boundaries of what is possible in the
+          field of healthcare, using technology and AI to develop innovative
+          solutions that are tailored to each individual's unique needs and
+          preferences.
+        </p>
+      </div>
+      <div class="right">
+        <div class="graphic"></div>
+        <div class="txt-area">
+          <h1 class="txt-md">Join our Team</h1>
+          <p>25 Job Openings Available</p>
         </div>
-        <div class="right">
-            <div class="graphic"></div>
-            <div class="txt-area">
-                <h1 class="txt-md"> Join our Team</h1>
-                <p>25 Job Openings Available</p>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- Get the Mobile Application Buttons -->
     <section class="download-btns mid-center">
-        <div class="wrapper flex-col-even-center">
-            <h1 class="txt-lg">Get Started Today!</h1>
-            <div class="download-btn-container">
-                <img class="d-btn" src="./public/assets/images/playstore.png">
-                <img class="d-btn" src="./public/assets/images/appstore.png">
-            </div>
+      <div class="wrapper flex-col-even-center">
+        <h1 class="txt-lg">Get Started Today!</h1>
+        <div class="download-btn-container">
+          <img class="d-btn" src="./public/assets/images/playstore.png" />
+          <img class="d-btn" src="./public/assets/images/appstore.png" />
         </div>
+      </div>
     </section>
 
-    <section class="app-features full-height">
-        <div class="toggle-area">
-            <div class="toggle-btns">
-                <button>Health Analytics</button>
-                <button>Predictive Analytics</button>
-            </div>
+    <section class="app-features">
+      <div class="toggle-area">
+        <div class="toggle-btns mid-center">
+          <button id="t1" class="active-toggle">
+            For User
+        </button>
+          <button id="t2" class="">For Doctor</button>
         </div>
+      </div>
+
+      <div id="app-features-t1" class="app-feature-list">
+        <h1 class="txt-lg">
+            Your Healthcare At Your Fingertips
+        </h1>
+
+        <div class="app-f-cont">
+          <div class="stack flex-row-even-center">
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="stack flex-row-even-center">
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="app-features-t2" class="app-feature-list hidden">
+        <h1 class="txt-lg">
+            Reach to More Patients
+        </h1>
+
+        <div class="app-f-cont">
+          <div class="stack flex-row-even-center">
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="stack flex-row-even-center">
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+
+            <div class="app-f">
+              <span class="app-feature-ico-cont mid-center">
+                <i class="fa-solid fa-fire"></i>
+              </span>
+              <h1 class="txt-md">Lorem, ipsum dolor.</h1>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                suscipit reiciendis corrupti optio consequatur sint.
+              </p>
+
+              <a href="" class="learn-more">
+                Learn More
+                <i class="fa-solid fa-plus"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <!-- Footer -->
     <footer class="full-height flex-col-even-stretch">
-        <div class="footer-head">
-            <h1>Epidise</h1>
+      <div class="footer-head">
+        <h1>Epidise</h1>
+      </div>
+      <div class="links-container para-card-container">
+        <div class="para-card">
+          <h1 class="link-head txt-md">Solutions</h1>
+          <p></p>
         </div>
-        <div class="links-container para-card-container">
-            <div class="para-card">
-                <h1 class="link-head txt-md">Solutions</h1>
-                <p></p>
-            </div>
-            <div class="para-card">
-                <h1 class="link-head txt-md">Company</h1>
-                <p>
-                </p>
-            </div>
-            <div class="para-card">
-                <h1 class="link-head txt-md">Resources</h1>
-                <p></p>
-            </div>
-            <div class="para-card socials txt-md">
-                <i class="fa-brands fa-linkedin-in"></i>
-                <i class="fa-brands fa-x-twitter"></i>
-                <i class="fa-brands fa-instagram"></i>
-            </div>
+        <div class="para-card">
+          <h1 class="link-head txt-md">Company</h1>
+          <p></p>
         </div>
-        <div class="footer-bottom">
-            <button>
-                <h1 class="txt-md">
-                    <span>
-                        Download the App
-                    </span>
-                    <span>
-                        <i class="fa-solid fa-download"></i>
-                    </span>
-                </h1>
-
-            </button>
+        <div class="para-card">
+          <h1 class="link-head txt-md">Resources</h1>
+          <p></p>
         </div>
+        <div class="para-card socials txt-md">
+          <i class="fa-brands fa-linkedin-in"></i>
+          <i class="fa-brands fa-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <button>
+          <h1 class="txt-md">
+            <span> Download the App </span>
+            <span>
+              <i class="fa-solid fa-download"></i>
+            </span>
+          </h1>
+        </button>
+      </div>
     </footer>
     <script src="./public/main.js"></script>
-</body>
+  </body>
 </html>
