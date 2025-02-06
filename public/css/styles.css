@@ -16,7 +16,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 body {
@@ -41,7 +41,7 @@ main, section, header, footer, article {
 }
 
 @media (max-width: 500px){
-    .hero{
+    .full-height{
         min-height: auto;
     }
 }
@@ -70,7 +70,7 @@ footer {
 .hero .mockups{
     width: 100%;
     height: fit-content;
-    border: 2px solid black;
+    /* border: 2px solid black; */
 }
 
 .hero .mockups img{
@@ -770,11 +770,20 @@ section.app-features{
     background-color: var(--light-gray);
     flex: 1;
     aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0;
+}
+
+.easy .cards-cont .card > *{
+    flex: 1;
 }
 
 .easy .cards-cont .card .easy-card-heading,
 .easy .cards-cont .card p{
-    padding: 20px 20px;
+    padding: 30px 25px;
 }
 
 .easy .cards-cont .card .icons-cont{
@@ -1073,7 +1082,7 @@ section.contact-vision .right .graphic {
 }
 
 section.download-btns {
-    padding: 20px 0px;
+    padding: 30px 0px;
 }
 
 section.download-btns .wrapper {
@@ -1106,6 +1115,13 @@ section.download-btns .wrapper .download-btn-container .d-btn {
     cursor: pointer;
     transform: scale(1.05);
     transition: transform 200ms ease-in-out;
+}
+
+@media (max-width:500px){
+    section.download-btns .wrapper .download-btn-container .d-btn{
+        width: 120px;
+        height: auto;
+    }
 }
 
 /* Footer */
@@ -1215,6 +1231,7 @@ footer .footer-bottom button:hover {
     section.contact-vision {
         flex-direction: column;
         align-items: center;
+        padding-bottom: 0%;
     }
 
     section.contact-vision .left,
@@ -1246,15 +1263,6 @@ footer .footer-bottom button:hover {
     }
 
     .contact-info .support-sections .support-section {
-        width: 100%;
-    }
-
-    section.download-btns .wrapper .download-btn-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    section.download-btns .wrapper .download-btn-container .d-btn {
         width: 100%;
     }
 }
