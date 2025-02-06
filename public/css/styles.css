@@ -745,6 +745,44 @@ section.app-features{
 /* ABOUT US PAGE */
 /* --------------------------------- */
 
+.easy{
+    background-color: white;
+}
+
+.easy .txt-area{
+    gap: 10px;
+}
+
+.easy .txt-area span{
+    flex: 1;
+}
+
+.easy .txt-area span{
+    padding: 20px 20px;
+}
+
+.easy .cards-cont{
+    gap: 10px;
+}
+
+.easy .cards-cont .card{
+    border-radius: 10px;
+    background-color: var(--light-gray);
+    flex: 1;
+    aspect-ratio: 1 / 1;
+}
+
+.easy .cards-cont .card .easy-card-heading,
+.easy .cards-cont .card p{
+    padding: 20px 20px;
+}
+
+.easy .cards-cont .card .icons-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .founders {
     background-color: #14B8A6;
     padding: 20px 0px;
@@ -755,7 +793,6 @@ section.app-features{
 
 .founders .txt-area {
     padding: 20px 20px;
-    text-align: center;
 }
 
 .founders .cards-area {
@@ -776,16 +813,15 @@ section.app-features{
 }
 
 .founders .cards-area .founder-card img {
+    flex: 2;
     width: 100%;
-    height: 80%;
-    
     border-radius: 5px;
     border: 2px solid white;
 }
 
 .founders .cards-area .founder-card .txt-area {
-    flex-grow: 1;
     padding: 10px 0;
+    text-align: center;
 }
 
 .founders .cards-area .founder-card .txt-area h4 {
@@ -1061,8 +1097,15 @@ section.download-btns .wrapper .download-btn-container {
 }
 
 section.download-btns .wrapper .download-btn-container .d-btn {
+    background-color: white;
     width: 200px;
     height: auto;
+}
+
+.d-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 200ms ease-in-out;
 }
 
 /* Footer */
