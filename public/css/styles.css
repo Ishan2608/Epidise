@@ -116,12 +116,12 @@ footer {
 .hero .mockups{
     width: 100%;
     height: fit-content;
-    /* border: 2px solid black; */
 }
 
 .hero .mockups img{
     width: 100%;
     height: auto;
+    margin: auto;
 }
 
 .flex-col-even-center {
