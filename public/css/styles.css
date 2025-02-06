@@ -12,6 +12,52 @@
     --dark-bg-light-txt: #8E94A4;
 }
 
+/* Font sizes based on a modular scale */
+.txt-xs { font-size: 0.875rem; /* 14px */ }
+.txt-sm { font-size: 1rem; /* 16px */ }
+.txt-md { font-size: 1.125rem; /* 18px */ }
+.txt-lg { font-size: 1.5rem; /* 24px */ }
+.txt-xl { font-size: 2rem; /* 32px */ }
+.txt-2xl { font-size: 2.5rem; /* 40px */ }
+.txt-3xl { font-size: 3rem; /* 48px */ }
+.txt-4xl { font-size: 3.5rem; /* 56px */ }
+
+/* Desktop to Tablet ( max-width: 1024px ) */
+@media (max-width: 1024px) {
+  .txt-xs { font-size: 0.8125rem; /* 13px */ }
+  .txt-sm { font-size: 0.9375rem; /* 15px */ }
+  .txt-md { font-size: 1.0625rem; /* 17px */ }
+  .txt-lg { font-size: 1.25rem; /* 20px */ }
+  .txt-xl { font-size: 1.875rem; /* 30px */ }
+  .txt-2xl { font-size: 2.25rem; /* 36px */ }
+  .txt-3xl { font-size: 2.75rem; /* 44px */ }
+  .txt-4xl { font-size: 3.25rem; /* 52px */ }
+}
+
+/* Tablet to Mobile ( max-width: 768px ) */
+@media (max-width: 768px) {
+  .txt-xs { font-size: 0.75rem; /* 12px */ }
+  .txt-sm { font-size: 0.875rem; /* 14px */ }
+  .txt-md { font-size: 1rem; /* 16px */ }
+  .txt-lg { font-size: 1.125rem; /* 18px */ }
+  .txt-xl { font-size: 1.75rem; /* 28px */ }
+  .txt-2xl { font-size: 2rem; /* 32px */ }
+  .txt-3xl { font-size: 2.5rem; /* 40px */ }
+  .txt-4xl { font-size: 2.75rem; /* 44px */ }
+}
+
+/* Mobile ( max-width: 480px ) */
+@media (max-width: 480px) {
+  .txt-xs { font-size: 0.6875rem; /* 11px */ }
+  .txt-sm { font-size: 0.8125rem; /* 13px */ }
+  .txt-md { font-size: 0.9375rem; /* 15px */ }
+  .txt-lg { font-size: 1rem; /* 16px */ }
+  .txt-xl { font-size: 1.5rem; /* 24px */ }
+  .txt-2xl { font-size: 1.75rem; /* 28px */ }
+  .txt-3xl { font-size: 2rem; /* 32px */ }
+  .txt-4xl { font-size: 2.25rem; /* 36px */ }
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -165,33 +211,6 @@ input:focus, select:focus, textarea:focus {
     gap: 10px;
 }
 
-.txt-xl2{
-    font-size: 56px;
-}
-
-.txt-xl {
-    font-size: 3rem; /* 48px */
-}
-
-.txt-lg2{
-    font-size: 40px;
-}
-
-.txt-lg {
-    font-size: 2rem; /* 32px */
-}
-
-.txt-md {
-    font-size: 1.5rem; /* 24px */
-}
-
-.text-nm {
-    font-size: 1rem; /* 16px */
-}
-
-.txt-sm {
-    font-size: 0.75rem; /* 12px */
-}
 
 .para-head {
     font-size: 1.125rem; /* 18px */
@@ -1170,14 +1189,6 @@ footer .footer-bottom button:hover {
 
 /* Media Queries */
 @media (max-width: 1200px) {
-    .txt-xl, .txt-lg {
-        font-size: 2.5rem; /* 40px */
-    }
-
-    .txt-md {
-        font-size: 1.25rem; /* 20px */
-    }
-
     .contact-container .contact-info,
     .contact-container .contact-form {
         width: 100%;
@@ -1197,17 +1208,6 @@ footer .footer-bottom button:hover {
 }
 
 @media (max-width: 768px) {
-    .txt-xl2, .txt-xl, .txt-lg2 {
-        font-size: 2rem; /* 32px */
-    }
-
-    .txt-lg{
-        font-size: 28px;
-    }
-
-    .txt-md {
-        font-size: 1.125rem; /* 18px */
-    }
 
     .contact-container {
         flex-direction: column;
@@ -1250,13 +1250,6 @@ footer .footer-bottom button:hover {
 }
 
 @media (max-width: 480px) {
-    .txt-xl2, .txt-xl, .txt-lg2  {
-        font-size: 1.5rem; /* 24px */
-    }
-
-    .txt-md {
-        font-size: 1rem; /* 16px */
-    }
 
     .contact-container .contact-info .text-area p {
         width: 100%;
