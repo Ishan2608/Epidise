@@ -12,6 +12,13 @@
     --dark-bg-light-txt: #8E94A4;
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: 1px solid gray;
+}
+
 /* Font sizes based on a modular scale */
 .txt-xs { font-size: 0.875rem; /* 14px */ }
 .txt-sm { font-size: 1rem; /* 16px */ }
@@ -56,13 +63,6 @@
   .txt-2xl { font-size: 1.75rem; /* 28px */ }
   .txt-3xl { font-size: 2rem; /* 32px */ }
   .txt-4xl { font-size: 2.25rem; /* 36px */ }
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    /* border: 1px solid gray; */
 }
 
 body {
@@ -121,6 +121,17 @@ footer {
 .hero .mockups img{
     width: 100%;
     height: auto;
+    margin: auto;
+}
+
+#home-hero .mockups{
+    height: 500px;
+    width: 100%;
+}
+
+#home-hero .mockups img{
+    height: 100%;
+    width: fit-content;
     margin: auto;
 }
 
@@ -654,7 +665,7 @@ section.diseases .text-area .para{
 
 section.app-features{
     background-color: #F2F5F9;
-    padding: 30px 30px;
+    padding: 30px 10px;
 }
 
 #app-features-t1,
@@ -663,14 +674,6 @@ section.app-features{
     background-position: right bottom;
     background-repeat: no-repeat;
     overflow: hidden;
-}
-
-#app-features-t1{
-    background-image: url("/public/assets/appf-user.png");
-}
-
-#app-features-t2{
-    background-image: url("/public/assets/appf-doc.png");
 }
 
 .app-features .toggle-area .toggle-btns{
@@ -711,26 +714,47 @@ section.app-features{
 }
 
 .app-feature-list .app-f-cont{
-    /* background-color: #8E94A4; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+}
+
+.app-feature-list .app-f-cont .stack-container{
+    flex: 3;
+    min-width: 500px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-    width: 60%;
+
 }
 
-.app-feature-list .app-f-cont .stack{
+.app-feature-list .app-f-cont .mockup-container{
+    flex: 2;
+}
+
+.app-feature-list .app-f-cont .mockup-container img{
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.app-feature-list .app-f-cont .stack-container .stack{
     gap: 10px;
 }
 
-.app-feature-list .app-f-cont .stack .app-f{
+.app-feature-list .app-f-cont .stack-container .stack .app-f{
     flex: 1;
     min-width: 180px;
     padding: 8px 5px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     justify-content: space-evenly;
     align-items: start;
 }
@@ -785,8 +809,7 @@ section.app-features{
 }
 
 .easy .cards-cont .card{
-    border-radius: 10px;
-    background-color: var(--light-gray);
+    border-radius: 20px;
     flex: 1;
     aspect-ratio: 1 / 1;
     display: flex;
@@ -803,12 +826,60 @@ section.app-features{
 .easy .cards-cont .card .easy-card-heading,
 .easy .cards-cont .card p{
     padding: 30px 25px;
+    background-color: var(--light-gray);
+}
+
+.easy .cards-cont .card .easy-card-heading{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.easy .cards-cont .card p{
+    border-bottom-right-radius: 15px;
 }
 
 .easy .cards-cont .card .icons-cont{
+    border-bottom-left-radius: 15px;
+    padding: 0;
+    flex: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+.easy .cards-cont .card .icons-cont .transparent-bg{    
+    flex: 1;
+    height: 100%;
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.easy .cards-cont .card .icons-cont .white-bg{
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--light-gray);
+}
+
+.easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper{
+    border-top-left-radius: 15px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px;
+}
+
+.easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper{
+    aspect-ratio: 1;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.easy .cards-cont .card .icons-cont .white-bg .wrapper i{
+    font-size: 20px;
 }
 
 .founders {
@@ -853,9 +924,7 @@ section.app-features{
 }
 
 .founders .cards-area .founder-card .txt-area h4 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0;
+    margin-bottom: 10px;
 }
 
 .founders .cards-area .founder-card .txt-area p {
