@@ -16,7 +16,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 /* Font sizes based on a modular scale */
@@ -722,19 +722,18 @@ section.app-features{
 }
 
 .app-feature-list .app-f-cont .stack-container{
-    flex: 3;
-    min-width: 500px;
-
+    flex: 1.5;
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     gap: 10px;
-
 }
 
 .app-feature-list .app-f-cont .mockup-container{
-    flex: 2;
+    flex: 1;
+    padding: 10px 5px;
 }
 
 .app-feature-list .app-f-cont .mockup-container img{
@@ -745,16 +744,16 @@ section.app-features{
 }
 
 .app-feature-list .app-f-cont .stack-container .stack{
-    gap: 10px;
+    gap: 5px;
 }
 
 .app-feature-list .app-f-cont .stack-container .stack .app-f{
     flex: 1;
-    min-width: 180px;
+    min-width: 100px;
     padding: 8px 5px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     justify-content: space-evenly;
     align-items: start;
 }
@@ -769,20 +768,56 @@ section.app-features{
     border-radius: 3px;
 }
 
-.app-f p{
-    font-size: 12px;
-}
-
 .learn-more-cont .learn-more:hover{
     cursor: pointer;
 }
 
 .learn-more{
-    font-size: 14px;
     text-decoration: none;
     color: var(--btn-prim);
 }
 
+
+@media (max-width:700px){
+    .app-feature-list .app-f-cont .mockup-container{
+        display: none;
+    }
+    .app-feature-list .app-f-cont .stack-container{
+        flex: 1;
+        width: 100%;
+        gap: 10px;
+    }
+    .app-feature-list .app-f-cont .stack-container .stack{
+        width: 100%;
+        gap:10px;
+    }
+    .app-feature-list .app-f-cont .stack-container .stack .app-f p{
+        font-size: 16px;
+    }
+}
+
+@media all and (max-width:455px){
+    .app-feature-list .app-f-cont,
+    .app-feature-list .app-f-cont .stack-container .stack{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 10px;
+    }
+
+    .app-feature-list .app-f-cont .stack-container .stack .app-f{
+        flex: 1;
+        padding: 6px 4px;
+        width: 100%;
+    }
+
+    .app-feature-list .app-f-cont .stack-container .stack .app-f p{
+        font-size: 12px;
+        /* max-width: 100px; */
+        text-wrap: wrap;
+    }
+
+}
 
 /* --------------------------------- */
 /* ABOUT US PAGE */
