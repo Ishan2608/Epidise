@@ -795,7 +795,7 @@ section.app-features {
 /* --------------------------------- */
 /* ABOUT US PAGE */
 /* --------------------------------- */
-
+/* 
 .easy{
     background-color: white;
 }
@@ -804,22 +804,30 @@ section.app-features {
     gap: 10px;
 }
 
-.easy .txt-area span{
+.easy .txt-area span.heading-area{
+    flex: 2;
+    min-width: 300px;
+}
+
+.easy .txt-area span.para-area{
     flex: 1;
+    min-width: 200px;
 }
 
 .easy .txt-area span{
     padding: 20px 20px;
 }
 
+
 .easy .cards-cont{
     gap: 10px;
 }
 
 .easy .cards-cont .card{
-    border-radius: 20px;
-    flex: 1;
     aspect-ratio: 1 / 1;
+    height: fit-content;
+    width: 250px;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -891,7 +899,197 @@ section.app-features {
 
 .easy .cards-cont .card .icons-cont .white-bg .wrapper i{
     font-size: 20px;
+} */
+
+/* ChatGPT */
+
+.easy {
+    background-color: white;
 }
+
+/* Handle the text area first */
+.easy .txt-area {
+    gap: 10px;
+}
+
+.easy .txt-area span.heading-area {
+    flex: 2;
+    min-width: 300px;
+}
+
+.easy .txt-area span.para-area {
+    flex: 1;
+    min-width: 200px;
+}
+
+.easy .txt-area span {
+    padding: 20px 20px;
+}
+
+/* Cards container layout */
+.easy .cards-cont {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap; /* Prevent cards from wrapping */
+    justify-content: flex-start;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    scroll-snap-type: x mandatory; /* Snap cards into place */
+    overflow-y: hidden; /* Prevent vertical scrolling */
+}
+
+/* Custom scrollbar */
+.easy .cards-cont::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar height */
+}
+
+.easy .cards-cont::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2); /* Darken the scrollbar thumb */
+    border-radius: 4px;
+    opacity: 0.5; /* Make the thumb more transparent */
+}
+
+.easy .cards-cont::-webkit-scrollbar-track {
+    background: transparent; /* Remove background of the scrollbar track */
+}
+
+/* Card Styles */
+.easy .cards-cont .card {
+    flex: 0 0 auto; /* Allow cards to maintain fixed width */
+    width: 100%; /* Ensure cards fill the container */
+    border-radius: 20px;
+    height: 100%; /* Maintain card height consistency */
+    aspect-ratio: 1 / 1; /* Ensure cards stay square */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 0;
+    scroll-snap-align: start; /* Snap cards into place */
+}
+
+/* Card content */
+.easy .cards-cont .card > * {
+    flex: 1;
+}
+
+/* Card Headings and Paragraphs */
+.easy .cards-cont .card .easy-card-heading,
+.easy .cards-cont .card p {
+    padding: 30px 25px;
+    background-color: var(--light-gray);
+}
+
+.easy .cards-cont .card .easy-card-heading {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.easy .cards-cont .card p {
+    border-bottom-right-radius: 15px;
+}
+
+/* Icon container styling */
+.easy .cards-cont .card .icons-cont {
+    border-bottom-left-radius: 15px;
+    padding: 0;
+    flex: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icon wrappers */
+.easy .cards-cont .card .icons-cont .transparent-bg {
+    flex: 1;
+    height: 100%;
+    background-color: var(--light-gray);
+    padding: 10px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.easy .cards-cont .card .icons-cont .white-bg {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    background-color: var(--light-gray);
+}
+
+.easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper {
+    border-top-left-radius: 15px;
+    background-color: white;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    min-height: 100%;
+    padding: 10px 10px;
+}
+
+.easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper {
+    aspect-ratio: 1;
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.easy .cards-cont .card .icons-cont .white-bg .wrapper i {
+    font-size: 20px;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 700px) {
+    .easy .cards-cont {
+        gap: 10px;
+    }
+
+    .easy .cards-cont .card {
+        flex: 0 0 calc(33.333% - 10px); /* 3 cards fully visible */
+    }
+}
+
+@media (max-width: 700px) and (min-width: 550px) {
+    .easy .cards-cont .card {
+        flex: 0 0 calc(50% - 10px); /* 2.5 cards visible */
+    }
+}
+
+@media (max-width: 550px) and (min-width: 400px) {
+    .easy .cards-cont .card {
+        flex: 0 0 calc(66.66% - 10px); /* 1.5 cards visible */
+    }
+
+    .easy .cards-cont .card .easy-card-heading,
+    .easy .cards-cont .card p {
+        font-size: 1rem; /* Reduce font size */
+        padding: 20px 15px; /* Adjust padding */
+    }
+}
+
+@media (max-width: 400px) and (min-width: 300px) {
+    .easy .cards-cont .card {
+        flex: 0 0 calc(83.33% - 10px); /* 1.2 cards visible */
+    }
+
+    .easy .cards-cont .card .easy-card-heading,
+    .easy .cards-cont .card p {
+        font-size: 0.9rem; /* Further reduce font size */
+        padding: 15px 10px; /* Adjust padding further */
+    }
+}
+
+@media (max-width: 300px) {
+    .easy .cards-cont .card {
+        flex: 0 0 100%; /* 1 card fully visible */
+    }
+
+    .easy .cards-cont .card .easy-card-heading,
+    .easy .cards-cont .card p {
+        font-size: 0.8rem; /* Minimized font size */
+        padding: 10px 5px; /* Minimized padding */
+    }
+}
+
 
 /* Founders Area */
 
