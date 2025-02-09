@@ -195,14 +195,6 @@ input:focus, select:focus, textarea:focus {
     gap: 0;
 }
 
-.para-card-container {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-wrap: wrap;
-}
-
 .para-card {
     flex: 1;
     display: flex;
@@ -1173,14 +1165,18 @@ section.app-features {
 }
 
 .contact-info .support-sections{
+    gap: 10px;
     padding: 10px 0px;
 }
 
 .contact-info .support-sections .support-section {
     flex: 1;
-    min-width: 250px; 
+    min-width: 130px; 
 }
 
+.contact-info .support-sections .support-section p{
+    font-size: 12px;
+}
 
 .contact-container .contact-info .text-area {
     display: flex;
