@@ -828,6 +828,7 @@ section.app-features {
     flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 10px;
+    padding: 20px 0px;
 
     overflow-x: auto; /* Enable horizontal scrolling */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
