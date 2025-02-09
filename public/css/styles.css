@@ -124,17 +124,6 @@ footer {
     margin: auto;
 }
 
-#home-hero .mockups{
-    height: 500px;
-    width: 100%;
-}
-
-#home-hero .mockups img{
-    height: 100%;
-    width: fit-content;
-    margin: auto;
-}
-
 .flex-col-even-center {
     display: flex;
     flex-direction: column;
@@ -404,10 +393,34 @@ a.nav-link.active {
 /* --------------------------------- */
 
 /* Hero Section */
-
-#home-hero{
-    background-image: #e5f1d5;
+#home-hero {
+    background-color: #e5f1d5;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full screen height */
 }
+
+/* Mockup Image */
+#home-hero .mockups {
+    position: absolute;
+    top: 100vh; /* Start completely hidden BELOW the viewport */
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100%;
+    max-width: 400px; /* Adjust based on design */
+    transition: transform 0.4s ease-out;
+}
+
+#home-hero .mockups img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 
 #home-hero .btns{
     width: fit-content;
@@ -671,10 +684,7 @@ section.app-features {
     background-color: var(--light-gray);
     padding: 5px 5px;
     border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
+    flex-direction: row;
 }
 
 .app-features .toggle-area .toggle-btns button {
