@@ -200,6 +200,7 @@ input:focus, select:focus, textarea:focus {
 
 .mid-center {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0;
@@ -1031,7 +1032,7 @@ section.app-features {
 /* Cards */
 .founders .cards-area .founder-card {
     flex: 0 0 auto;
-    gap: 10px;
+    gap: 20px;
     aspect-ratio: 3/4;
     border-radius: 15px;
     padding: 20px 15px;
@@ -1041,19 +1042,36 @@ section.app-features {
     scroll-snap-align: start; 
 }
 
-/* Card Image */
-.founders .cards-area .founder-card img {
-    flex: 3;
+.founders .cards-area .founder-card .img-wrapper {
     width: 100%;
-    border-radius: 5px;
-    border: 2px solid white;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.founders .cards-area .founder-card .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
 
 /* Card Text */
 .founders .cards-area .founder-card .txt-area {
-    flex: 1;
     padding: 10px 0;
     text-align: center;
+}
+
+.founders .cards-area .founder-card .txt-area{
+    gap: 10px;
+}
+
+@media (min-width:801px){
+    .founders .cards-area .founder-card{
+        flex: 0 0 calc(25% - 20px);
+    }
 }
 
 @media (max-width: 800px) and (min-width: 600px) {
