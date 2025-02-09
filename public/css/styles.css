@@ -249,7 +249,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
     background-color: var(--nav-bg);
     margin-bottom: 10px;
     position: sticky;
@@ -290,7 +289,6 @@ a.nav-link.active {
     color: white;
     background-color: black;
     border-radius: 10px;
-    font-size: 16px;
     font-weight: 600;
 }
 
@@ -344,7 +342,7 @@ a.nav-link.active {
 }
 
 .close-btn {
-    font-size: 24px;
+    font-size: 28px;
     cursor: pointer;
 }
 
@@ -662,21 +660,12 @@ section.diseases .text-area .para{
 }
 
 /* App Features */
-
-section.app-features{
+section.app-features {
     background-color: #F2F5F9;
     padding: 30px 10px;
 }
 
-#app-features-t1,
-#app-features-t2{
-    background-size: contain;
-    background-position: right bottom;
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-
-.app-features .toggle-area .toggle-btns{
+.app-features .toggle-area .toggle-btns {
     width: fit-content;
     background-color: var(--light-gray);
     padding: 5px 5px;
@@ -687,8 +676,7 @@ section.app-features{
     gap: 0;
 }
 
-
-.app-features .toggle-area .toggle-btns button{
+.app-features .toggle-area .toggle-btns button {
     background-color: transparent;
     border: none;
     border-radius: 5px;
@@ -698,22 +686,20 @@ section.app-features{
     margin: 0;
 }
 
-.app-features .toggle-area .toggle-btns button.active-toggle{
+.app-features .toggle-area .toggle-btns button.active-toggle {
     background-color: white;
     font-weight: bold;
 }
 
-.app-feature-list{
+.app-feature-list {
     padding: 20px 10px;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-
 }
 
-.app-feature-list h1{
+.app-feature-list h1 {
     padding: 10px 0px;
 }
 
-.app-feature-list .app-f-cont{
+.app-feature-list .app-f-cont {
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
@@ -721,44 +707,40 @@ section.app-features{
     padding: 0;
 }
 
-.app-feature-list .app-f-cont .stack-container{
+.app-feature-list .app-f-cont .stack-container {
     flex: 1.5;
-    min-width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    min-width: 0; /* Adjusted to allow flexibility */
     gap: 10px;
 }
 
-.app-feature-list .app-f-cont .mockup-container{
+.app-feature-list .app-f-cont .mockup-container {
     flex: 1;
     padding: 10px 5px;
 }
 
-.app-feature-list .app-f-cont .mockup-container img{
-    display: block;
+.app-feature-list .app-f-cont .mockup-container img {
     max-height: 100%;
     max-width: 100%;
     object-fit: cover;
 }
 
-.app-feature-list .app-f-cont .stack-container .stack{
+.app-feature-list .app-f-cont .stack-container .stack {
     gap: 5px;
+    flex-wrap: wrap;
 }
 
-.app-feature-list .app-f-cont .stack-container .stack .app-f{
+.app-feature-list .app-f-cont .stack-container .stack .app-f {
+    min-width: 150px;
     flex: 1;
-    min-width: 100px;
     padding: 8px 5px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
     justify-content: space-evenly;
     align-items: start;
+    gap: 5px;
 }
 
-.app-f .app-feature-ico-cont{
+.app-f .app-feature-ico-cont {
     background-color: white;
     width: fit-content;
     height: fit-content;
@@ -768,56 +750,47 @@ section.app-features{
     border-radius: 3px;
 }
 
-.learn-more-cont .learn-more:hover{
+.learn-more-cont .learn-more:hover {
     cursor: pointer;
 }
 
-.learn-more{
+.learn-more {
     text-decoration: none;
     color: var(--btn-prim);
 }
 
-
-@media (max-width:700px){
-    .app-feature-list .app-f-cont .mockup-container{
-        display: none;
-    }
-    .app-feature-list .app-f-cont .stack-container{
-        flex: 1;
-        width: 100%;
-        gap: 10px;
-    }
-    .app-feature-list .app-f-cont .stack-container .stack{
-        width: 100%;
-        gap:10px;
-    }
-    .app-feature-list .app-f-cont .stack-container .stack .app-f p{
-        font-size: 16px;
-    }
-}
-
-@media all and (max-width:455px){
-    .app-feature-list .app-f-cont,
-    .app-feature-list .app-f-cont .stack-container .stack{
-        display: flex;
+@media (max-width: 700px) {
+    .app-feature-list .app-f-cont {
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        align-items: stretch;
         gap: 10px;
     }
 
-    .app-feature-list .app-f-cont .stack-container .stack .app-f{
-        flex: 1;
-        padding: 6px 4px;
+    .app-feature-list .app-f-cont .stack-container,
+    .app-feature-list .app-f-cont .mockup-container {
         width: 100%;
     }
 
-    .app-feature-list .app-f-cont .stack-container .stack .app-f p{
-        font-size: 12px;
-        /* max-width: 100px; */
-        text-wrap: wrap;
+    .app-feature-list .app-f-cont .mockup-container {
+        height: 400px;
+        max-height: 400px;
+        padding: 15px 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    .app-feature-list .app-f-cont .mockup-container img {
+        max-height: 380px;
+        width: auto; 
+    }
 }
+
+
+@media (max-width: 455px) {
+}
+
 
 /* --------------------------------- */
 /* ABOUT US PAGE */
@@ -895,6 +868,7 @@ section.app-features{
 .easy .cards-cont .card .icons-cont .white-bg{
     height: 100%;
     aspect-ratio: 1 / 1;
+    padding: 0%;
     background-color: var(--light-gray);
 }
 
@@ -902,7 +876,9 @@ section.app-features{
     border-top-left-radius: 15px;
     background-color: white;
     width: 100%;
+    min-width: 100%;
     height: 100%;
+    min-height: 100%;
     padding: 10px 10px;
 }
 
@@ -917,11 +893,12 @@ section.app-features{
     font-size: 20px;
 }
 
+/* Founders Area */
+
 .founders {
     background-color: #14B8A6;
     padding: 20px 0px;
     color: white;
-    /* Prevent body from scrolling horizontally */
     overflow-x: hidden;
 }
 
@@ -939,10 +916,9 @@ section.app-features{
 
 .founders .cards-area .founder-card {
     flex:1;
-    min-width: 150px;
     aspect-ratio: 2/2.5;
     border-radius: 10px;
-    padding: 15px 10px;
+    padding: 20px 15px;
     background-color: #0e9181;
 }
 
@@ -963,20 +939,7 @@ section.app-features{
 }
 
 .founders .cards-area .founder-card .txt-area p {
-    font-size: 1rem;
-    font-weight: normal;
-    margin: 0;
-}
-
-/* Media query for large screens */
-@media (min-width: 1024px) {
-    .founders .cards-area .founder-card .txt-area h4 {
-        font-size: 18px;
-    }
-
-    .founders .cards-area .founder-card .txt-area p {
-        font-size: 16px;
-    }
+    padding: 5px 0px;
 }
 
 /* Media query for tablet screens */
@@ -984,14 +947,6 @@ section.app-features{
     .founders .cards-area .founder-card {
         /* Show 2.5 cards */
         min-width: calc(33.33% - 20px);
-    }
-
-    .founders .cards-area .founder-card .txt-area h4 {
-        font-size: 16px;
-    }
-
-    .founders .cards-area .founder-card .txt-area p {
-        font-size: 14px;
     }
 }
 
@@ -1005,15 +960,8 @@ section.app-features{
         /* Ensure two cards are visible */
         min-width: calc(50% - 20px); 
     }
-
-    .founders .cards-area .founder-card .txt-area h4 {
-        font-size: 14px;
-    }
-
-    .founders .cards-area .founder-card .txt-area p {
-        font-size: 12px;
-    }
 }
+
 
 
 
@@ -1335,7 +1283,6 @@ footer .footer-bottom button:hover {
     section.contact-vision {
         flex-direction: column;
         align-items: center;
-        padding-bottom: 0%;
     }
 
     section.contact-vision .left,
