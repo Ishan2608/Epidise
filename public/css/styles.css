@@ -336,11 +336,11 @@ section.app-features {
 
 .app-feature-list .app-f-cont .mockup-container {
     flex: 1;
-    padding: 10px 5px;
+    padding: 20px 10px;
 }
 
 .app-feature-list .app-f-cont .mockup-container img {
-    max-height: 100%;
+    max-height: 90%;
     max-width: 100%;
     object-fit: cover;
 }
@@ -440,8 +440,9 @@ section.app-features {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    gap: 10px;
+    align-items: center;
     padding-bottom: 25px;
+    gap: 20px;
 
     overflow-x: auto; /* Enable horizontal scrolling */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
@@ -469,14 +470,14 @@ section.app-features {
     /* Allow cards to maintain fixed width */
     flex: 0 0 auto; 
     border-radius: 20px;
-    height: 100%; /* Maintain card height consistency */
-    aspect-ratio: 1 / 1; /* Ensure cards stay square */
+    height: 100%;
+    aspect-ratio: 1 / 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
     gap: 0;
-    scroll-snap-align: start; /* Snap cards into place */
+    scroll-snap-align: start;
 }
 
 /* Card content */
@@ -538,6 +539,7 @@ section.app-features {
 }
 
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper {
+    width: 50px;
     aspect-ratio: 1;
     background-color: var(--lighter-gray);
     border-radius: 50%;
@@ -545,36 +547,51 @@ section.app-features {
     transform: rotate(-45deg);
 }
 
-.easy .cards-cont .card .icons-cont .white-bg .wrapper i {
+.easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper i{
     font-size: 20px;
 }
 
 /* Media Queries for Responsive Design */
-@media (min-width: 700px) {
-    .easy .cards-cont {
-        gap: 10px;
+@media (min-width: 800px) {
+
+    .easy .cards-cont{
+        justify-content: space-evenly;
     }
 
-    .easy .cards-cont .card {
-        flex: 0 0 calc(33.333% - 10px); /* 3 cards fully visible */
+    .easy .cards-cont .card{
+        flex: 1;
     }
 }
 
-@media (max-width: 700px) and (min-width: 550px) {
+@media (max-width: 800px) and (min-width: 650px) {
+
+    .easy .cards-cont{
+        justify-content: flex-start;
+    }
     .easy .cards-cont .card {
-        flex: 0 0 calc(47% - 10px); /* 2.5 cards visible */
+        flex: 0 0 calc(42% - 20px);
+    }
+}
+
+@media (max-width: 650px) and (min-width: 550px) {
+
+    .easy .cards-cont{
+        justify-content: flex-start;
+    }
+    .easy .cards-cont .card {
+        flex: 0 0 calc(47% - 20px); /* 2.5 cards visible */
     }
 }
 
 @media (max-width: 550px) and (min-width: 400px) {
     .easy .cards-cont .card {
-        flex: 0 0 calc(66.66% - 10px); /* 1.5 cards visible */
+        flex: 0 0 calc(66.66% - 20px); /* 1.5 cards visible */
     }
 
     .easy .cards-cont .card .easy-card-heading,
     .easy .cards-cont .card p {
-        font-size: 1rem; /* Reduce font size */
-        padding: 20px 15px; /* Adjust padding */
+        font-size: 1rem;
+        padding: 20px 15px;
     }
 }
 
@@ -586,7 +603,6 @@ section.app-features {
     .easy .cards-cont .card .easy-card-heading,
     .easy .cards-cont .card p {
         font-size: 0.9rem; /* Further reduce font size */
-        padding: 15px 10px; /* Adjust padding further */
     }
 }
 
@@ -598,7 +614,6 @@ section.app-features {
     .easy .cards-cont .card .easy-card-heading,
     .easy .cards-cont .card p {
         font-size: 0.8rem; /* Minimized font size */
-        padding: 10px 5px; /* Minimized padding */
     }
 }
 @media (max-width:400px){
@@ -609,13 +624,20 @@ section.app-features {
 
 /* Founders Area */
 .founders {
-    background-color: #14B8A6;
     padding: 20px 0px;
-    color: white;
+
+    /* Peach Theme */
+    /* background-color: #f4a261;
+    color: #432E20; */
+
+    /* Lavender Theme */
+    background-color: #e6e6fa;
+    color: #36454F;
+
 }
 
 .founders .txt-area {
-    padding: 30px 15px;
+    padding: 30px 30px;
 }
 
 /* Cards container */
@@ -626,6 +648,7 @@ section.app-features {
     align-items: stretch;
     gap: 20px;
     padding: 30px 20px;
+    padding-left: 30px;
     
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -653,9 +676,14 @@ section.app-features {
     aspect-ratio: 3/4;
     border-radius: 15px;
     padding: 20px 15px;
-    background-color: #0e9181;
-    transition: all 0.3s ease-in-out;
 
+    /* Peach Theme */
+    /* background: linear-gradient(to bottom, #e76f51, #f4a261); */
+
+    /* Lavender Theme */
+    background: linear-gradient(to bottom, #ae80df, #e6e6fa);
+
+    transition: all 0.3s ease-in-out;
     scroll-snap-align: start; 
 }
 
@@ -668,10 +696,11 @@ section.app-features {
 }
 
 .founders .cards-area .founder-card .img-wrapper img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: contain;
     border-radius: 50%;
+    border: 3px solid var(--charcoal);
 }
 
 
@@ -686,28 +715,32 @@ section.app-features {
 }
 
 @media (min-width:801px){
+    .founders .cards-area{
+        justify-content: space-evenly;
+    }
     .founders .cards-area .founder-card{
-        flex: 0 0 calc(25% - 20px);
+        flex:1;
     }
 }
 
 @media (max-width: 800px) and (min-width: 600px) {
     .founders .cards-area{
-        gap: 10px;
+        justify-content: flex-start;
+        gap: 20px;
     }
     .founders .cards-area .founder-card {
-        flex: 0 0 calc(32% - 10px);
+        flex: 0 0 calc(32% - 20px);
     }
 }
 @media (max-width: 600px) and (min-width: 500px) {
     .founders .cards-area .founder-card {
-        flex: 0 0 calc(43% - 10px);
+        flex: 0 0 calc(43% - 20px);
     }
 }
 @media (max-width: 499px) and (min-width: 450px) {
     .founders .cards-area .founder-card {
         aspect-ratio: 3/3.8;
-        flex: 0 0 calc(60% - 10px);
+        flex: 0 0 calc(60% - 20px);
     }
 }
 @media (max-width: 449px) and (min-width: 399px) {
@@ -715,21 +748,16 @@ section.app-features {
         gap: 5px;
     }
     .founders .cards-area .founder-card {
-        flex: 0 0 calc(70% - 5px);
+        flex: 0 0 calc(70% - 10px);
     }
 }
 @media (max-width: 398px) {
     .founders .cards-area .founder-card {
         aspect-ratio: none;
-        flex: 0 0 calc(80% - 5px);
+        flex: 0 0 calc(80% - 10px);
     }
 }
-@media (max-width: 360px) {
-    .founders .cards-area .founder-card {
- 
-        flex: 0 0 calc(90% - 5px);
-    }
-}
+
 @media (max-width: 360px) {
     .founders .cards-area .founder-card {
  
