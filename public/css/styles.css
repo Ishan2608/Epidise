@@ -176,7 +176,7 @@ section.feature-cards .feature.only-head {
 
 section.diseases{
     /* background-color: var(--light-gray); */
-    background-color: #F8F8F8;
+    background-color: var(--lighter-gray);
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -488,7 +488,7 @@ section.app-features {
 .easy .cards-cont .card .easy-card-heading,
 .easy .cards-cont .card p {
     padding: 30px 25px;
-    background-color: var(--light-gray);
+    background-color: var(--lighter-gray);
 }
 
 .easy .cards-cont .card .easy-card-heading {
@@ -514,7 +514,7 @@ section.app-features {
 .easy .cards-cont .card .icons-cont .transparent-bg {
     flex: 1;
     height: 100%;
-    background-color: var(--light-gray);
+    background-color: var(--lighter-gray);
     padding: 10px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -524,7 +524,7 @@ section.app-features {
     height: 100%;
     aspect-ratio: 1 / 1;
     padding: 0;
-    background-color: var(--light-gray);
+    background-color: var(--lighter-gray);
 }
 
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper {
@@ -539,9 +539,10 @@ section.app-features {
 
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper {
     aspect-ratio: 1;
-    background-color: var(--light-gray);
-    border-radius: 10px;
+    background-color: var(--lighter-gray);
+    border-radius: 50%;
     padding: 10px 10px;
+    transform: rotate(-45deg);
 }
 
 .easy .cards-cont .card .icons-cont .white-bg .wrapper i {
