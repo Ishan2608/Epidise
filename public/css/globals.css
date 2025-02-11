@@ -18,7 +18,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* border: 1px solid gray; */
+    /* border: 2px solid gray; */
 }
 
 /* Font sizes based on a modular scale */
@@ -85,8 +85,8 @@ main, section, header, footer, article {
 }
 
 .full-height {
-    height: 100vh;
-    max-height: fit-content;
+    min-height: 100vh;
+    max-height: auto;
 }
 
 
@@ -212,7 +212,6 @@ nav {
     border-radius: 5px;
     color: black;
 
-    /* background-color: var(--nav-bg); */
     background-color: white;
     margin-bottom: 10px;
     position: sticky;
@@ -249,7 +248,7 @@ nav .menu ul li {
     height: 100%;
 }
 
-a.nav-link {
+nav .menu ul li a.nav-link {
     display: inline-block;
     height: 100%;
     text-decoration: none;
@@ -257,21 +256,21 @@ a.nav-link {
     color: black;
 }
 
-a.nav-link.active {
+nav .menu ul li a.nav-link.active {
     font-weight: bolder;
     border-bottom: 3px solid black;
 }
 
-#partner-up{
+nav #partner-up-cont #partner-up{
     border: 2px solid white;
-    padding: 14px 16px;
+    padding: 12px 14px;
     color: white;
     background-color: black;
     border-radius: 10px;
     font-weight: 600;
 }
 
-#partner-up:hover{
+nav #partner-up-cont #partner-up:hover{
     border: 2px solid black;
     color: black;
     background-color: white;
@@ -311,15 +310,15 @@ a.nav-link.active {
 .mobile-nav {
     position: fixed;
     top: 0;
-    left: -100%; /* Start off-screen to the left */
-    width: 80%; /* Adjust width as needed */
-    max-width: 300px; /* Ensure it doesn't exceed a certain width */
+    left: -100%;
+    width: 80%;
+    max-width: 300px;
     height: 100%;
     background-color: white;
     z-index: 999;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease; /* Smooth transition */
+    transition: left 0.3s ease;
 }
 
 .mobile-nav-header {
@@ -330,12 +329,20 @@ a.nav-link.active {
 
 .close-btn {
     font-size: 28px;
+}
+
+.close-btn:hover{
     cursor: pointer;
 }
 
 .mobile-nav-menu {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: start;
+    align-items: start;
 }
 
 .mobile-nav-menu .menu-item {
@@ -395,16 +402,16 @@ footer {
 }
 
 footer div.footer-head {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 footer .links-container {
-    display: flex;
-    flex-wrap: wrap;
+    flex: 1;
     gap: 20px;
     width: 100%;
 }
@@ -425,11 +432,41 @@ footer .links-container div.socials {
     min-width: 60px;
 }
 
+footer .links-container div.socials .social-icon{
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+footer .links-container div.socials .social-icon:hover{
+    cursor: pointer;
+    font-size: 1.75rem;
+}
+
+footer .links-container div .footer-links-cont{
+    width: 100%;
+    gap: 15px;
+    list-style: none;
+}
+
+footer .links-container div .footer-links-cont *{
+    width: 100%;
+}
+
+
+footer .links-container div .footer-links-cont li a{
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+footer .links-container div .footer-links-cont li a:hover{
+    font-size: 18px;
+}
+
 footer .footer-bottom {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
+    padding: 0px;
 }
 
 footer .footer-bottom button {

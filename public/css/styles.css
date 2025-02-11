@@ -371,13 +371,15 @@ section.app-features {
     border-radius: 3px;
 }
 
-.learn-more-cont .learn-more:hover {
-    cursor: pointer;
-}
-
-.learn-more {
+.learn-more-cont .learn-more {
     text-decoration: none;
     color: var(--btn-prim);
+}
+
+.learn-more-cont .learn-more:hover {
+    cursor: pointer;
+    color: var(--charcoal);
+    font-size: 18px;
 }
 
 @media (max-width: 700px) {
@@ -441,8 +443,9 @@ section.app-features {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    padding-bottom: 25px;
+    padding: 20px 10px;
     gap: 20px;
+    min-height: fit-content;
 
     overflow-x: auto; /* Enable horizontal scrolling */
     -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
@@ -452,7 +455,7 @@ section.app-features {
 
 /* Custom scrollbar */
 .easy .cards-cont::-webkit-scrollbar {
-    height: 8px;
+    height: 5px;
 }
 
 .easy .cards-cont::-webkit-scrollbar-thumb {
@@ -469,9 +472,9 @@ section.app-features {
 .easy .cards-cont .card {
     /* Allow cards to maintain fixed width */
     flex: 0 0 auto; 
-    border-radius: 20px;
-    height: 100%;
     aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
