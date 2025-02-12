@@ -241,7 +241,7 @@ a.nav-link {
     color: black;
 }
 
-.active {
+a.active {
     font-weight: bolder;
     border-bottom: 3px solid black;
 }
