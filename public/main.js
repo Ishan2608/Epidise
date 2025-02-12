@@ -52,15 +52,67 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", (event) => {
       const scrollY = window.scrollY;
       const heroHeight = hero.offsetHeight;
+      const mockupHeight = mockup.offsetHeight;
+
+      // Calculate the maximum distance the mockup can move up
+      const maxScrollDistance = heroHeight - mockupHeight - 20;
 
       if (scrollY > heroHeight / 3) {
         // Move mockup up at 2x the scroll speed
-        mockup.style.transform = `translate(-50%, ${-scrollY * 0.9}px)`;
+        mockup.style.transform = `translate(-50%, ${-scrollY * 1.25}px)`;
       } else {
         // Reset when user scrolls back up
         mockup.style.transform = `translate(-50%, 0px)`;
       }
+
+
     });
   }
+
+  const stepperSection = document.querySelector('.stepper-section');
+const steps = document.querySelectorAll('.step');
+const stepNumbers = document.querySelectorAll('.step-number');
+const stepCards = document.querySelectorAll('.step-card');
+const dottedLine = document.querySelector('.dotted-line');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateSteps();
+        observer.unobserve(stepperSection);
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+observer.observe(stepperSection);
+
+function animateSteps() {
+  stepNumbers.forEach((stepNumber, index) => {
+    setTimeout(() => {
+      stepNumber.style.backgroundColor = '#D2DEF2';
+      stepNumber.style.boxShadow = '0 0 10px #D2DEF2';
+    }, index * 500);
+  });
+
+  stepCards.forEach((stepCard, index) => {
+    setTimeout(() => {
+      stepCard.style.opacity = '1';
+      stepCard.style.transform = 'translateY(0)';
+    }, index * 500);
+  });
+
+  // Animate dotted line (improved)
+  if (window.innerWidth > 768) { // Horizontal line
+    dottedLine.style.width = 'calc(100% - 100px)'; // Adjust width as needed
+  } else { // Vertical line
+    dottedLine.style.height = 'calc(100% - 70px)'; // Adjust height as needed
+    dottedLine.style.width = '2px'; // Ensure width is set for vertical line
+  }
+  dottedLine.classList.add('animate'); // Trigger CSS transition
+}
+
 
 });
