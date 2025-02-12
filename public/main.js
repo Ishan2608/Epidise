@@ -44,36 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Hero Section Scroll Effect
-  const mockup = document.querySelector("#home-hero .mockups");
-  const hero = document.getElementById("home-hero");
-
-  if (mockup && hero) {
-    window.addEventListener("scroll", (event) => {
-      const scrollY = window.scrollY;
-      const heroHeight = hero.offsetHeight;
-      const mockupHeight = mockup.offsetHeight;
-
-      // Calculate the maximum distance the mockup can move up
-      const maxScrollDistance = heroHeight - mockupHeight - 20;
-
-      if (scrollY > heroHeight / 3) {
-        // Move mockup up at 2x the scroll speed
-        mockup.style.transform = `translate(-50%, ${-scrollY * 1.25}px)`;
-      } else {
-        // Reset when user scrolls back up
-        mockup.style.transform = `translate(-50%, 0px)`;
-      }
-
-
-    });
-  }
-
   const stepperSection = document.querySelector('.stepper-section');
-const steps = document.querySelectorAll('.step');
-const stepNumbers = document.querySelectorAll('.step-number');
-const stepCards = document.querySelectorAll('.step-card');
-const dottedLine = document.querySelector('.dotted-line');
+  const steps = document.querySelectorAll('.step');
+  const stepNumbers = document.querySelectorAll('.step-number');
+  const stepCards = document.querySelectorAll('.step-card');
+  const dottedLine = document.querySelector('.dotted-line');
 
 const observer = new IntersectionObserver(
   (entries) => {
