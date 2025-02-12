@@ -1,2 +1,2 @@
 View the new Epidise website at:
- https://ishan2608.github.io/Epidise/
+ https://soft-halva-719b54.netlify.app/
