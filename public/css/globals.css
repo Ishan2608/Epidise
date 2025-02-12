@@ -68,6 +68,11 @@
   .txt-4xl { font-size: 2.25rem; /* 36px */ }
 }
 
+@media (max-width: 310px){
+    .txt-3xl { font-size: 22px;}
+    .txt-4xl { font-size: 26px;}
+}
+
 body {
     padding: 10px;
     font-family: "Roboto", serif;
@@ -375,6 +380,136 @@ nav #partner-up-cont #partner-up:hover{
     color: white;
     font-weight: bold;
 }
+
+/* Vision */
+
+section.contact-vision {
+    padding: 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+}
+
+section.contact-vision>div {
+    border-radius: 20px;
+    padding: 40px 20px;
+}
+
+section.contact-vision .left {
+    flex: 2;
+    background-color: var(--prim-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 10px;
+}
+
+section.contact-vision .left * {
+    width: 84%;
+}
+
+section.contact-vision .left p {
+    color: #8E94A4;
+}
+
+section.contact-vision .left h1 {
+    color: white;
+}
+
+section.contact-vision .left h1 .highlight {
+    color: var(--btn-prim);
+}
+
+section.contact-vision .right {
+    flex: 1;
+    background-color: var(--prim-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+}
+
+section.contact-vision .right .txt-area h1 {
+    color: var(--prim-dark);
+    margin-bottom: 10px;
+}
+
+section.contact-vision .right .graphic {
+    width: 80px;
+    height: 80px;
+}
+
+section.contact-vision .right .graphic img{
+    width: 100%;
+    height: auto;
+}
+
+/* Download Buttons */
+
+section.download-btns {
+    padding: 30px 0px;
+}
+
+section.download-btns .wrapper {
+    width: 100%;
+    padding: 20px 0px;
+    border-radius: 20px;
+    background-color: var(--prim-light);
+    gap: 20px;
+}
+
+section.download-btns .wrapper h1 {
+    color: var(--prim-dark);
+}
+
+section.download-btns .wrapper .download-btn-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section.download-btns .wrapper .download-btn-container .d-btn {
+    background-color: white;
+    width: 200px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.d-btn:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 200ms ease-in-out;
+}
+
+@media (max-width:500px) {
+    section.download-btns .wrapper .download-btn-container .d-btn {
+        width: 120px;
+        border-radius: 5px;
+        height: auto;
+    }
+}
+@media (max-width:340px) {
+    section.download-btns .wrapper h1{
+        font-size: 20px;
+    }
+    section.download-btns .wrapper .download-btn-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Footer */
 
 footer {
     background-color: var(--prim-dark);

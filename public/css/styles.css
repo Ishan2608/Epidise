@@ -4,52 +4,120 @@
 
 /* Hero Section */
 #home-hero {
-    background-color: #e5f1d5;
     position: relative;
+    background-color: #e5f1d5;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
-#home-hero .mockups {
+#home-hero .txt-area{
+    gap:15px;
+}
+
+#home-hero .mockups{
+    width: 500px;
+    height: 75%;
     position: absolute;
-    top: 90vh;
+    bottom: -20px;
     left: 50%;
-    transform: translate(-50%, 0);
-    width: 100%;
-    max-width: 400px;
-    transition: transform 0.4s ease-out;
+    transform: translate(-50%,0);
 }
 
-#home-hero .mockups img {
-    width: 100%;
-    height: auto;
-    display: block;
+#home-hero .mockups img{
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: auto;
+    object-fit: contain;
 }
 
-
-#home-hero .btns {
+#home-hero .txt-area .btns {
     width: fit-content;
     margin: auto;
     padding: 20px 10px;
-    gap: 20px;
+    gap: 15px;
 }
 
-#home-hero .btns button {
+#home-hero .txt-area .btns button {
+    border: none;
     color: white;
     background-color: black;
-    border-radius: 50px;
+    border-radius: 40px;
     font-size: 18px;
-    padding: 10px 18px;
+    padding: 15px 20px;
+    box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.404);
 }
 
-#home-hero .btns button:hover {
+#home-hero .txt-area .btns button:hover {
     cursor: pointer;
     background-color: white;
     color: black;
+}
+
+@media (min-width:601px){
+    #home-hero p,
+    #home-hero .btns{
+        display: none;
+    }
+}
+
+@media (max-width:600px){
+    #home-hero{
+        padding: 0px 20px;
+        padding-top:20px;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        height:100vh;
+    }
+
+    #home-hero .mockups{
+        flex:1;
+    }
+
+    #home-hero .txt-area{
+        flex:1;
+    }
+
+    #home-hero .txt-area h1{
+        font-size:26px;
+        margin-bottom: 0;
+        padding: 0px 0px;
+        padding-top: 20px;
+    }
+
+    #home-hero .txt-area p{
+        padding: 0px 0px;
+    }
+
+    #home-hero .txt-area .btns{
+        padding: 0;
+        margin:0px;
+    }
+
+    #home-hero .txt-area .btns button{
+        padding:12px 15px;
+        font-size: 14px;
+    }
+
+    #home-hero .mockups{
+        position: static;
+        height: 60%;
+        width: 90%;
+        transform: translate(0,0);
+    }
+}
+
+@media (max-width:400px){
+    #home-hero .txt-area p{
+        font-size: 14px;
+    }
 }
 
 /* Stepper Section */
@@ -302,6 +370,13 @@ section.quote h1 span i.round-icon {
     background-color: rgb(150, 241, 253);
 }
 
+@media (max-width:400px){
+    section.quote h1{
+        font-size: 28px;
+    }
+}
+
+
 /* Features Section */
 
 .feature-cards {
@@ -456,7 +531,6 @@ section.quote h1 span i.round-icon {
 /* Diseases Section */
 
 section.diseases {
-    /* background-color: var(--light-gray); */
     background-color: var(--lighter-gray);
     display: flex;
     flex-direction: column;
@@ -604,6 +678,19 @@ section.diseases .text-area .para {
     }
 }
 
+@media (max-width: 300px){
+    section.diseases .cards-area {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+    }
+
+    section.diseases .cards-area .disease{
+        justify-content: start;
+        padding: 10px 20px;
+    }
+}
+
 /* App Features */
 section.app-features {
     background-color: #F2F5F9;
@@ -733,6 +820,18 @@ section.app-features {
 /* --------------------------------- */
 /* ABOUT US PAGE */
 /* --------------------------------- */
+
+
+@media (max-width:400px){
+    section#about-hero{
+        padding: 10px 10px;
+    }
+
+    section#about-hero h1{
+        font-size: 28px;
+        padding: 8px 8px;
+    }
+}
 
 .easy {
     background-color: white;
@@ -1255,111 +1354,6 @@ form {
     margin: 0 auto;
 }
 
-section.contact-vision {
-    padding: 20px 0px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-evenly;
-}
-
-section.contact-vision>div {
-    border-radius: 20px;
-    padding: 40px 20px;
-}
-
-section.contact-vision .left {
-    flex: 2;
-    background-color: var(--prim-dark);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-    padding: 40px 10px;
-}
-
-section.contact-vision .left * {
-    width: 84%;
-}
-
-section.contact-vision .left p {
-    color: #8E94A4;
-}
-
-section.contact-vision .left h1 {
-    color: white;
-}
-
-section.contact-vision .left h1 .highlight {
-    color: var(--btn-prim);
-}
-
-section.contact-vision .right {
-    flex: 1;
-    background-color: var(--prim-light);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    gap: 30px;
-}
-
-section.contact-vision .right .txt-area h1 {
-    color: var(--prim-dark);
-    margin-bottom: 10px;
-}
-
-section.contact-vision .right .graphic {
-    width: 80px;
-    height: 80px;
-    background-color: black;
-}
-
-section.download-btns {
-    padding: 30px 0px;
-}
-
-section.download-btns .wrapper {
-    width: 100%;
-    padding: 20px 0px;
-    border-radius: 20px;
-    background-color: var(--prim-light);
-    gap: 20px;
-}
-
-section.download-btns .wrapper h1 {
-    color: var(--prim-dark);
-}
-
-section.download-btns .wrapper .download-btn-container {
-    display: flex;
-    gap: 10px;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-section.download-btns .wrapper .download-btn-container .d-btn {
-    background-color: white;
-    width: 200px;
-    height: auto;
-    border-radius: 15px;
-}
-
-.d-btn:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: transform 200ms ease-in-out;
-}
-
-@media (max-width:500px) {
-    section.download-btns .wrapper .download-btn-container .d-btn {
-        width: 120px;
-        height: auto;
-    }
-}
-
 
 /* Media Queries */
 @media (max-width: 1200px) {
@@ -1423,5 +1417,29 @@ section.download-btns .wrapper .download-btn-container .d-btn {
 
     .contact-info .support-sections .support-section {
         width: 100%;
+    }
+}
+
+@media (max-width: 410px){
+    .contact-container .contact-form{
+        min-width:0px;
+    }
+    .contact-container .contact-form .form-grp form .name-grp{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+    .contact-container .contact-form .form-grp form .name-grp input{
+        width: 100%;
+    }
+    .phone-grp select{
+        padding: 4px;
+        min-width: 0;
+    }
+    .phone-grp input#phone{
+        min-width:0;
+        margin: 0px;
     }
 }
