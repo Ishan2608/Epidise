@@ -83,27 +83,46 @@ section.quote h1 span i.round-icon {
 
 /* Features Section */
 
-section.feature-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: stretch;
+.feature-cards {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     gap: 20px;
     padding: 30px 20px;
+
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory; 
+    overflow-y: hidden;
 }
 
-section.feature-cards .feature {
-    flex: 1 1 calc(25% - 20px); /* Ensure four cards per row on tablet and desktop */
-    min-width: 100px;
-    aspect-ratio: 2 / 2.5;
+.feature-cards::-webkit-scrollbar {
+    height: 8px;
+}
+.feature-cards::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    opacity: 0.5;
+}
+.feature-cards::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.feature-cards .feature {
+    flex: 0 0 auto;
+    /* min-width: 100px; */
+    aspect-ratio: 3 / 4;
     border-radius: 5px;
+    padding: 20px;
+    background-color: #8E94A4;
+
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
-    padding: 20px;
-    background-color: #8E94A4;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+    transition: all 0.3s ease-in-out;
+    scroll-snap-align: start; 
+    
 }
 
 #f1{
@@ -120,11 +139,11 @@ section.feature-cards .feature {
 }
 
 
-section.feature-cards .feature.ico-head-div {
+.feature-cards .feature.ico-head-div {
     justify-content: space-between;
 }
 
-section.feature-cards .feature.only-head {
+.feature-cards .feature.only-head {
     justify-content: flex-end;
 }
 
@@ -138,40 +157,70 @@ section.feature-cards .feature.only-head {
 .ico-text-h h2,
 .ico-text-h i,
 .feature-heading-bottom {
-    font-size: 18px; /* Larger font size for heading */
+    font-size: 18px;
 }
 
 .feature p {
-    font-size: 14px; /* Larger font size for paragraph */
+    font-size: 14px;
 }
 
-/* Media Query for Mobile */
-@media (max-width: 767px) {
-    section.feature-cards {
-        padding: 10px;
-        gap: 10px; /* Reduce gap for mobile view */
+/* Ensure 4 cards on Desktop Wide Screens */
+@media (min-width:801px){
+    .feature-cards{
+        justify-content: space-evenly;
     }
+    .feature-cards .feature{
+        flex:1;
+    }
+}
 
-    section.feature-cards .feature {
-        flex: 1 1 calc(50% - 10px); /* Ensure two cards per row on mobile */
-        padding: 20px;
+@media (max-width: 800px) and (min-width: 701px) {
+    .feature-cards{
+        gap: 20px;
+    }
+    .feature-cards .feature {
+        flex: 0 0 calc(32% - 20px);
+    }
+}
+@media (max-width: 701px) and (min-width: 600px) {
+    .feature-cards .feature {
+        flex: 0 0 calc(43% - 20px);
+    }
+}
+
+@media (max-width: 600px) and (min-width: 500px) {
+    .feature-cards .feature {
+        aspect-ratio: 3/3.8;
+        flex: 0 0 calc(55% - 20px);
+    }
+}
+
+@media (max-width: 499px) and (min-width: 450px) {
+    .feature-cards .feature {
+        flex: 0 0 calc(70% - 20px);
+    }
+}
+
+@media (max-width: 449px) and (min-width: 399px) {
+    .feature-cards{
         gap: 10px;
     }
-
-    .feature-heading-bottom {
-        font-size: 16px; /* Smaller font size for heading */
+    .feature-cards .feature{
+        flex: 0 0 calc(70% - 10px);
     }
-
-    .ico-text-h h2,
-    .ico-text-h i {
-        font-size: 16px; /* Smaller font size for heading */
-    }
-
-    .feature p {
-        font-size: 12px; /* Smaller font size for paragraph */
+}
+@media (max-width: 398px) {
+    .feature-cards .feature {
+        aspect-ratio: none;
+        flex: 0 0 calc(80% - 10px);
     }
 }
 
+@media (max-width: 360px) {
+    .feature-cards .feature {
+        flex: 0 0 calc(95% - 5px);
+    }
+}
 
 /* Diseases Section */
 
@@ -233,23 +282,27 @@ section.diseases .text-area .para{
     padding: 6px;
 }
 
-.disease-card{
-    flex: 1;
-    min-width: 120px;
+.diseases .cards-area{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    /* gap: 10px; */
+    padding: 20px 0px;
+
 }
 
-.disease-card .disease{
+.disease{
     padding: 25px 12px;
     gap: 10px;
 }
 
-.disease-card .disease .disease-name{
+.disease .disease-name{
     font-size: 18px;
     font-weight: 500;
 }
 
 @media (max-width: 768px) {
-    .disease-card .disease .disease-name,
+    .disease .disease-name,
     .round-icon-container.check-cont{
         font-size: 16px;
     }
@@ -258,7 +311,18 @@ section.diseases .text-area .para{
     }
 }
 
-@media (max-width: 545px) {
+@media (max-width:710px){
+    section.diseases .cards-area{
+        display: grid;
+        grid-template-columns: 33.33% 33.33% 33.33%;
+        grid-template-rows: 25% 25% 25% 25%;
+    }
+}
+
+@media (max-width: 580px) {
+    section.diseases{
+        padding: 10px;
+    }
     section.diseases .text-area h1{
         min-width: fit-content;
     }
@@ -266,21 +330,39 @@ section.diseases .text-area .para{
         font-size: 12px;
         min-width: fit-content;
     }
-    .disease-card{
-        padding: 0;
-    }
-    .disease-card .disease{
+    
+    .disease{
+        justify-content: center;
         padding: 10px 0px;
         gap: 2px;
     }
-    .disease-card .disease .disease-name,
+    .disease .disease-name,
     .round-icon-container.check-cont{
         font-size: 12px;
         font-weight: 300;
-        padding: 2px;
+        padding: 4px;
     }
     .round-icon-container.check-cont{
-        padding: 4px;
+        /* max-height: 14px; */
+        aspect-ratio: 1;
+    }
+}
+
+@media (max-width:440px){
+    section.diseases .cards-area{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 2fr 2fr 2fr 2fr 2fr 2fr;
+    }
+    section.diseases .cards-area .disease .disease-name{
+        font-size: 14px;
+    }
+}
+
+@media (max-width:324px){
+    section.diseases .cards-area .disease .disease-name{
+        font-size: 12px;
+        padding: 0px 10px;
     }
 }
 
@@ -717,6 +799,7 @@ section.app-features {
     gap: 10px;
 }
 
+/* Ensure 4 cards on Desktop Wide Screens */
 @media (min-width:801px){
     .founders .cards-area{
         justify-content: space-evenly;
@@ -748,7 +831,7 @@ section.app-features {
 }
 @media (max-width: 449px) and (min-width: 399px) {
     .founders .cards-area{
-        gap: 5px;
+        gap: 10px;
     }
     .founders .cards-area .founder-card {
         flex: 0 0 calc(70% - 10px);
