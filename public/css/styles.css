@@ -57,14 +57,14 @@
     color: black;
 }
 
-@media (min-width:601px){
+@media (min-width:701px){
     #home-hero p,
     #home-hero .btns{
         display: none;
     }
 }
 
-@media (max-width:600px){
+@media (max-width:700px){
     #home-hero{
         padding: 0px 20px;
         padding-top:20px;
@@ -95,6 +95,10 @@
     #home-hero .txt-area p{
         padding: 0px 0px;
     }
+    #home-hero p,
+    #home-hero h1{
+        width:80%
+    }
 
     #home-hero .txt-area .btns{
         padding: 0;
@@ -117,6 +121,10 @@
 @media (max-width:400px){
     #home-hero .txt-area p{
         font-size: 14px;
+    }
+    #home-hero p,
+    #home-hero h1{
+        width:90%
     }
 }
 
@@ -149,6 +157,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
     opacity: 1;
     transition: opacity 0.5s ease;
     position: relative;
@@ -238,11 +247,13 @@
         margin-bottom: 0;
         flex-direction: row;
         align-items: center;
-        gap: 20px;
+        gap: 30px;
     }
 
     .step-card{
+        flex: 1;
         aspect-ratio: inherit;
+        
     }
 
     .step-number {
@@ -307,7 +318,9 @@
         padding: 30px 10px;
     }
 
-    .step
+    .step{
+        gap: 15px;
+    }
 
     /* Step Number */
     .step-number {
@@ -343,6 +356,9 @@
 }
 
 /* Quote Section */
+#home-main{
+    padding: 0;
+}
 
 section.quote {
     padding: 40px 20px;
@@ -354,20 +370,24 @@ section.quote h1 span.light {
 }
 
 section.quote h1 span i.round-icon {
-    height: auto;
+    height: 100%;
     aspect-ratio: 1;
 }
 
 #drug-icon {
-    background-color: mediumseagreen;
+    background-color: var(--f1);
 }
 
 #hour-glass-icon {
-    background-color: rgb(250, 250, 135);
+    background-color: var(--f2);
 }
 
 #telehealth-icon {
-    background-color: rgb(150, 241, 253);
+    background-color: var(--f3);
+}
+
+#platform-icon{
+    background-color: var(--f4);
 }
 
 @media (max-width:400px){
@@ -424,19 +444,19 @@ section.quote h1 span i.round-icon {
 }
 
 #f1 {
-    background-color: #e5f1d5;
+    background-color: var(--f1);
 }
 
 #f2 {
-    background-color: #D2DEF2;
+    background-color: var(--f2);
 }
 
 #f3 {
-    background-color: #E8FFFF;
+    background-color: var(--f3);
 }
 
 #f4 {
-    background-color: #F2F5F9;
+    background-color: var(--f4);
 }
 
 
@@ -695,6 +715,7 @@ section.diseases .text-area .para {
 section.app-features {
     background-color: #F2F5F9;
     padding: 30px 10px;
+    margin-top: 20px;
 }
 
 .app-features .toggle-area .toggle-btns {
@@ -970,10 +991,9 @@ section.app-features {
     background-color: var(--lighter-gray);
     border-radius: 50%;
     padding: 10px 10px;
-    transform: rotate(-45deg);
 }
 
-.fa-arrow-right:hover {
+.fa-check:hover {
     cursor: pointer;
     transform: scale(1.5);
     transition: transform 200ms ease-in-out;

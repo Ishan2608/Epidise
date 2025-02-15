@@ -14,6 +14,10 @@
     --lighter-gray: #F8F8F8;
     --dark-bg-light-txt: #8E94A4;
     --charcoal: #36454F;
+    --f1: #e5f1d5;
+    --f2: #d2def2;
+    --f3: #e8ffff;
+    --f4: #F2F5F9;
 }
 
 * {
@@ -395,6 +399,7 @@ a.active {
 
 section.contact-vision {
     padding: 20px 0px;
+    padding-bottom: 0px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -461,7 +466,7 @@ section.contact-vision .right .graphic img{
 /* Download Buttons */
 
 section.download-btns {
-    padding: 30px 0px;
+    padding: 20px 0px;
 }
 
 section.download-btns .wrapper {
@@ -534,13 +539,19 @@ footer {
 footer div.footer-head {
     flex: 1;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
     padding: 20px;
 }
 
-footer div.footer-head img{
+footer div.footer-head p > a{
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+/* footer div.footer-head img{
     height: 100px;
     width: auto;
     object-fit: contain;
@@ -555,7 +566,7 @@ footer div.footer-head img{
     footer div.footer-head img{
         height: 50px;
     }
-}
+} */
 
 footer .links-container {
     flex: 1;
@@ -640,6 +651,13 @@ footer .footer-bottom {
 @media (max-width: 606px) {
     footer .links-container div {
         padding: 15px;
+    }
+
+    footer .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
     }
 
 }
