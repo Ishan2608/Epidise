@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <link rel="stylesheet" href="public/css/globals.css">
-    <link rel="stylesheet" href="public/css/styles.css" />
-    <title>About Us</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
+    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="public/css/globals.css">
+  <link rel="stylesheet" href="public/css/styles.css" />
+  <title>About Us</title>
 </head>
+
 <body>
 
-    <!-- Desktop and Tablet Navigation -->
+  <!-- Desktop and Tablet Navigation -->
   <nav class="txt-md">
     <!-- Left Part - Logo -->
     <div class="logo-container mid-center">
@@ -76,96 +80,127 @@
     </div>
   </div>
 
-    <section id="about-hero" class="hero">
-        <h1 class="txt-4xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, iure.
+  <section id="about-hero" class="hero">
+
+    <div id="bg-circle1" class="bg-circle"></div>
+    <div id="bg-circle2" class="bg-circle"></div>
+    <div id="bg-circle3" class="bg-circle"></div>
+
+    <h1 class="txt-4xl">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, iure.
+    </h1>
+
+    <div class="mockups">
+      <div id="about-float1" class="float floating">
+        <h1 class="txt-sm">lorem lorem lorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur </p>
+      </div>
+      <img src="/public/assets/user-mocks3.png" alt="">
+      <div id="about-float2" class="float floating">
+        <h1 class="txt-sm">lorem lorem lorem</h1>
+        <p>Lorem ipsum dolor sit amet consectetur </p>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    window.onload = function () {
+      // Get all the circles
+      const circles = document.querySelectorAll('.bg-circle');
+
+      // Loop through each circle
+      circles.forEach(circle => {
+        // Get the width of each circle
+        const circleWidth = circle.offsetWidth;
+
+        // Set the bottom position to be half of the width (pull it down)
+        circle.style.bottom = `-${circleWidth / 2}px`;
+      });
+    };
+  </script>
+
+  <section class="easy">
+    <div class="txt-area flex-row-even-stretch">
+      <span class="heading-area">
+        <h1 class="txt-2xl">
+          We Make it Easy by Keeping Things Simple
         </h1>
+      </span>
 
-        <div class="mockups">
-            <img src="/public/assets/user-mocks3.png" alt="">
-        </div>
-    </section>
+      <span class="para-area">
+        <p class="txt-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, error sit debitis optio nam eius esse
+          voluptatibus officiis suscipit corrupti?
+        </p>
+      </span>
+    </div>
 
-    <section class="easy">
-        <div class="txt-area flex-row-even-stretch">
-            <span class="heading-area">
-                <h1 class="txt-2xl">
-                    We Make it Easy by Keeping Things Simple
-                </h1>
-            </span>
+    <div class="cards-cont flex-row-even-stretch">
+      <div class="card">
+        <h1 class="txt-md easy-card-heading">Lorem ipsum dolor sit amet.</h1>
+        <p class="txt-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis excepturi,
+        </p>
+        <div class="icons-cont">
+          <span class="transparent-bg">
+            <i></i>
+          </span>
+          <span class="white-bg">
+            <div class="curvy-wrapper mid-center">
 
-            <span class="para-area">
-                <p class="txt-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, error sit debitis optio nam eius esse voluptatibus officiis suscipit corrupti?
-                </p>
-            </span>
-        </div>
-
-        <div class="cards-cont flex-row-even-stretch">
-            <div class="card">
-                <h1 class="txt-md easy-card-heading">Lorem ipsum dolor sit amet.</h1>
-                <p class="txt-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis excepturi,
-                </p>
-                <div class="icons-cont">
-                    <span class="transparent-bg">
-                        <i></i>
-                    </span>
-                    <span class="white-bg">
-                        <div class="curvy-wrapper mid-center">
-
-                            <span class="wrapper mid-center">
-                              <i class="fa-solid fa-check"></i>
-                            </span>    
-                        </div>
-                    </span>
-                </div>
+              <span class="wrapper mid-center">
+                <i class="fa-solid fa-check"></i>
+              </span>
             </div>
-            <div class="card">
-                <h1 class="txt-md easy-card-heading">Lorem ipsum dolor sit amet.</h1>
-                <p class="txt-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis excepturi,
-                </p>
-                <div class="icons-cont">
-                    <span class="transparent-bg">
-                        <i></i>
-                    </span>
-                    <span class="white-bg">
-                        <div class="curvy-wrapper mid-center">
-
-                            <span class="wrapper mid-center">
-                              <i class="fa-solid fa-check"></i>
-                            </span>    
-                        </div>
-                    </span>
-                </div>
-            </div>
-            <div class="card">
-                <h1 class="txt-md easy-card-heading">Lorem ipsum dolor sit amet.</h1>
-                <p class="txt-sm">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis excepturi,
-                </p>
-                <div class="icons-cont">
-                    <span class="transparent-bg">
-                        <i></i>
-                    </span>
-                    <span class="white-bg">
-                        <div class="curvy-wrapper mid-center">
-
-                            <span class="wrapper mid-center">
-                              <i class="fa-solid fa-check"></i>
-                            </span>    
-                        </div>
-                    </span>
-                </div>
-            </div>
+          </span>
         </div>
+      </div>
+      <div class="card">
+        <h1 class="txt-md easy-card-heading">Lorem ipsum dolor sit amet.</h1>
+        <p class="txt-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis excepturi,
+        </p>
+        <div class="icons-cont">
+          <span class="transparent-bg">
+            <i></i>
+          </span>
+          <span class="white-bg">
+            <div class="curvy-wrapper mid-center">
 
-    </section>
+              <span class="wrapper mid-center">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+          </span>
+        </div>
+      </div>
+      <div class="card">
+        <h1 class="txt-md easy-card-heading">Lorem ipsum dolor sit amet.</h1>
+        <p class="txt-sm">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur officiis excepturi,
+        </p>
+        <div class="icons-cont">
+          <span class="transparent-bg">
+            <i></i>
+          </span>
+          <span class="white-bg">
+            <div class="curvy-wrapper mid-center">
 
-    <!-- Founders Area -->
+              <span class="wrapper mid-center">
+                <i class="fa-solid fa-check"></i>
+              </span>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
 
-    <!-- <section class="founders">
+  </section>
+
+  <!-- Founders Area -->
+
+  <!-- <section class="founders">
 
         <div class="txt-area">
             <h1 class="txt-2xl">Masterminds Behind Epidise</h1>
@@ -220,42 +255,43 @@
         </div>
     </section> -->
 
-    <!-- Vision Section -->
+  <!-- Vision Section -->
 
-    <section class="contact-vision">
-        <div class="left">
-            <h1 class="txt-2xl">
-                Our vision is to empower individuals with  
-                <span class="highlight"> personalized  </span> skincare solutions
-            </h1>
-            <p>
-                We are committed to pushing the boundaries of what is possible in the field of healthcare, using technology and AI to develop innovative solutions that are tailored to each individual's unique needs and preferences.
-            </p>
-        </div>
-        <div class="right">
-            <div class="graphic">
-                <img src="/public/assets/med_icon.png" alt="">
-            </div>
-            <div class="txt-area">
-                <h1 class="txt-lg"> Join our Team</h1>
-                <p>25 Job Openings Available</p>
-            </div>
-        </div>
-    </section>
+  <section class="contact-vision">
+    <div class="left">
+      <h1 class="txt-2xl">
+        Our vision is to empower individuals with
+        <span class="highlight"> personalized </span> skincare solutions
+      </h1>
+      <p>
+        We are committed to pushing the boundaries of what is possible in the field of healthcare, using technology and
+        AI to develop innovative solutions that are tailored to each individual's unique needs and preferences.
+      </p>
+    </div>
+    <div class="right">
+      <div class="graphic">
+        <img src="/public/assets/med_icon.png" alt="">
+      </div>
+      <div class="txt-area">
+        <h1 class="txt-lg"> Join our Team</h1>
+        <p>25 Job Openings Available</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Download Buttons Section -->
+  <!-- Download Buttons Section -->
 
-    <section class="download-btns mid-center">
-        <div class="wrapper flex-col-even-center">
-            <h1 class="txt-2xl">Get Started Today!</h1>
-            <div class="download-btn-container">
-                <img class="d-btn" src="./public/assets/playstore.png">
-                <img class="d-btn" src="./public/assets/appstore.png">
-            </div>
-        </div>
-    </section>
+  <section class="download-btns mid-center">
+    <div class="wrapper flex-col-even-center">
+      <h1 class="txt-2xl">Get Started Today!</h1>
+      <div class="download-btn-container">
+        <img class="d-btn" src="./public/assets/playstore.png">
+        <img class="d-btn" src="./public/assets/appstore.png">
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
+  <!-- Footer -->
   <footer class="full-height">
     <div class="footer-head">
       <h1 class="txt-2xl">Epidise</h1>
@@ -308,6 +344,7 @@
     </div>
   </footer>
 
-    <script src="./public/main.js"></script>
+  <script src="./public/main.js"></script>
 </body>
+
 </html>
