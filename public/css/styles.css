@@ -13,20 +13,20 @@
     justify-content: center;
 }
 
-#home-hero .txt-area{
-    gap:15px;
+#home-hero .txt-area {
+    gap: 15px;
 }
 
-#home-hero .mockups{
+#home-hero .mockups {
     width: 500px;
     height: 75%;
     position: absolute;
     bottom: -20px;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
 }
 
-#home-hero .mockups img{
+#home-hero .mockups img {
     height: 100%;
     width: auto;
     max-width: 100%;
@@ -57,74 +57,77 @@
     color: black;
 }
 
-@media (min-width:701px){
+@media (min-width:701px) {
+
     #home-hero p,
-    #home-hero .btns{
+    #home-hero .btns {
         display: none;
     }
 }
 
-@media (max-width:700px){
-    #home-hero{
+@media (max-width:700px) {
+    #home-hero {
         padding: 0px 20px;
-        padding-top:20px;
+        padding-top: 20px;
         position: static;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         gap: 15px;
-        height:100vh;
+        height: 100vh;
     }
 
-    #home-hero .mockups{
-        flex:1;
+    #home-hero .mockups {
+        flex: 1;
     }
 
-    #home-hero .txt-area{
-        flex:1;
+    #home-hero .txt-area {
+        flex: 1;
     }
 
-    #home-hero .txt-area h1{
-        font-size:26px;
+    #home-hero .txt-area h1 {
+        font-size: 26px;
         margin-bottom: 0;
         padding: 0px 0px;
         padding-top: 20px;
     }
 
-    #home-hero .txt-area p{
+    #home-hero .txt-area p {
         padding: 0px 0px;
     }
+
     #home-hero p,
-    #home-hero h1{
-        width:80%
+    #home-hero h1 {
+        width: 80%
     }
 
-    #home-hero .txt-area .btns{
+    #home-hero .txt-area .btns {
         padding: 0;
-        margin:0px;
+        margin: 0px;
     }
 
-    #home-hero .txt-area .btns button{
-        padding:12px 15px;
+    #home-hero .txt-area .btns button {
+        padding: 12px 15px;
         font-size: 14px;
     }
 
-    #home-hero .mockups{
+    #home-hero .mockups {
         position: static;
         height: 60%;
         width: 90%;
-        transform: translate(0,0);
+        transform: translate(0, 0);
     }
 }
 
-@media (max-width:400px){
-    #home-hero .txt-area p{
+@media (max-width:400px) {
+    #home-hero .txt-area p {
         font-size: 14px;
     }
+
     #home-hero p,
-    #home-hero h1{
-        width:90%
+    #home-hero h1 {
+        width: 90%
     }
 }
 
@@ -135,9 +138,9 @@
     background-color: #ffffff;
 }
 
-.stepper-heading{
+.stepper-heading {
     padding: 30px 20px;
-    margin-bottom:30px;
+    margin-bottom: 30px;
 }
 
 /* Stepper Container */
@@ -203,7 +206,6 @@
     background-color: white;
     color: #333;
     border-radius: 12px;
-    aspect-ratio: 4/3.75;
     box-shadow: 0 4px 15px rgba(138, 137, 137, 0.1);
     opacity: 0;
     transform: translateY(20px);
@@ -250,10 +252,10 @@
         gap: 30px;
     }
 
-    .step-card{
+    .step-card {
         flex: 1;
         aspect-ratio: inherit;
-        
+
     }
 
     .step-number {
@@ -284,9 +286,9 @@
     }
 }
 
-@media (max-width: 526px){
+@media (max-width: 526px) {
 
-    .stepper-section{
+    .stepper-section {
         padding: 50px 15px;
     }
 
@@ -307,18 +309,20 @@
         width: 2px;
     }
 }
-@media (max-width: 380px){
-    .stepper-container{
+
+@media (max-width: 380px) {
+    .stepper-container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 15px;
     }
-    .stepper-section{
+
+    .stepper-section {
         padding: 30px 10px;
     }
 
-    .step{
+    .step {
         gap: 15px;
     }
 
@@ -339,11 +343,11 @@
         left: 15px;
         width: 2px;
         border-left: 4px dotted #D2DEF2;
-        
+
     }
 }
 
-@media (max-width:290px){
+@media (max-width:290px) {
     .dotted-line {
         /* Adjust based on step number position */
         top: 45px;
@@ -351,12 +355,12 @@
         left: 15px;
         width: 2px;
         border-left: 4px dotted #D2DEF2;
-        
+
     }
 }
 
 /* Quote Section */
-#home-main{
+#home-main {
     padding: 0;
 }
 
@@ -369,10 +373,53 @@ section.quote h1 span.light {
     color: #AFAFAF;
 }
 
-section.quote h1 span i.round-icon {
+section.quote h1 span {
     height: 100%;
     aspect-ratio: 1;
 }
+
+section.quote h1 span.ico-cont {
+    /* Style the new container span */
+    display: inline-block;
+    height: 1.5em;
+    /* Set a height - em units are relative to font size */
+    width: 1.5em;
+    /* Ensure it's square */
+    vertical-align: middle;
+    /* Align vertically with the text */
+    background-color: lightgray;
+    /* Temporary background color for visibility */
+    margin: 0 0.2em;
+    /* Add some margin around the icon */
+    border-radius: 50%;
+    /* Make it round */
+    overflow: hidden;
+    /* Hide content that overflows (for images) */
+}
+
+section.quote h1 span.ico-cont i.round-icon {
+    /* Target the i tag inside the container */
+    height: 100%;
+    width: 100%;
+    display: block;
+    /* Makes image a block element */
+    margin: 0 auto;
+    /* Centers the image horizontally and vertically */
+    background: transparent;
+    /* Remove background from the i tag */
+}
+
+section.quote h1 span.ico-cont i.round-icon img {
+    max-width: 100%;
+    /* Image should not exceed container width */
+    max-height: 100%;
+    /* Image should not exceed container height */
+    display: block;
+    /* Makes image a block element */
+    margin: 0 auto;
+    /* Centers the image horizontally and vertically */
+}
+
 
 #drug-icon {
     background-color: var(--f1);
@@ -386,12 +433,12 @@ section.quote h1 span i.round-icon {
     background-color: var(--f3);
 }
 
-#platform-icon{
+#platform-icon {
     background-color: var(--f4);
 }
 
-@media (max-width:400px){
-    section.quote h1{
+@media (max-width:400px) {
+    section.quote h1 {
         font-size: 28px;
     }
 }
@@ -548,6 +595,9 @@ section.quote h1 span i.round-icon {
     }
 }
 
+/* Additional Animation CSS */
+
+
 /* Diseases Section */
 
 section.diseases {
@@ -698,14 +748,14 @@ section.diseases .text-area .para {
     }
 }
 
-@media (max-width: 300px){
+@media (max-width: 300px) {
     section.diseases .cards-area {
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: auto;
     }
 
-    section.diseases .cards-area .disease{
+    section.diseases .cards-area .disease {
         justify-content: start;
         padding: 10px 20px;
     }
@@ -843,15 +893,75 @@ section.app-features {
 /* --------------------------------- */
 
 
-@media (max-width:400px){
-    section#about-hero{
+@media (max-width:400px) {
+    section#about-hero {
         padding: 10px 10px;
     }
 
-    section#about-hero h1{
+    section#about-hero h1 {
         font-size: 28px;
         padding: 8px 8px;
     }
+}
+
+#about-hero{
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 0px;
+}
+
+#about-hero .bg-circle{
+    position: absolute;
+    left: 50%;
+    /* bottom: -50%; */
+    transform: translate(-50%, 0%);
+
+    background-color: transparent;
+    border: 2px solid blue;
+
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+#bg-circle1{
+    width: 70%;
+}
+
+#bg-circle2{
+    width: 100%;
+}
+
+#bg-circle3{
+    width: 130%;
+}
+
+#about-hero .mockups{
+    position: relative;
+}
+
+#about-hero .mockups .float{
+    padding: 10px 15px;
+    text-align: left;
+    position: absolute;
+    top: 5px;
+    width: 15vw;
+    aspect-ratio: 4/3;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgba(124, 124, 124, 0.39);
+}
+
+#about-hero .mockups .float h1{
+    padding: 0;
+}
+
+#about-float1{
+    left: -10px;
+    transform: rotate(-30);
+}
+#about-float2{
+    right: -10px;
+    transform: rotate(-30);
 }
 
 .easy {
@@ -1282,12 +1392,12 @@ section.app-features {
 .contact-info .support-sections .support-section {
     flex: 1;
     min-width: 130px;
-    padding:10px 10px;
+    padding: 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    gap:10px;
+    gap: 10px;
 }
 
 .contact-info .support-sections .support-section p {
@@ -1440,26 +1550,30 @@ form {
     }
 }
 
-@media (max-width: 410px){
-    .contact-container .contact-form{
-        min-width:0px;
+@media (max-width: 410px) {
+    .contact-container .contact-form {
+        min-width: 0px;
     }
-    .contact-container .contact-form .form-grp form .name-grp{
+
+    .contact-container .contact-form .form-grp form .name-grp {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
         gap: 10px;
     }
-    .contact-container .contact-form .form-grp form .name-grp input{
+
+    .contact-container .contact-form .form-grp form .name-grp input {
         width: 100%;
     }
-    .phone-grp select{
+
+    .phone-grp select {
         padding: 4px;
         min-width: 0;
     }
-    .phone-grp input#phone{
-        min-width:0;
+
+    .phone-grp input#phone {
+        min-width: 0;
         margin: 0px;
     }
 }
