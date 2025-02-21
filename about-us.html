@@ -82,43 +82,14 @@
 
   <section id="about-hero" class="hero">
 
-    <div id="bg-circle1" class="bg-circle"></div>
-    <div id="bg-circle2" class="bg-circle"></div>
-    <div id="bg-circle3" class="bg-circle"></div>
-
     <h1 class="txt-4xl">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, iure.
     </h1>
 
     <div class="mockups">
-      <div id="about-float1" class="float floating">
-        <h1 class="txt-sm">lorem lorem lorem</h1>
-        <p>Lorem ipsum dolor sit amet consectetur </p>
-      </div>
       <img src="/public/assets/user-mocks3.png" alt="">
-      <div id="about-float2" class="float floating">
-        <h1 class="txt-sm">lorem lorem lorem</h1>
-        <p>Lorem ipsum dolor sit amet consectetur </p>
-      </div>
     </div>
   </section>
-
-
-  <script>
-    window.onload = function () {
-      // Get all the circles
-      const circles = document.querySelectorAll('.bg-circle');
-
-      // Loop through each circle
-      circles.forEach(circle => {
-        // Get the width of each circle
-        const circleWidth = circle.offsetWidth;
-
-        // Set the bottom position to be half of the width (pull it down)
-        circle.style.bottom = `-${circleWidth / 2}px`;
-      });
-    };
-  </script>
 
   <section class="easy">
     <div class="txt-area flex-row-even-stretch">
