@@ -904,11 +904,35 @@ section.app-features {
     }
 }
 
-#about-hero{
-    overflow: hidden;
-    position: relative;
-    padding-bottom: 0px;
-}.
+#about-hero .mockups{
+    width: 100%;
+    height: 50%;
+    max-height: fit-content;
+    gap: 0;
+}
+
+#about-hero .mockup-l,
+#about-hero .mockup-m,
+#about-hero .mockup-r{
+    flex: 1;
+}
+
+#about-hero .mockup-l{
+    align-items: end;
+}
+
+#about-hero .mockup-r{
+    align-items: start;
+}
+
+.mockups img{
+    width: 100em;
+    max-width: 100em;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Easy Cards Section */
 
 .easy {
     background-color: white;
