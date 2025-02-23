@@ -550,21 +550,11 @@ footer div.footer-head p > a{
     color: var(--light-gray);
 }
 
-/* footer div.footer-head img{
-    height: 100px;
-    width: auto;
-    object-fit: contain;
-}
-
-@media (max-width: 600px){
-    footer div.footer-head img{
-        height: 70px;
-    }
-}
-@media (max-width: 350px){
-    footer div.footer-head img{
-        height: 50px;
-    }
+/* footer .footer-head{
+    background-image: url("/public/assets/med_icon_bnw.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
 } */
 
 footer .links-container {
