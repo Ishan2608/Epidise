@@ -909,12 +909,31 @@ section.app-features {
     width: 100%;
 }
 
+@media (min-width:701px){
+    #about-hero .mockups img.tab-mock{
+        display: none;
+    }
+}
+
+@media (max-width:700px){
+    #about-hero .mockups img.desk-mock{
+        display: none;
+    }
+    #about-hero .mockups{
+        max-width: 400px;
+        margin: auto;
+    }
+    #about-hero .mockups img.tab-mock{
+        display: block;
+    }
+}
+
 @media (max-width:400px) {
-    section#about-hero {
+    #about-hero {
         padding: 10px 10px;
     }
 
-    section#about-hero h1 {
+    #about-hero h1 {
         font-size: 28px;
         padding: 8px 8px;
     }
