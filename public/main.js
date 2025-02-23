@@ -81,7 +81,7 @@ function animateSteps() {
 
   // Animate dotted line (improved)
   if (window.innerWidth > 768) { // Horizontal line
-    dottedLine.style.width = 'calc(100% - 100px)'; // Adjust width as needed
+    dottedLine.style.width = 'calc(100% - 50px)'; // Adjust width as needed
   } else { // Vertical line
     dottedLine.style.height = 'calc(100% - 70px)'; // Adjust height as needed
     dottedLine.style.width = '2px'; // Ensure width is set for vertical line
