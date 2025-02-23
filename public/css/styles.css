@@ -31,17 +31,18 @@
     width: auto;
     max-width: 100%;
     max-height: auto;
+    margin:auto;
     object-fit: contain;
 }
 
-#home-hero .txt-area .btns {
+.hero .txt-area .btns{
     width: fit-content;
-    margin: auto;
     padding: 20px 10px;
     gap: 15px;
 }
 
-#home-hero .txt-area .btns button {
+.hero .txt-area .btns button
+{
     border: none;
     color: white;
     background-color: black;
@@ -51,7 +52,8 @@
     box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.404);
 }
 
-#home-hero .txt-area .btns button:hover {
+.hero .txt-area .btns button:hover
+{
     cursor: pointer;
     background-color: white;
     color: black;
@@ -892,6 +894,20 @@ section.app-features {
 /* ABOUT US PAGE */
 /* --------------------------------- */
 
+#about-hero .txt-area .btns{
+    font-size: 16px;
+}
+#about-hero .txt-area .btns button{
+    padding: 8px 15px;
+}
+
+#about-hero .mockups{
+    padding: 0;
+}
+
+#about-hero .mockups img{
+    width: 100%;
+}
 
 @media (max-width:400px) {
     section#about-hero {
@@ -904,33 +920,6 @@ section.app-features {
     }
 }
 
-#about-hero .mockups{
-    width: 100%;
-    height: 50%;
-    max-height: fit-content;
-    gap: 0;
-}
-
-#about-hero .mockup-l,
-#about-hero .mockup-m,
-#about-hero .mockup-r{
-    flex: 1;
-}
-
-#about-hero .mockup-l{
-    align-items: end;
-}
-
-#about-hero .mockup-r{
-    align-items: start;
-}
-
-.mockups img{
-    width: 100em;
-    max-width: 100em;
-    height: auto;
-    object-fit: contain;
-}
 
 /* Easy Cards Section */
 
