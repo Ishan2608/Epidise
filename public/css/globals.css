@@ -36,6 +36,7 @@
 .txt-2xl { font-size: 2.5rem; /* 40px */ }
 .txt-3xl { font-size: 3rem; /* 48px */ }
 .txt-4xl { font-size: 3.5rem; /* 56px */ }
+.txt-5xl { font-size: 4.5rem;}
 
 /* Desktop to Tablet ( max-width: 1024px ) */
 @media (max-width: 1024px) {
@@ -47,6 +48,7 @@
   .txt-2xl { font-size: 2.25rem; /* 36px */ }
   .txt-3xl { font-size: 2.75rem; /* 44px */ }
   .txt-4xl { font-size: 3.25rem; /* 52px */ }
+  .txt-5xl { font-size: 4rem; /* 52px */ }
 }
 
 /* Tablet to Mobile ( max-width: 768px ) */
@@ -59,6 +61,7 @@
   .txt-2xl { font-size: 2rem; /* 32px */ }
   .txt-3xl { font-size: 2.5rem; /* 40px */ }
   .txt-4xl { font-size: 2.75rem; /* 44px */ }
+  .txt-5xl { font-size: 3.75rem; /* 44px */ }
 }
 
 /* Mobile ( max-width: 480px ) */
@@ -71,11 +74,13 @@
   .txt-2xl { font-size: 1.75rem; /* 28px */ }
   .txt-3xl { font-size: 2rem; /* 32px */ }
   .txt-4xl { font-size: 2.25rem; /* 36px */ }
+  .txt-5xl { font-size: 3.25rem; /* 36px */ }
 }
 
 @media (max-width: 310px){
     .txt-3xl { font-size: 22px;}
     .txt-4xl { font-size: 26px;}
+    .txt-5xl { font-size: 30px;}
 }
 
 body {
@@ -103,7 +108,7 @@ main, section, header, footer, article {
 
 @media (max-width: 500px){
     .full-height{
-        min-height: auto;
+        min-height: fit-content;
     }
 }
 
