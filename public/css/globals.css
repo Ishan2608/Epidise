@@ -101,14 +101,14 @@ main, section, header, footer, article {
 }
 
 .full-height {
-    min-height: 100vh;
-    max-height: auto;
+    height: 100vh;
+    max-height: 900px;
 }
 
 
 @media (max-width: 500px){
     .full-height{
-        min-height: fit-content;
+        height: fit-content;
     }
 }
 

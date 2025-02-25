@@ -14,16 +14,22 @@
 }
 
 #home-hero .txt-area {
-    gap: 15px;
+    gap: 20px;
 }
 
 #home-hero .mockups {
-    width: 500px;
     height: 75%;
+    width: fit-content;
+    max-width: 500px;
     position: absolute;
-    bottom: -20px;
+    bottom: 0px;
     left: 50%;
     transform: translate(-50%, 0);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 #home-hero .mockups img {
@@ -32,7 +38,9 @@
     max-width: 100%;
     max-height: auto;
     margin:auto;
+    margin-bottom:0px;
     object-fit: contain;
+    object-position: bottom;
 }
 
 .hero .txt-area .btns{
@@ -76,12 +84,12 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        gap: 15px;
-        height: 100vh;
+        gap: 20px;
     }
 
     #home-hero .mockups {
         flex: 1;
+        max-width: 400px;
     }
 
     #home-hero .txt-area {
