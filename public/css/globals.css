@@ -105,7 +105,6 @@ main, section, header, footer, article {
     max-height: 900px;
 }
 
-
 @media (max-width: 500px){
     .full-height{
         height: fit-content;
@@ -537,8 +536,12 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
+    gap: 40px;
     padding: 20px;
+
+    
 }
+
 
 footer div.footer-head {
     flex: 1;
@@ -555,12 +558,12 @@ footer div.footer-head p > a{
     color: var(--light-gray);
 }
 
-/* footer .footer-head{
-    background-image: url("/public/assets/med_icon_bnw.png");
+footer .footer-head{
+    background-image: url("/public/assets/med_bnw.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
-} */
+}
 
 footer .links-container {
     flex: 1;
