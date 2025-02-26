@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    max-height: 900px;
 }
 
 #home-hero .txt-area {
@@ -18,26 +19,55 @@
 }
 
 #home-hero .mockups {
-    height: 75%;
-    width: fit-content;
-    max-width: 500px;
+    min-height: 65%;
+    max-height: 100%;
+    width: 100%;
+    
     position: absolute;
     bottom: 0px;
     left: 50%;
     transform: translate(-50%, 0);
 
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: end;
 }
 
-#home-hero .mockups img {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-    max-height: auto;
-    margin:auto;
+#home-hero .mockups #left-side,
+#home-hero .mockups #right-side,
+#home-hero .mockups #mid-side{
+    flex: 1;
+}
+
+.lifted-txt{
+    text-shadow: 0px 0px 2px rgba(53, 53, 53, 0.438)
+}
+
+@media (max-width: 1000px) and (min-width:701px){
+    #home-hero .mockups #mid-side{
+        flex: 1.25;
+    }
+}
+
+
+#home-hero .mockups #left-side,
+#home-hero .mockups #right-side{
+    text-align: left;
+    padding: 20px 20px;
+}
+
+#home-hero .mockups #left-side p{
+    margin-bottom: 10px;
+}
+
+#home-hero .mockups #mid-side img {
+    height: auto;
+    width: 100%;
+
+    max-height: 100%;
+    min-width: auto;
+    max-width: auto;
+
     margin-bottom:0px;
     object-fit: contain;
     object-position: bottom;
@@ -49,29 +79,41 @@
     gap: 15px;
 }
 
-.hero .txt-area .btns button
-{
+.black-download-btn{
     border: none;
     color: white;
     background-color: black;
     border-radius: 40px;
-    font-size: 18px;
     padding: 15px 20px;
     box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.13);
 }
 
-.hero .txt-area .btns button:hover
-{
+.black-download-btn:hover{
     cursor: pointer;
     background-color: white;
     color: black;
 }
 
-@media (min-width:701px) {
-
-    #home-hero p,
-    #home-hero .btns {
+@media (max-width:750px){
+    #home-hero .mockups #left-side,
+    #home-hero .mockups #right-side{
         display: none;
+    }
+
+}
+
+@media (min-width:701px) {
+    #home-hero{
+        max-height: 700px;
+    }
+    #home-hero .txt-area > p,
+    #home-hero .txt-area > .btns {
+        display: none;
+    }
+
+    #home-hero .mockups #mid-side img{
+        max-height: 550px;
+        width: auto;
     }
 }
 
@@ -89,7 +131,7 @@
 
     #home-hero .mockups {
         flex: 1;
-        max-width: 400px;
+        max-width: 350px;
     }
 
     #home-hero .txt-area {
@@ -216,7 +258,7 @@
     background-color: white;
     color: #333;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(138, 137, 137, 0.1);
+    box-shadow: 0 2px 4px rgba(170, 169, 169, 0.075);
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -901,6 +943,13 @@ section.app-features {
 /* --------------------------------- */
 /* ABOUT US PAGE */
 /* --------------------------------- */
+
+#about-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
 #about-hero .txt-area .btns{
     font-size: 16px;
