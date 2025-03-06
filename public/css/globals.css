@@ -37,6 +37,7 @@
 .txt-3xl { font-size: 3rem; /* 48px */ }
 .txt-4xl { font-size: 3.5rem; /* 56px */ }
 .txt-5xl { font-size: 4.5rem;}
+.txt-6xl { font-size: 5rem;}
 
 /* Desktop to Tablet ( max-width: 1024px ) */
 @media (max-width: 1024px) {
@@ -128,7 +129,7 @@ main, section, header, footer, article {
 .hero .mockups img{
     max-height: 100%;
     max-width: 100%;
-    margin: auto;
+    margin: 0 auto;
     object-fit: contain;
 }
 
@@ -210,7 +211,7 @@ nav {
     align-items: center;
     border-radius: 5px;
     color: black;
-    box-shadow: 0px 2px 2px rgba(59, 59, 59, 0.116);
+    /* box-shadow: 0px 2px 2px rgba(59, 59, 59, 0.116); */
 
     background-color: white;
     margin-bottom: 10px;
@@ -468,6 +469,13 @@ section.contact-vision .right .graphic img{
     height: auto;
 }
 
+section.contact-vision .right:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 6px rgba(95, 95, 95, 0.226);
+    transform: scale(1.02);
+    transition: transform 200ms ease-in-out;
+}
+
 /* Download Buttons */
 
 section.download-btns {
@@ -556,13 +564,6 @@ footer div.footer-head {
 footer div.footer-head p > a{
     text-decoration: none;
     color: var(--light-gray);
-}
-
-footer .footer-head{
-    background-image: url("/public/assets/med_bnw.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
 }
 
 footer .links-container {

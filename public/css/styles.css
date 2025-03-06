@@ -5,18 +5,41 @@
 /* Hero Section */
 #home-hero {
     position: relative;
-    background-color: #e5f1d5;
+    background-color: #8fffdb;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-height: 900px;
+    color: black;
 }
 
 #home-hero .txt-area {
     gap: 20px;
 }
+
+#home-hero .txt-area p{
+    font-weight: 800;
+}
+
+#home-hero .mockups .mid-side img {
+    transform: translateY(100%);
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 
 #home-hero .mockups {
     min-height: 65%;
@@ -58,6 +81,7 @@
 
 #home-hero .mockups #left-side p{
     margin-bottom: 10px;
+    font-weight: 800;
 }
 
 #home-hero .mockups #mid-side img {
@@ -68,7 +92,7 @@
     min-width: auto;
     max-width: auto;
 
-    margin-bottom:0px;
+    margin-bottom:-10px;
     object-fit: contain;
     object-position: bottom;
 }
@@ -149,8 +173,7 @@
         padding: 0px 0px;
     }
 
-    #home-hero p,
-    #home-hero h1 {
+    #home-hero p{
         width: 80%
     }
 
@@ -177,8 +200,7 @@
         font-size: 14px;
     }
 
-    #home-hero p,
-    #home-hero h1 {
+    #home-hero p{
         width: 90%
     }
 }
@@ -200,7 +222,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
-    gap: 20px;
+    gap: 25px;
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
@@ -246,7 +268,7 @@
     width: 0;
     /* Initially hidden */
     height: 2px;
-    border-top: 8px dotted #D2DEF2;
+    border-top: 8px dotted var(--prim-light);
     z-index: 1;
     transition: width 2s ease, height 2s ease;
     /* Add transition for height */
@@ -254,11 +276,11 @@
 
 /* Step Card */
 .step-card {
-    padding: 25px;
+    padding: 25px 5px;
     background-color: white;
     color: #333;
     border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(170, 169, 169, 0.075);
+    /* box-shadow: 0 2px 4px rgba(170, 169, 169, 0.075); */
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
@@ -272,19 +294,13 @@
 
 .step-card h4 {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 800;
     color: #2C3E50;
 }
 
 .step-card p {
     font-size: 14px;
     color: #666;
-}
-
-/* Hover Effects */
-.step-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0px 10px rgba(105, 105, 105, 0.15);
 }
 
 /* Responsive Styles */
@@ -324,7 +340,7 @@
         height: 0;
         /* Initially hidden */
         border-top: none;
-        border-left: 8px dotted #D2DEF2;
+        border-left: 8px dotted var(--prim-light);
         /* Add transition for height */
         transition: width 2s ease, height 2s ease;
     }
@@ -431,62 +447,42 @@ section.quote h1 span {
 }
 
 section.quote h1 span.ico-cont {
-    /* Style the new container span */
-    display: inline-block;
+    display: inline-flex;
     height: 1.5em;
-    /* Set a height - em units are relative to font size */
     width: 1.5em;
-    /* Ensure it's square */
     vertical-align: middle;
-    /* Align vertically with the text */
-    background-color: lightgray;
-    /* Temporary background color for visibility */
     margin: 0 0.2em;
-    /* Add some margin around the icon */
     border-radius: 50%;
-    /* Make it round */
     overflow: hidden;
-    /* Hide content that overflows (for images) */
+    padding: 5px;
 }
 
-section.quote h1 span.ico-cont i.round-icon {
-    /* Target the i tag inside the container */
-    height: 100%;
-    width: 100%;
+section.quote h1 span.ico-cont img {
+    height: 87%;
+    width: 87%;
     display: block;
-    /* Makes image a block element */
-    margin: 0 auto;
-    /* Centers the image horizontally and vertically */
-    background: transparent;
-    /* Remove background from the i tag */
-}
-
-section.quote h1 span.ico-cont i.round-icon img {
-    max-width: 100%;
-    /* Image should not exceed container width */
-    max-height: 100%;
-    /* Image should not exceed container height */
-    display: block;
-    /* Makes image a block element */
-    margin: 0 auto;
-    /* Centers the image horizontally and vertically */
+    margin: auto;
 }
 
 
-#drug-icon {
+span#drug-icon {
     background-color: var(--f1);
 }
 
-#hour-glass-icon {
+span#stethoscope {
     background-color: var(--f2);
 }
 
-#telehealth-icon {
+span#meds {
     background-color: var(--f3);
 }
 
-#platform-icon {
+span#dna {
     background-color: var(--f4);
+}
+
+span#dna img{
+    transform: rotate(-45deg);
 }
 
 @media (max-width:400px) {
@@ -548,6 +544,10 @@ section.quote h1 span.ico-cont i.round-icon img {
 
 #f2 {
     background-color: var(--f2);
+    background-image: url('/public/assets/doc-consults2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #f3 {
@@ -556,11 +556,29 @@ section.quote h1 span.ico-cont i.round-icon img {
 
 #f4 {
     background-color: var(--f4);
+    background-image: url('/public/assets/user-consults2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
 .feature-cards .feature.ico-head-div {
     justify-content: space-between;
+}
+
+.feature-cards .feature.ico-head-div .ico-cont{
+    max-height: 50px;
+    max-width: 50px;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px 5px;
+}
+
+.feature-cards .feature.ico-head-div .ico-cont img{
+    height: 100%;
+    width: auto;
 }
 
 .feature-cards .feature.only-head {
@@ -574,18 +592,15 @@ section.quote h1 span.ico-cont i.round-icon img {
     width: fit-content;
 }
 
-.ico-text-h h2,
+
 .ico-text-h i,
 .feature-heading-bottom {
     font-size: 18px;
 }
 
-.feature p {
-    font-size: 14px;
-}
 
 /* Ensure 4 cards on Desktop Wide Screens */
-@media (min-width:801px) {
+@media (min-width:851px) {
     .feature-cards {
         justify-content: space-evenly;
     }
@@ -595,7 +610,7 @@ section.quote h1 span.ico-cont i.round-icon img {
     }
 }
 
-@media (max-width: 800px) and (min-width: 701px) {
+@media (max-width: 850px) and (min-width: 721px) {
     .feature-cards {
         gap: 20px;
     }
@@ -605,7 +620,7 @@ section.quote h1 span.ico-cont i.round-icon img {
     }
 }
 
-@media (max-width: 701px) and (min-width: 600px) {
+@media (max-width: 720px) and (min-width: 600px) {
     .feature-cards .feature {
         flex: 0 0 calc(43% - 20px);
     }
@@ -877,7 +892,7 @@ section.app-features {
 }
 
 .app-feature-list .app-f-cont .stack-container .stack {
-    gap: 5px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
@@ -887,29 +902,24 @@ section.app-features {
     padding: 8px 5px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: start;
     gap: 10px;
 }
 
 .app-f .app-feature-ico-cont {
     background-color: white;
-    width: fit-content;
-    height: fit-content;
+    width: 30px;
+    height: 30px;
     aspect-ratio: 1;
-    padding: 10px 10px;
-    font-size: 18px;
-    border-radius: 3px;
+    padding: 5px 5px;
+    border-radius: 5px;
 }
 
-.learn-more {
-    color: var(--btn-prim);
-    text-decoration: none;
-}
-
-.learn-more:hover {
-    cursor: pointer;
-    color: var(--charcoal);
+.app-f .app-feature-ico-cont img{
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 @media (max-width: 700px) {
@@ -949,6 +959,8 @@ section.app-features {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: var(--light-gray);
+    padding-bottom: 0px;
 }
 
 #about-hero .txt-area .btns{
