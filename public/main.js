@@ -67,8 +67,8 @@ observer.observe(stepperSection);
 function animateSteps() {
   stepNumbers.forEach((stepNumber, index) => {
     setTimeout(() => {
-      stepNumber.style.backgroundColor = '#D2DEF2';
-      stepNumber.style.boxShadow = '0 0 10px #D2DEF2';
+      stepNumber.style.backgroundColor = '#D0E4FF';
+      stepNumber.style.boxShadow = '0 0 10px #D0E4FF';
     }, index * 500);
   });
 
@@ -81,7 +81,7 @@ function animateSteps() {
 
   // Animate dotted line (improved)
   if (window.innerWidth > 768) { // Horizontal line
-    dottedLine.style.width = 'calc(100% - 50px)'; // Adjust width as needed
+    dottedLine.style.width = 'calc(97% - 50px)'; // Adjust width as needed
   } else { // Vertical line
     dottedLine.style.height = 'calc(100% - 70px)'; // Adjust height as needed
     dottedLine.style.width = '2px'; // Ensure width is set for vertical line
