@@ -972,10 +972,12 @@ section.app-features {
 
 #about-hero .mockups{
     padding: 0;
+    overflow: hidden;
 }
 
 #about-hero .mockups img{
     width: 100%;
+    margin-bottom: -5px;
 }
 
 #about-hero .mockups img.tab-mock{
