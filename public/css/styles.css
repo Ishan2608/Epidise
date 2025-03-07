@@ -19,6 +19,10 @@
     gap: 20px;
 }
 
+#home-hero .txt-area h1{
+    width: 90%;
+}
+
 #home-hero .txt-area p{
     font-weight: 800;
 }
@@ -437,6 +441,10 @@ section.quote {
     text-align: center;
 }
 
+section.quote h1{
+    font-weight: 450;
+}
+
 section.quote h1 span.light {
     color: #AFAFAF;
 }
@@ -464,9 +472,13 @@ section.quote h1 span.ico-cont img {
     margin: auto;
 }
 
+span#dna {
+    padding: 10px;
+    background-color: var(--f4);
+}
 
-span#drug-icon {
-    background-color: var(--f1);
+span#dna img{
+    transform: rotate(45deg);
 }
 
 span#stethoscope {
@@ -474,16 +486,10 @@ span#stethoscope {
 }
 
 span#meds {
-    background-color: var(--f3);
+    padding: 10px;
+    background-color: var(--f1);
 }
 
-span#dna {
-    background-color: var(--f4);
-}
-
-span#dna img{
-    transform: rotate(-45deg);
-}
 
 @media (max-width:400px) {
     section.quote h1 {
@@ -571,7 +577,7 @@ span#dna img{
     max-height: 50px;
     max-width: 50px;
     aspect-ratio: 1;
-    background-color: white;
+    /* background-color: white; */
     border-radius: 50%;
     padding: 5px 5px;
 }
@@ -909,8 +915,8 @@ section.app-features {
 
 .app-f .app-feature-ico-cont {
     background-color: white;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     aspect-ratio: 1;
     padding: 5px 5px;
     border-radius: 5px;
@@ -959,25 +965,26 @@ section.app-features {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--light-gray);
     padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-#about-hero .txt-area .btns{
-    font-size: 16px;
-}
-#about-hero .txt-area .btns button{
-    padding: 8px 15px;
+#about-hero .txt-area{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 #about-hero .mockups{
     padding: 0;
-    overflow: hidden;
+    /* border-radius: 20px; */
 }
 
 #about-hero .mockups img{
     width: 100%;
     margin-bottom: -5px;
+    border: 0.5px solid rgba(134, 134, 134, 0.13);
+    border-radius: 20px;
 }
 
 #about-hero .mockups img.tab-mock{
@@ -1026,17 +1033,17 @@ section.app-features {
     gap: 10px;
 }
 
-.easy .txt-area span.heading-area {
+.easy .txt-area .heading-area {
     flex: 2;
     min-width: 300px;
 }
 
-.easy .txt-area span.para-area {
+.easy .txt-area .para-area {
     flex: 1;
     min-width: 200px;
 }
 
-.easy .txt-area span {
+.easy .txt-area div {
     padding: 20px 20px;
 }
 
@@ -1077,7 +1084,7 @@ section.app-features {
 
 /* Card Styles */
 .easy .cards-cont .card {
-    /* Allow cards to maintain fixed width */
+    
     flex: 0 0 auto;
     aspect-ratio: 1 / 1;
     border-radius: 20px;
@@ -1099,7 +1106,7 @@ section.app-features {
 .easy .cards-cont .card .easy-card-heading,
 .easy .cards-cont .card p {
     padding: 30px 25px;
-    background-color: var(--lighter-gray);
+    background-color: var(--f3);
 }
 
 .easy .cards-cont .card .easy-card-heading {
@@ -1125,7 +1132,7 @@ section.app-features {
 .easy .cards-cont .card .icons-cont .transparent-bg {
     flex: 1;
     height: 100%;
-    background-color: var(--lighter-gray);
+    background-color: var(--f3);
     padding: 10px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -1135,7 +1142,7 @@ section.app-features {
     height: 100%;
     aspect-ratio: 1 / 1;
     padding: 0;
-    background-color: var(--lighter-gray);
+    background-color: var(--f3);
 }
 
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper {
@@ -1151,7 +1158,7 @@ section.app-features {
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper {
     width: 50px;
     aspect-ratio: 1;
-    background-color: var(--lighter-gray);
+    background-color: var(--f3);
     border-radius: 50%;
     padding: 10px 10px;
 }
