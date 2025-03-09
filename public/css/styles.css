@@ -1088,9 +1088,8 @@ section.app-features {
 .easy .cards-cont .card {
     
     flex: 0 0 auto;
-    /* aspect-ratio: 1 / 1; */
+    aspect-ratio: 1 / 1;
     border-radius: 20px;
-    /* height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1134,7 +1133,7 @@ section.app-features {
     flex: 1;
     height: 100%;
     background-color: var(--f3);
-    padding: 25px;
+    padding-left: 25px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
@@ -1195,7 +1194,7 @@ section.app-features {
 }
 
 /* Media Queries for Responsive Design */
-@media (min-width: 800px) {
+@media (min-width: 801px) {
 
     .easy .cards-cont {
         justify-content: space-evenly;
@@ -1203,6 +1202,18 @@ section.app-features {
 
     .easy .cards-cont .card {
         flex: 1;
+    }
+}
+
+@media (max-width: 800px) and (min-width: 700px) {
+    .easy-card-heading{
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 699px){
+    .easy-card-heading{
+        font-size: 20px;
     }
 }
 
@@ -1224,47 +1235,35 @@ section.app-features {
     }
 
     .easy .cards-cont .card {
-        flex: 0 0 calc(47% - 20px);
+        flex: 0 0 calc(50% - 20px);
     }
 }
 
 @media (max-width: 550px) and (min-width: 400px) {
     .easy .cards-cont .card {
-        flex: 0 0 calc(66.66% - 20px);
-        /* 1.5 cards visible */
+        flex: 0 0 calc(85% - 20px);
     }
 
-    .easy .cards-cont .card .easy-card-heading,
-    .easy .cards-cont .card p {
-        font-size: 1rem;
-        padding: 20px 15px;
+    .easy .cards-cont .card .easy-card-heading{
+        font-size: 26px;
     }
 }
 
 @media (max-width: 400px) and (min-width: 300px) {
     .easy .cards-cont .card {
-        flex: 0 0 calc(83.33% - 10px);
-        /* 1.2 cards visible */
+        flex: 0 0 calc(90% - 10px);
     }
 
-    .easy .cards-cont .card .easy-card-heading,
-    .easy .cards-cont .card p {
-        font-size: 0.9rem;
-        /* Further reduce font size */
-    }
 }
 
 @media (max-width: 300px) {
+    .easy .cards-cont{
+        gap: 10px;
+    }
     .easy .cards-cont .card {
-        flex: 0 0 100%;
-        /* 1 card fully visible */
+        flex: 0 0 98%;
     }
 
-    .easy .cards-cont .card .easy-card-heading,
-    .easy .cards-cont .card p {
-        font-size: 0.8rem;
-        /* Minimized font size */
-    }
 }
 
 @media (max-width:400px) {
