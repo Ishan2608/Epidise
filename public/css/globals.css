@@ -50,6 +50,7 @@
   .txt-3xl { font-size: 2.75rem; /* 44px */ }
   .txt-4xl { font-size: 3.25rem; /* 52px */ }
   .txt-5xl { font-size: 4rem; /* 52px */ }
+  .txt-6xl { font-size: 5rem;}
 }
 
 /* Tablet to Mobile ( max-width: 768px ) */
@@ -63,6 +64,7 @@
   .txt-3xl { font-size: 2.5rem; /* 40px */ }
   .txt-4xl { font-size: 2.75rem; /* 44px */ }
   .txt-5xl { font-size: 3.75rem; /* 44px */ }
+  .txt-6xl { font-size: 4.75rem;}
 }
 
 /* Mobile ( max-width: 480px ) */
@@ -76,12 +78,14 @@
   .txt-3xl { font-size: 2rem; /* 32px */ }
   .txt-4xl { font-size: 2.25rem; /* 36px */ }
   .txt-5xl { font-size: 3.25rem; /* 36px */ }
+  .txt-6xl { font-size: 4.25rem;}
 }
 
 @media (max-width: 310px){
     .txt-3xl { font-size: 22px;}
     .txt-4xl { font-size: 26px;}
     .txt-5xl { font-size: 30px;}
+    .txt-6xl { font-size: 36px;}
 }
 
 body {
