@@ -34,16 +34,29 @@
     animation-delay: 0.5s;
   }
 
-  @keyframes slideUp {
-    0% {
-      transform: translateY(100px);
-      opacity: 0;
+  @media (min-width: 701px) {
+    #home-hero {
+        max-height: 700px;
     }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
+    #home-hero .txt-area > p,
+    #home-hero .txt-area > .btns {
+        display: none;
     }
-  }
+
+    #home-hero .mockups #mid-side img {
+        max-height: 550px;
+        width: auto;
+        transform: translateY(100%);
+        /* opacity: 0; */
+        transition: transform 1s ease-out, opacity 1s ease-out; /* Add transition effect */
+    }
+
+    /* Add a class to trigger the animation after 2 seconds */
+    #home-hero.mockups-loaded .mockups #mid-side img {
+        transform: translateY(0);
+        /* opacity: 1; */
+    }
+}
 
 #home-hero .mockups {
     min-height: 65%;
@@ -784,7 +797,6 @@ section.diseases .text-area .para {
     }
 
     .disease {
-        justify-content: center;
         padding: 10px 0px;
         gap: 2px;
     }
