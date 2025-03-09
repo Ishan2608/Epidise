@@ -5,7 +5,9 @@
 /* Hero Section */
 #home-hero {
     position: relative;
-    background-color: #8fffdb;
+    background-color: #ffffcc;
+    background-color: #e1affd;
+    background-color: var(--f2);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -21,11 +23,9 @@
 
 #home-hero .txt-area h1{
     width: 90%;
+    /* font-weight: 500; */
 }
 
-#home-hero .txt-area p{
-    font-weight: 800;
-}
 
 #home-hero .mockups .mid-side img {
     transform: translateY(100%);
@@ -79,9 +79,6 @@
     flex: 1;
 }
 
-.lifted-txt{
-    text-shadow: 0px 0px 2px rgba(53, 53, 53, 0.438)
-}
 
 @media (max-width: 1000px) and (min-width:701px){
     #home-hero .mockups #mid-side{
@@ -98,7 +95,6 @@
 
 #home-hero .mockups #left-side p{
     margin-bottom: 10px;
-    font-weight: 800;
 }
 
 #home-hero .mockups #mid-side img {
@@ -311,7 +307,6 @@
 
 .step-card h4 {
     font-size: 20px;
-    font-weight: 800;
     color: #2C3E50;
 }
 
@@ -454,9 +449,6 @@ section.quote {
     text-align: center;
 }
 
-section.quote h1{
-    font-weight: 450;
-}
 
 section.quote h1 span.light {
     color: #AFAFAF;
@@ -541,7 +533,6 @@ span#meds {
 
 .feature-cards .feature {
     flex: 0 0 auto;
-    /* min-width: 100px; */
     aspect-ratio: 3 / 4;
     border-radius: 5px;
     padding: 20px;
@@ -556,6 +547,7 @@ span#meds {
     scroll-snap-align: start;
 
 }
+
 
 #f1 {
     background-color: var(--f1);
@@ -705,7 +697,6 @@ section.diseases .text-area {
 }
 
 section.diseases .text-area h1 {
-    font-weight: 500;
     margin-bottom: 10px;
     flex: 3;
     min-width: 340px;
@@ -759,7 +750,6 @@ section.diseases .text-area .para {
 
 .disease .disease-name {
     font-size: 18px;
-    font-weight: 500;
 }
 
 @media (max-width: 768px) {
@@ -989,7 +979,6 @@ section.app-features {
 
 #about-hero .mockups{
     padding: 0;
-    /* border-radius: 20px; */
 }
 
 #about-hero .mockups img{
@@ -1000,6 +989,7 @@ section.app-features {
 }
 
 #about-hero .mockups img.tab-mock{
+    max-width: 300px;
     margin-top: 20px;
 }
 
@@ -1098,14 +1088,13 @@ section.app-features {
 .easy .cards-cont .card {
     
     flex: 0 0 auto;
-    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 1 / 1; */
     border-radius: 20px;
-    height: auto;
+    /* height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    gap: 0;
     scroll-snap-align: start;
 }
 
@@ -1117,7 +1106,7 @@ section.app-features {
 /* Card Headings and Paragraphs */
 .easy .cards-cont .card .easy-card-heading,
 .easy .cards-cont .card p {
-    padding: 30px 25px;
+    padding: 20px 25px;
     background-color: var(--f3);
 }
 
@@ -1175,9 +1164,18 @@ section.app-features {
     padding: 10px 10px;
 }
 
+.easy-card-icon-wrapper{
+    height: 50px;
+    width: auto;
+    aspect-ratio: 1 / 1;
+    padding: 10px;
+    background-color: white;
+    border-radius: 50%;
+}
 
 .easy-card-icon{
-    height: 30px;
+    background-color: transparent;
+    height: 100%;
     width: auto;
     aspect-ratio: 1;
     color: var(--btn-prim);

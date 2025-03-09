@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
     --prim-dark: #242E49;
@@ -90,7 +91,8 @@
 
 body {
     padding: 10px;
-    font-family: "Manrope", serif;
+    /* font-family: "Manrope", serif; */
+    font-family: "Ubuntu", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
@@ -103,6 +105,18 @@ body {
 main, section, header, footer, article {
     padding: 20px;
     border-radius: 20px;
+}
+
+h1, h2, h3, h4{
+    font-weight: 400;
+}
+
+p, li, a, button{
+    font-weight: 300;
+}
+
+strong, b, bold{
+    font-weight: 400;
 }
 
 .full-height {
@@ -222,7 +236,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     color: black;
-    background-color: rgba(255, 255, 255, 0.863);
+    background-color: rgba(255, 255, 255, 0.938);
     margin-bottom: 10px;
     position: sticky;
     top: 0px;
@@ -235,7 +249,6 @@ nav {
 
 #nav-logo-txt {
     text-decoration: none;
-    font-weight: bolder;
     color: black;
 }
 
@@ -278,7 +291,6 @@ a.active {
     color: white;
     background-color: black;
     border-radius: 10px;
-    font-weight: 600;
 }
 
 .partner-up:hover{
@@ -408,7 +420,6 @@ a.active {
     border: none;
     background-color: var(--btn-prim);
     color: white;
-    font-weight: bold;
 }
 
 /* Vision */
