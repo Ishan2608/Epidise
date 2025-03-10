@@ -45,49 +45,95 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const stepperSection = document.querySelector('.stepper-section');
-  const steps = document.querySelectorAll('.step');
-  const stepNumbers = document.querySelectorAll('.step-number');
-  const stepCards = document.querySelectorAll('.step-card');
-  const dottedLine = document.querySelector('.dotted-line');
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        animateSteps();
-        observer.unobserve(stepperSection);
+  if (stepperSection) {
+
+
+    const steps = document.querySelectorAll('.step');
+    const stepNumbers = document.querySelectorAll('.step-number');
+    const stepCards = document.querySelectorAll('.step-card');
+    const dottedLine = document.querySelector('.dotted-line');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateSteps();
+            observer.unobserve(stepperSection);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(stepperSection);
+
+    function animateSteps() {
+      stepNumbers.forEach((stepNumber, index) => {
+        setTimeout(() => {
+          stepNumber.style.backgroundColor = '#D0E4FF';
+          stepNumber.style.boxShadow = '0 0 10px #D0E4FF';
+        }, index * 500);
+      });
+
+      stepCards.forEach((stepCard, index) => {
+        setTimeout(() => {
+          stepCard.style.opacity = '1';
+          stepCard.style.transform = 'translateY(0)';
+        }, index * 500);
+      });
+
+      // Animate dotted line (improved)
+      if (window.innerWidth > 768) { // Horizontal line
+        dottedLine.style.width = 'calc(97% - 50px)'; // Adjust width as needed
+      } else { // Vertical line
+        dottedLine.style.height = 'calc(100% - 70px)'; // Adjust height as needed
+        dottedLine.style.width = '2px'; // Ensure width is set for vertical line
       }
-    });
-  },
-  { threshold: 0.5 }
-);
+      dottedLine.classList.add('animate'); // Trigger CSS transition
+    }
 
-observer.observe(stepperSection);
 
-function animateSteps() {
-  stepNumbers.forEach((stepNumber, index) => {
-    setTimeout(() => {
-      stepNumber.style.backgroundColor = '#D0E4FF';
-      stepNumber.style.boxShadow = '0 0 10px #D0E4FF';
-    }, index * 500);
-  });
-
-  stepCards.forEach((stepCard, index) => {
-    setTimeout(() => {
-      stepCard.style.opacity = '1';
-      stepCard.style.transform = 'translateY(0)';
-    }, index * 500);
-  });
-
-  // Animate dotted line (improved)
-  if (window.innerWidth > 768) { // Horizontal line
-    dottedLine.style.width = 'calc(97% - 50px)'; // Adjust width as needed
-  } else { // Vertical line
-    dottedLine.style.height = 'calc(100% - 70px)'; // Adjust height as needed
-    dottedLine.style.width = '2px'; // Ensure width is set for vertical line
   }
-  dottedLine.classList.add('animate'); // Trigger CSS transition
-}
 
+  // Select all download buttons
+  const downloadButtons = document.querySelectorAll('.black-download-btn, .d-btn');
+
+  // Select the modal and overlay elements
+  const modal = document.querySelector('.modal');
+  const overlay = document.querySelector('.overlay');
+
+  // Add event listeners to each button
+  downloadButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      // Show the modal and overlay
+      modal.style.display = 'block';
+      overlay.style.display = 'block';
+
+      // Disable scrolling
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  // Add event listener to the overlay to close the modal
+  overlay.addEventListener('click', function () {
+    modal.style.display = 'none';
+    overlay.style.display = 'none';
+
+    // Enable scrolling
+    document.body.style.overflow = 'auto';
+  });
+
+  // Add event listener to the modal's close button (if you have one)
+  const closeModalButton = document.querySelector('.close-modal');
+  if (closeModalButton) {
+    closeModalButton.addEventListener('click', function () {
+      modal.style.display = 'none';
+      overlay.style.display = 'none';
+
+      // Enable scrolling
+      document.body.style.overflow = 'auto';
+    });
+  }
 
 });
