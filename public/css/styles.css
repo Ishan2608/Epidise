@@ -1035,9 +1035,12 @@ section.app-features {
     gap: 10px;
 }
 
-.easy .txt-area .heading-area {
-    flex: 2;
-    min-width: 300px;
+
+@media (min-width: 650px){
+    .easy .txt-area .heading-area {
+        flex: 2;
+        min-width: 300px;
+    }    
 }
 
 .easy .txt-area .para-area {
@@ -1205,6 +1208,7 @@ section.app-features {
     }
 }
 
+
 @media (max-width: 800px) and (min-width: 700px) {
     .easy-card-heading{
         font-size: 26px;
@@ -1250,6 +1254,7 @@ section.app-features {
 }
 
 @media (max-width: 400px) and (min-width: 300px) {
+
     .easy .cards-cont .card {
         flex: 0 0 calc(90% - 10px);
     }
@@ -1257,6 +1262,8 @@ section.app-features {
 }
 
 @media (max-width: 300px) {
+
+
     .easy .cards-cont{
         gap: 10px;
     }
@@ -1267,165 +1274,7 @@ section.app-features {
 }
 
 @media (max-width:400px) {
-    section.easy {
-        padding: 10px 5px;
-    }
-}
-
-/* Founders Area */
-.founders {
-    padding: 20px 0px;
-
-    /* Peach Theme */
-    /* background-color: #f4a261;
-    color: #432E20; */
-
-    /* Lavender Theme */
-    background-color: #e6e6fa;
-    color: #36454F;
-
-}
-
-.founders .txt-area {
-    padding: 30px 30px;
-}
-
-/* Cards container */
-.founders .cards-area {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
-    gap: 20px;
-    padding: 30px 20px;
-
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: x mandatory;
-    overflow-y: hidden;
-
-}
-
-.founders .cards-area::-webkit-scrollbar {
-    height: 8px;
-}
-
-.founders .cards-area::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    opacity: 0.5;
-}
-
-.founders .cards-area::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-/* Cards */
-.founders .cards-area .founder-card {
-    flex: 0 0 auto;
-    gap: 20px;
-    aspect-ratio: 3/4;
-    border-radius: 15px;
-    padding: 20px 15px;
-
-    /* Peach Theme */
-    /* background: linear-gradient(to bottom, #e76f51, #f4a261); */
-
-    /* Lavender Theme */
-    background: linear-gradient(to bottom, #ae80df, #e6e6fa);
-
-    transition: all 0.3s ease-in-out;
-    scroll-snap-align: start;
-}
-
-.founders .cards-area .founder-card .img-wrapper {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.founders .cards-area .founder-card .img-wrapper img {
-    width: 80%;
-    height: 100%;
-    object-fit: contain;
-    border-radius: 50%;
-    border: 5px solid var(--charcoal);
-}
-
-
-/* Card Text */
-.founders .cards-area .founder-card .txt-area {
-    padding: 10px 0;
-    text-align: center;
-}
-
-.founders .cards-area .founder-card .txt-area {
-    gap: 10px;
-}
-
-/* Ensure 4 cards on Desktop Wide Screens */
-@media (min-width:801px) {
-    .founders .cards-area {
-        justify-content: space-evenly;
-    }
-
-    .founders .cards-area .founder-card {
-        flex: 1;
-    }
-}
-
-@media (max-width: 800px) and (min-width: 600px) {
-    .founders .cards-area {
-        justify-content: flex-start;
-        gap: 20px;
-    }
-
-    .founders .cards-area .founder-card {
-        flex: 0 0 calc(32% - 20px);
-    }
-}
-
-@media (max-width: 600px) and (min-width: 500px) {
-    .founders .cards-area .founder-card {
-        flex: 0 0 calc(43% - 20px);
-    }
-}
-
-@media (max-width: 499px) and (min-width: 450px) {
-    .founders .cards-area .founder-card {
-        aspect-ratio: 3/3.8;
-        flex: 0 0 calc(60% - 20px);
-    }
-}
-
-@media (max-width: 449px) and (min-width: 399px) {
-    .founders .cards-area {
-        gap: 10px;
-    }
-
-    .founders .cards-area .founder-card {
-        flex: 0 0 calc(70% - 10px);
-    }
-}
-
-@media (max-width: 398px) {
-    .founders .cards-area .founder-card {
-        aspect-ratio: none;
-        flex: 0 0 calc(80% - 10px);
-    }
-}
-
-@media (max-width: 360px) {
-    .founders .cards-area .founder-card {
-
-        flex: 0 0 calc(95% - 5px);
-    }
-}
-
-@media (max-width:400px) {
-    section.founders {
+    .easy {
         padding: 10px 5px;
     }
 }

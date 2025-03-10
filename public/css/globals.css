@@ -211,9 +211,20 @@ strong, b, bold{
 
 
 
-@media (max-width: 400px){
+@media (max-width: 870px){
     .modal{
-        width: 97%;
+        width: 60%;
+    }
+}
+@media (max-width: 760px){
+    .modal{
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px){
+    .modal{
+        width: 90%;
     }
 }
 
