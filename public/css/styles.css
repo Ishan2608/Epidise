@@ -37,6 +37,12 @@
     width: auto;
 }
 
+#home-hero  .txt-area .dl-btns .dl-btn:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 200ms linear;
+}
+
 #home-hero .mockup{
     flex: 1;
     max-height: 560px;
