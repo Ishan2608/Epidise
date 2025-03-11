@@ -2,219 +2,104 @@
 /* Home Page */
 /* --------------------------------- */
 
-/* Hero Section */
-#home-hero {
-    position: relative;
-    background-color: #ffffcc;
-    background-color: #e1affd;
-    background-color: var(--f2);
-    overflow: hidden;
+#home-hero{
+    gap: 30px;
+    background-image: url("/public/assets/home-hero-bg1.jpg");
+    background-image: url("/public/assets/home-hero-bg2.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    /* height: fit-content; */
+}
+
+#home-hero .txt-area{
+    flex: 2;
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    max-height: 900px;
-    color: black;
-}
-
-#home-hero .txt-area {
+    align-items: flex-start;
     gap: 20px;
+    padding: 0 20px;
 }
 
-#home-hero .txt-area h1{
-    width: 90%;
-    /* font-weight: 500; */
-}
-
-
-#home-hero .mockups .mid-side img {
-    transform: translateY(100%);
-    opacity: 0;
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 0.5s;
-  }
-
-  @media (min-width: 701px) {
-    #home-hero {
-        max-height: 700px;
-    }
-    #home-hero .txt-area > p,
-    #home-hero .txt-area > .btns {
-        display: none;
-    }
-
-    #home-hero .mockups #mid-side img {
-        max-height: 550px;
-        width: auto;
-        transform: translateY(100%);
-        /* opacity: 0; */
-        transition: transform 1s ease-out, opacity 1s ease-out; /* Add transition effect */
-    }
-
-    /* Add a class to trigger the animation after 2 seconds */
-    #home-hero.mockups-loaded .mockups #mid-side img {
-        transform: translateY(0);
-        /* opacity: 1; */
-    }
-}
-
-#home-hero .mockups {
-    min-height: 65%;
-    max-height: 100%;
-    width: 100%;
-    
-    position: absolute;
-    bottom: 0px;
-    left: 50%;
-    transform: translate(-50%, 0);
-
+#home-hero  .txt-area .dl-btns{
     display: flex;
-    justify-content: space-evenly;
-    align-items: end;
-}
-
-#home-hero .mockups #left-side,
-#home-hero .mockups #right-side,
-#home-hero .mockups #mid-side{
-    flex: 1;
-}
-
-
-@media (max-width: 1000px) and (min-width:701px){
-    #home-hero .mockups #mid-side{
-        flex: 1.25;
-    }
-}
-
-
-#home-hero .mockups #left-side,
-#home-hero .mockups #right-side{
-    text-align: left;
-    padding: 20px 20px;
-}
-
-#home-hero .mockups #left-side p{
-    margin-bottom: 10px;
-}
-
-#home-hero .mockups #mid-side img {
-    height: auto;
-    width: 100%;
-
-    max-height: 100%;
-    min-width: auto;
-    max-width: auto;
-
-    margin-bottom:-10px;
-    object-fit: contain;
-    object-position: bottom;
-}
-
-.hero .txt-area .btns{
+    justify-content: start;
+    gap: 20px;
     width: fit-content;
-    padding: 20px 10px;
-    gap: 15px;
+    height: fit-content;
 }
 
-.black-download-btn{
-    border: none;
-    color: white;
-    background-color: black;
-    border-radius: 40px;
-    padding: 15px 20px;
-    box-shadow: 0px 0px 10px rgba(117, 117, 117, 0.13);
+#home-hero  .txt-area .dl-btns .dl-btn{
+    height: 45px;
+    width: auto;
 }
 
-.black-download-btn:hover{
-    cursor: pointer;
-    background-color: white;
-    color: black;
+#home-hero .mockup{
+    flex: 1;
+    max-height: 560px;
 }
 
-@media (max-width:750px){
-    #home-hero .mockups #left-side,
-    #home-hero .mockups #right-side{
-        display: none;
-    }
-
+#home-hero .mockup img{
+    max-height: 90%;
+    max-width: 100%;
+    object-fit: cover;
 }
 
-@media (min-width:701px) {
+
+@media (max-width: 700px) {
     #home-hero{
-        max-height: 700px;
-    }
-    #home-hero .txt-area > p,
-    #home-hero .txt-area > .btns {
-        display: none;
-    }
-
-    #home-hero .mockups #mid-side img{
-        max-height: 550px;
-        width: auto;
-    }
-}
-
-@media (max-width:700px) {
-    #home-hero {
-        padding: 0px 20px;
-        padding-top: 20px;
-        position: static;
-        display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: stretch;
+        gap: 35px;
+    }
+    #home-hero .txt-area{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         align-items: center;
         gap: 20px;
     }
 
-    #home-hero .mockups {
-        flex: 1;
-        max-width: 350px;
+    #home-hero .mockup{
+        width: 100%;
+        height: 400px;
+        max-height: 440px;
+        padding: 20px 0px;
     }
 
-    #home-hero .txt-area {
-        flex: 1;
-    }
-
-    #home-hero .txt-area h1 {
-        font-size: 26px;
-        margin-bottom: 0;
-        padding: 0px 0px;
-        padding-top: 20px;
-    }
-
-    #home-hero .txt-area p {
-        padding: 0px 0px;
-    }
-
-    #home-hero p{
-        width: 80%
-    }
-
-    #home-hero .txt-area .btns {
-        padding: 0;
-        margin: 0px;
-    }
-
-    #home-hero .txt-area .btns button {
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-
-    #home-hero .mockups {
-        position: static;
-        height: 60%;
-        width: 90%;
-        transform: translate(0, 0);
+    #home-hero .mockup img{
+        max-height: 380px;
+        width: auto;
     }
 }
 
-@media (max-width:400px) {
-    #home-hero .txt-area p {
-        font-size: 14px;
+@media (max-width: 480px){
+    #home-hero .txt-area{
+        padding: 20px 0px;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+    }
+    #home-hero .txt-area .dl-btns .dl-btn{
+        gap: 15px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 330px){
+    #home-hero .txt-area .dl-btns{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
     }
 
-    #home-hero p{
-        width: 90%
+    #home-hero .txt-area .dl-btns .dl-btn{
+        height: 35px;
     }
 }
 
@@ -947,9 +832,6 @@ section.app-features {
         height: 400px;
         max-height: 400px;
         padding: 15px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 
     .app-feature-list .app-f-cont .mockup-container img {
@@ -973,7 +855,6 @@ section.app-features {
 }
 
 #about-hero .txt-area{
-    padding-bottom: 20px;
     margin-bottom: 20px;
 }
 
@@ -983,9 +864,11 @@ section.app-features {
 
 #about-hero .mockups img{
     width: 100%;
+    height: auto;
     margin-bottom: -5px;
     border: 0.5px solid rgba(134, 134, 134, 0.13);
     border-radius: 20px;
+    object-fit: contain;
 }
 
 #about-hero .mockups img.tab-mock{
@@ -1109,7 +992,7 @@ section.app-features {
 .easy .cards-cont .card .easy-card-heading,
 .easy .cards-cont .card p {
     padding: 20px 25px;
-    background-color: var(--f3);
+    background-color: var(--easy);
 }
 
 .easy .cards-cont .card .easy-card-heading {
@@ -1135,7 +1018,7 @@ section.app-features {
 .easy .cards-cont .card .icons-cont .transparent-bg {
     flex: 1;
     height: 100%;
-    background-color: var(--f3);
+    background-color: var(--easy);
     padding-left: 25px;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -1145,7 +1028,7 @@ section.app-features {
     height: 100%;
     aspect-ratio: 1 / 1;
     padding: 0;
-    background-color: var(--f3);
+    background-color: var(--easy);
 }
 
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper {
@@ -1161,7 +1044,7 @@ section.app-features {
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper {
     width: 50px;
     aspect-ratio: 1;
-    background-color: var(--f3);
+    background-color: var(--easy);
     border-radius: 50%;
     padding: 10px 10px;
 }
@@ -1190,11 +1073,6 @@ section.app-features {
     color: var(--btn-prim);
 }
 
-.easy .fa-check:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: transform 200ms ease-in-out;
-}
 
 /* Media Queries for Responsive Design */
 @media (min-width: 801px) {
@@ -1296,10 +1174,10 @@ section.app-features {
     width: 70%;
     flex: 2;
     padding: 20px;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: start;
+    align-items: start; */
 }
 
 .contact-container .contact-form {

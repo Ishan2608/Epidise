@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
@@ -19,6 +17,7 @@
     --f2: #d2def2;
     --f3: #e8ffff;
     --f4: #F2F5F9;
+    --easy: #c7fcfc;
 }
 
 * {
@@ -28,16 +27,15 @@
 }
 
 /* Font sizes based on a modular scale */
-.txt-xs { font-size: 0.875rem; /* 14px */ }
-.txt-sm { font-size: 1rem; /* 16px */ }
-.txt-md { font-size: 1.125rem; /* 18px */ }
-.txt-lg { font-size: 1.5rem; /* 24px */ }
-.txt-xl { font-size: 2rem; /* 32px */ }
-.txt-2xl { font-size: 2.5rem; /* 40px */ }
-.txt-3xl { font-size: 3rem; /* 48px */ }
-.txt-4xl { font-size: 3.5rem; /* 56px */ }
-.txt-5xl { font-size: 4.5rem;}
-.txt-6xl { font-size: 5rem;}
+.txt-xs { font-size: 0.875rem; }
+.txt-sm { font-size: 1rem; }
+.txt-md { font-size: 1.125rem; }
+.txt-lg { font-size: 1.5rem; }
+.txt-xl { font-size: 2rem; }
+.txt-2xl { font-size: 2.5rem; }
+.txt-3xl { font-size: 3rem; }
+.txt-4xl { font-size: 3.5rem; }
+.txt-5xl { font-size: 4rem;}
 
 /* Desktop to Tablet ( max-width: 1024px ) */
 @media (max-width: 1024px) {
@@ -49,48 +47,59 @@
   .txt-2xl { font-size: 2.25rem; /* 36px */ }
   .txt-3xl { font-size: 2.75rem; /* 44px */ }
   .txt-4xl { font-size: 3.25rem; /* 52px */ }
-  .txt-5xl { font-size: 4rem; /* 52px */ }
-  .txt-6xl { font-size: 5rem;}
+  .txt-5xl { font-size: 3.7rem; /* 52px */ }
 }
 
-/* Tablet to Mobile ( max-width: 768px ) */
-@media (max-width: 768px) {
-  .txt-xs { font-size: 0.75rem; /* 12px */ }
-  .txt-sm { font-size: 0.875rem; /* 14px */ }
-  .txt-md { font-size: 1rem; /* 16px */ }
-  .txt-lg { font-size: 1.125rem; /* 18px */ }
-  .txt-xl { font-size: 1.75rem; /* 28px */ }
-  .txt-2xl { font-size: 2rem; /* 32px */ }
-  .txt-3xl { font-size: 2.5rem; /* 40px */ }
-  .txt-4xl { font-size: 2.75rem; /* 44px */ }
-  .txt-5xl { font-size: 3.75rem; /* 44px */ }
-  .txt-6xl { font-size: 4.75rem;}
+@media (max-width: 850px){
+    .txt-4xl { font-size: 3rem; }  
+}
+
+@media (max-width: 780px) {
+  .txt-xs { font-size: 0.75rem; }
+  .txt-sm { font-size: 0.875rem; }
+  .txt-md { font-size: 1rem; }
+  .txt-lg { font-size: 1.125rem; }
+  .txt-xl { font-size: 1.75rem; }
+  .txt-2xl { font-size: 2rem;  }
+  .txt-3xl { font-size: 2.5rem; }
+  .txt-4xl { font-size: 2.75rem; }
+  .txt-5xl { font-size: 3rem; }
+  
+}
+
+@media (max-width: 730px){
+    .txt-4xl { font-size: 2.6rem; }
+}
+
+@media (max-width: 700px){
+    .txt-4xl { font-size: 2.5rem; }
 }
 
 /* Mobile ( max-width: 480px ) */
 @media (max-width: 480px) {
-  .txt-xs { font-size: 0.6875rem; /* 11px */ }
-  .txt-sm { font-size: 0.8125rem; /* 13px */ }
-  .txt-md { font-size: 0.9375rem; /* 15px */ }
-  .txt-lg { font-size: 1rem; /* 16px */ }
-  .txt-xl { font-size: 1.5rem; /* 24px */ }
-  .txt-2xl { font-size: 1.75rem; /* 28px */ }
-  .txt-3xl { font-size: 2rem; /* 32px */ }
-  .txt-4xl { font-size: 2.25rem; /* 36px */ }
-  .txt-5xl { font-size: 3.25rem; /* 36px */ }
-  .txt-6xl { font-size: 4.25rem;}
+  .txt-xs { font-size: 0.6875rem; }
+  .txt-sm { font-size: 0.8125rem; }
+  .txt-md { font-size: 0.9375rem; }
+  .txt-lg { font-size: 1rem; }
+  .txt-xl { font-size: 1.5rem; }
+  .txt-2xl { font-size: 1.75rem; }
+  .txt-3xl { font-size: 2rem; }
+  .txt-4xl { font-size: 2.25rem; }
+  .txt-5xl { font-size: 2.5rem; }
+}
+
+@media (max-width: 420px){
+    .txt-4xl { font-size: 28px; }
 }
 
 @media (max-width: 310px){
     .txt-3xl { font-size: 22px;}
     .txt-4xl { font-size: 26px;}
     .txt-5xl { font-size: 30px;}
-    .txt-6xl { font-size: 36px;}
 }
 
 body {
     padding: 10px;
-    /* font-family: "Manrope", serif; */
     font-family: "Ubuntu", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
@@ -209,7 +218,10 @@ strong, b, bold{
     color: #333;
 }
 
-
+.highlight {
+    padding: 0%;
+    color: var(--btn-prim);
+}
 
 @media (max-width: 870px){
     .modal{
@@ -228,30 +240,14 @@ strong, b, bold{
     }
 }
 
-.full-height {
-    height: 100vh;
-    max-height: 900px;
-}
-
-@media (max-width: 700px){
-    .full-height{
-        height: fit-content;
-        max-height: fit-content;
-    }
-}
-
-.highlight {
-    padding: 0%;
-    color: var(--btn-prim);
-}
-
 .hero{
     padding: 20px 20px;
     text-align: center;
 }
 
-.hero h1{
-    padding: 20px 0px;
+
+.hero .txt-area{
+    gap: 25px;
 }
 
 .hero .mockups{
@@ -277,6 +273,13 @@ strong, b, bold{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: stretch;
+}
+
+.flex-col-even-start{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: start;
 }
 
 .flex-row-even-center {
@@ -352,6 +355,10 @@ nav {
     z-index: 100;
 }
 
+nav .wrapper{
+    gap: 20px;
+}
+
 #nav-logo-txt:hover {
     cursor: pointer;
 }
@@ -359,6 +366,7 @@ nav {
 #nav-logo-txt {
     text-decoration: none;
     color: black;
+    font-weight: bold;
 }
 
 .nav-link:hover {
@@ -622,7 +630,7 @@ section.download-btns .wrapper h1 {
 
 section.download-btns .wrapper .download-btn-container {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: nowrap;
     justify-content: space-evenly;
     align-items: center;
@@ -802,13 +810,13 @@ footer .footer-bottom {
 }
   
 @keyframes float {
-0% {
-    transform: translateY(0);
-}
-50% {
-    transform: translateY(-20px);
-}
-100% {
-    transform: translateY(0);
-}
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
