@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Select all download buttons
-  const downloadButtons = document.querySelectorAll('.black-download-btn, .d-btn');
+  const downloadButtons = document.querySelectorAll('.dl-btn, .d-btn');
 
   // Select the modal and overlay elements
   const modal = document.querySelector('.modal');
