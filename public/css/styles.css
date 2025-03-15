@@ -2,16 +2,92 @@
 /* Home Page */
 /* --------------------------------- */
 
+#home-header{
+    /* width: 100%;
+    height: 100vh;
+    max-height: 600px; */
+    padding: 0;
+    
+    position: relative;
+}
+
+
+#home-header div.lower{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: -1;
+
+    height: 50%;
+    border-radius: 20px;
+    /* background-color: #EACDFF; */
+    background-image: url('/public/assets/homer.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#home-header .front{
+    gap: 10px;
+    padding: 20px 20px;
+}
+
+#home-header .front .txt-area{
+    flex: 2;
+}
+
+
+#home-header .mockup{
+    flex: 1;
+    max-height: 560px;
+}
+
+#home-header .mockup img{
+    max-height: 90%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+@media (max-width:800px){
+    #home-header .front{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: stretch;
+        gap: 30px;
+    }
+
+    #home-header .front .txt-area{
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+    }
+    #home-header .front .mockup{
+        width: 100%;
+        height: 400px;
+        max-height: 440px;
+        padding: 20px 0px;
+    }
+
+    #home-header .front .mockup img{
+        max-height: 380px;
+        width: auto;
+    }
+}
+
+/* ----------------------------------------- */
+
 #home-hero{
     gap: 30px;
     background-image: url("/public/assets/home-hero-bg1.jpg");
-    background-image: url("/public/assets/home-hero-bg2.jpg");
+    /* background-image: url("/public/assets/home-hero-bg2.jpg"); */
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
-
-    /* height: fit-content; */
 }
+
+
 
 #home-hero .txt-area{
     flex: 2;
@@ -22,25 +98,6 @@
     align-items: flex-start;
     gap: 20px;
     padding: 0 20px;
-}
-
-#home-hero  .txt-area .dl-btns{
-    display: flex;
-    justify-content: start;
-    gap: 20px;
-    width: fit-content;
-    height: fit-content;
-}
-
-#home-hero  .txt-area .dl-btns .dl-btn{
-    height: 45px;
-    width: auto;
-}
-
-#home-hero  .txt-area .dl-btns .dl-btn:hover{
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: transform 200ms linear;
 }
 
 #home-hero .mockup{
