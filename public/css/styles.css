@@ -21,7 +21,6 @@
 
     height: 50%;
     border-radius: 20px;
-    /* background-color: #EACDFF; */
     background-image: url('/public/assets/homer.png');
     background-position: center;
     background-size: cover;
@@ -77,94 +76,6 @@
 }
 
 /* ----------------------------------------- */
-
-#home-hero{
-    gap: 30px;
-    background-image: url("/public/assets/home-hero-bg1.jpg");
-    /* background-image: url("/public/assets/home-hero-bg2.jpg"); */
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-
-
-#home-hero .txt-area{
-    flex: 2;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-#home-hero .mockup{
-    flex: 1;
-    max-height: 560px;
-}
-
-#home-hero .mockup img{
-    max-height: 90%;
-    max-width: 100%;
-    object-fit: cover;
-}
-
-
-@media (max-width: 700px) {
-    #home-hero{
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: stretch;
-        gap: 35px;
-    }
-    #home-hero .txt-area{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 20px;
-    }
-
-    #home-hero .mockup{
-        width: 100%;
-        height: 400px;
-        max-height: 440px;
-        padding: 20px 0px;
-    }
-
-    #home-hero .mockup img{
-        max-height: 380px;
-        width: auto;
-    }
-}
-
-@media (max-width: 480px){
-    #home-hero .txt-area{
-        padding: 20px 0px;
-        width: 100%;
-        min-width: 0;
-        height: auto;
-    }
-    #home-hero .txt-area .dl-btns .dl-btn{
-        gap: 15px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 330px){
-    #home-hero .txt-area .dl-btns{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    #home-hero .txt-area .dl-btns .dl-btn{
-        height: 35px;
-    }
-}
 
 /* Stepper Section */
 
