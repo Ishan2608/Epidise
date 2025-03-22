@@ -386,7 +386,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     color: black;
-    background-color: rgba(255, 255, 255, 0.938);
+    background-color: rgba(255, 255, 255, 0.836);
+    backdrop-filter: blur(10px);
     margin-bottom: 10px;
     position: sticky;
     top: 0px;
