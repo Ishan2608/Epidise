@@ -6,6 +6,7 @@
     position: relative;
 }
 
+
 #home-header #wrapper .bg-circle{
     position: absolute;
     top: -50%;
@@ -16,7 +17,6 @@
     border-radius: 50%;
     background-color: var(--f3);
     z-index: -1;
-
     opacity: 0.9;
     filter: blur(50px);
 }
@@ -24,6 +24,7 @@
 #home-header .txt-area{
     gap: 20px;
     flex: 1.5;
+    padding: 20px 20px;
 }
 
 #home-header .txt-area .download-btns .d-btn{
@@ -82,13 +83,94 @@
     }
 }
 
+@media (max-width: 800px){
+    #home-header #wrapper{
+        flex-direction: column;
+        gap: 25px;
+    }
+    #home-header #wrapper .bg-circle{
+        top: -35%;
+        left: -35%;
+        width: 60%;
+    }
+    #home-header #wrapper .txt-area,
+    #home-header #wrapper #hero-mockup{
+        flex: 0;
+    }
+
+    #home-header #wrapper .txt-area{
+        align-items: center;
+        text-align: center;
+    }
+
+    #home-mock{
+        width: auto;
+        max-height: 400px;
+    }
+
+    #home-header #wrapper #hero-mockup .circle{
+        height: 55%;
+        width: auto;
+    }
+    #c1{
+        right: 12%;
+    }
+    #c2{
+        right: 15%;
+    }
+    #c3{
+        left: 15%;
+    }
+}
+
+@media (max-width: 550px){
+    #home-header{
+
+        padding: 20px 0px;
+        margin: 0;
+    }
+    #home-header #wrapper .bg-circle{
+        top: -10%;
+        left: -50%;
+        width: 60%;
+    }
+    #c1, #c2{
+        left: 50%;
+    }
+    #c3{
+        right: 60%;
+        left: auto;
+    }
+}
+
+@media (max-width: 440px){
+    #c1, #c2{
+        right: 0%;
+        left: auto;
+    }
+    #c3{
+        left: 0%;
+        right: auto;
+    }
+    #home-mock{
+        height: 90%;
+        max-height: auto;
+    }
+}
+
+@media (max-width: 330px){
+    #home-mock{
+        height: auto;
+        width: 100%;
+    }
+}
+
 /* ----------------------------------------- */
 
 /* Stepper Section */
 
 .stepper-section {
     padding: 60px 20px;
-    background-color: #ffffff;
 }
 
 .stepper-heading {
@@ -955,7 +1037,7 @@ section.app-features {
 .easy .cards-cont .card {
     
     flex: 0 0 auto;
-    aspect-ratio: 1 / 1;
+    /* aspect-ratio: 1 / 1; */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -965,7 +1047,7 @@ section.app-features {
 }
 
 /* Card content */
-.easy .cards-cont .card>* {
+.easy .cards-cont .card > * {
     flex: 1;
 }
 

@@ -24,7 +24,33 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+
 }
+
+/* Webkit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 8px; /* Adjust width for desktop */
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #6bffeb, #845ec2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #4be6c7, #6f4bbd);
+}
+
+/* Firefox Scrollbar (Limited Customization) */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #6bffeb #121212;
+}
+
 
 /* Font sizes based on a modular scale */
 .txt-xs { font-size: 0.875rem; }
@@ -98,8 +124,16 @@
     .txt-5xl { font-size: 30px;}
 }
 
+.gradient-text {
+    background: linear-gradient(90deg, #6bffff, #845ec2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
 body {
-    padding: 10px;
+    padding: 10px 0px;
     font-family: "Ubuntu", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
@@ -107,13 +141,14 @@ body {
     font-variation-settings: 100;
     max-width: 1400px;
     margin: 0 auto;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     position: relative;
 }
 
-main, section, header, footer, article {
+main, section, header, footer {
     padding: 20px;
     border-radius: 20px;
+    margin: 0px 10px;
 }
 
 h1, h2, h3, h4{
@@ -152,7 +187,7 @@ strong, b, bold{
     display: none;
     z-index: 1001;
     text-align: center;
-    padding: 3px; /* Add padding to modal to make gradient visible */
+    padding: 3px;
     overflow: hidden;
 }
 
@@ -380,36 +415,52 @@ input:focus, select:focus, textarea:focus {
     gap: 0;
 }
 
-nav {
-    padding: 0 10px;
+nav{
+    width: 70%;
+    border-radius: 50px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.959);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    margin-bottom: 10px;
+    position: sticky;
+    z-index: 1001;
+    top: 10px;
+    padding: 0px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
-    background-color: rgba(255, 255, 255, 0.836);
-    backdrop-filter: blur(10px);
-    margin-bottom: 10px;
-    position: sticky;
-    top: 0px;
-    z-index: 1001;
+    box-shadow: 0px 0px 20px rgba(173, 173, 173, 0.13);
+
 }
+
 
 nav .wrapper{
     gap: 20px;
 }
 
-#nav-logo-txt:hover {
+#nav-logo:hover {
     cursor: pointer;
 }
 
-#nav-logo-txt {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+#nav-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
+#nav-logo img {
+    height: 80%;
+    width: auto;
+    border-radius: 50%;
+    object-fit: contain;
+    max-height: 50px;
+}
+
+
 .nav-link:hover {
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 nav > * {
@@ -436,25 +487,36 @@ a.nav-link {
 }
 
 a.active {
-    font-weight: bolder;
-    color: var(--btn-prim);
-    border-bottom: 3px solid var(--btn-prim);
+    font-weight: 500;
+    /* color: var(--btn-prim); */
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, #6bffeb, #845ec2);
+    border-image-slice: 1;
+
+    background: linear-gradient(90deg, #6bffeb, #845ec2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
+
 .partner-up{
-    border: 2px solid white;
+    border: none;
     padding: 12px 14px;
     color: white;
-    background-color: black;
-    border-radius: 10px;
+    background: linear-gradient(90deg, #6bffeb, #845ec2);
+    border-radius: 50px;
 }
 
 .partner-up:hover{
-    border: 2px solid black;
-    color: black;
     background-color: white;
-    transform: scaleX(1.05);
-    transition: transform 200ms ease-in-out;
+    
+    background: linear-gradient(90deg, #6bffeb, #845ec2);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    transition: all 200ms ease-in-out;
 }
 
 /* Hamburger Menu */
@@ -536,12 +598,14 @@ a.active {
 
 .mobile-nav-menu .nav-link {
     text-decoration: none;
-    color: black;
     font-size: 18px;
 }
 
 /* Media Query for Mobile Navigation */
 @media (max-width: 700px) {
+    nav{
+        padding: 20px 20px;
+    }
     .hamburger {
         display: flex;
     }
