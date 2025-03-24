@@ -2,6 +2,18 @@
 /* Home Page */
 /* --------------------------------- */
 
+#home-header{
+    background-color: rgba(230, 230, 230, 0.096);
+    backdrop-filter: blur(50px);
+    padding: 20px 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#home-header > nav{
+    margin-bottom: 40px;
+}
+
 #home-header #wrapper{
     position: relative;
 }
@@ -18,7 +30,7 @@
     background-color: var(--f3);
     z-index: -1;
     opacity: 0.9;
-    filter: blur(50px);
+    filter: blur(70px);
 }
 
 #home-header .txt-area{
@@ -40,13 +52,19 @@
     position: relative;
 }
 
+@media (min-width: 801px){
+    #hero-mockup{
+        align-items: end;
+    }
+}
+
 .circle{
     position: absolute;
     aspect-ratio: 1/1;
     border-radius: 50%;
     z-index: -1;
     opacity: 0.8;
-    filter: blur(30px);
+    filter: blur(50px);
 }
 
 #c1{
@@ -71,7 +89,7 @@
 }
 
 #home-mock{
-    width: 80%;
+    width: 75%;
     object-fit: contain;
     z-index: 100;
     max-height: 500px;
@@ -125,9 +143,7 @@
 
 @media (max-width: 550px){
     #home-header{
-
         padding: 20px 0px;
-        margin: 0;
     }
     #home-header #wrapper .bg-circle{
         top: -10%;
@@ -1037,7 +1053,6 @@ section.app-features {
 .easy .cards-cont .card {
     
     flex: 0 0 auto;
-    /* aspect-ratio: 1 / 1; */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
