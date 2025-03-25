@@ -30,42 +30,43 @@
 
   <!-- Desktop and Tablet Navigation -->
   <nav class="txt-md">
-    <!-- Left Part - Logo -->
-    <div class="wrapper flex-row-start">
-      <div class="logo-container mid-center">
-        <a id="nav-logo" href="index.html">
-          <img src="/public/assets/logo.jpg" alt="">
-        </a>
+  
+
+        <!-- Left Part - Logo -->
+        <div class="logo-container mid-center">
+          <a id="nav-logo" href="index.html">
+            <img src="/public/assets/logo.jpg" alt="">
+          </a>
+        </div>
+    
+        <!-- Middle Part - Navigation Links -->
+        <div class="menu">
+          <ul>
+            <li class="menu-item">
+              <a class="nav-link active" href="index.html"> Home </a>
+            </li>
+            <li class="menu-item">
+              <a class="nav-link" href="contact-us.html">Contacts Us</a>
+            </li>
+          </ul>
+        </div>
+  
+      <!-- Partner Button on Right -->
+      <div id="d-partner-up-cont">
+        <button id="d-partner-up" class="txt-md partner-up">
+          Partner Up
+        </button>
       </div>
   
-      <!-- Middle Part - Navigation Links -->
-      <div class="menu">
-        <ul>
-          <li class="menu-item">
-            <a class="nav-link active" href="index.html"> Home </a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link" href="contact-us.html">Contacts Us</a>
-          </li>
-        </ul>
+      <!-- Hamburger Symbol on Extreme Right Only When on Mobile -->
+      <div class="hamburger" id="hamburger">
+        <div class="wrapper mid-center">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-     </div>
-
-    <!-- Partner Button on Right -->
-    <div id="d-partner-up-cont">
-      <button id="d-partner-up" class="txt-md partner-up">
-        Partner Up
-      </button>
-    </div>
-
-    <!-- Hamburger Symbol on Extreme Right Only When on Mobile -->
-    <div class="hamburger" id="hamburger">
-      <div class="wrapper mid-center">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
+  
   </nav>
 
   <!-- Mobile Navigation -->
@@ -377,11 +378,13 @@
   <!-- Display Features of App - User and Doctor App -->
   <section class="app-features">
     <div class="toggle-area">
-      <div class="toggle-btns mid-center txt-md">
-        <button id="t1" class="active-toggle">
+      <div class="toggle-btns mid-center">
+        <button id="t1" class="active-toggle txt-md">
           For User
         </button>
-        <button id="t2" class="">For Doctor</button>
+        <button id="t2" class="txt-md">
+          For Doctor
+        </button>
       </div>
     </div>
 
