@@ -47,8 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const stepperSection = document.querySelector('.stepper-section');
 
   if (stepperSection) {
-
-
     const steps = document.querySelectorAll('.step');
     const stepNumbers = document.querySelectorAll('.step-number');
     const stepCards = document.querySelectorAll('.step-card');
@@ -83,14 +81,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }, index * 500);
       });
 
-      // Animate dotted line (improved)
+      
       if (window.innerWidth > 768) { // Horizontal line
-        dottedLine.style.width = 'calc(97% - 50px)'; // Adjust width as needed
+        dottedLine.style.width = 'calc(97% - 50px)';
       } else { // Vertical line
-        dottedLine.style.height = 'calc(100% - 70px)'; // Adjust height as needed
-        dottedLine.style.width = '2px'; // Ensure width is set for vertical line
+        dottedLine.style.height = 'calc(100% - 70px)'; 
+
+        // Ensure width is set for vertical line
+        dottedLine.style.width = '2px'; 
       }
-      dottedLine.classList.add('animate'); // Trigger CSS transition
+      // Trigger CSS transition
+      dottedLine.classList.add('animate');
     }
 
 
@@ -130,8 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
     closeModalButton.addEventListener('click', function () {
       modal.style.display = 'none';
       overlay.style.display = 'none';
-
-      // Enable scrolling
       document.body.style.overflow = 'auto';
     });
   }
