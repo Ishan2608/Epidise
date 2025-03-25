@@ -133,7 +133,7 @@
 
 
 body {
-    padding: 10px 0px;
+    padding: 20px 0px;
     font-family: "Ubuntu", sans-serif;
     font-optical-sizing: auto;
     font-weight: normal;
@@ -404,7 +404,7 @@ button:hover,
 input:focus, select:focus, textarea:focus {
     border-color: var(--btn-prim); /* Change border color on focus */
     outline: none; /* Remove default outline */
-    box-shadow: 0 0 5px rgba(18, 100, 255, 0.5); /* Add a subtle box shadow for emphasis */
+    box-shadow: 0 0 2px rgba(18, 101, 255, 0.329); /* Add a subtle box shadow for emphasis */
 }
 
 .mid-center {
@@ -416,30 +416,27 @@ input:focus, select:focus, textarea:focus {
 }
 
 nav{
-    width: 70%;
     border-radius: 50px;
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.959);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    margin-bottom: 10px;
+    margin: 0px 10px 20px 10px;
     position: sticky;
     z-index: 997;
     top: 10px;
-    padding: 0px 10px;
+    box-shadow: 0px 0px 20px rgba(196, 196, 196, 0.144);
+    background-color: rgba(255, 255, 255, 0.932);
+    backdrop-filter: blur(20px);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
-    
-    box-shadow: 0px 0px 20px rgba(173, 173, 173, 0.13);
-
+    padding: 0px 10px;
 }
 
-
-nav .wrapper{
-    gap: 20px;
+@media (min-width: 500px){
+    nav{
+        width: 70%;
+        margin: 0px auto 20px auto;
+    }
 }
 
 #nav-logo:hover {
@@ -490,7 +487,6 @@ a.nav-link {
 
 a.active {
     font-weight: 500;
-    /* color: var(--btn-prim); */
     border-bottom: 3px solid transparent;
     border-image: linear-gradient(90deg, #6bffeb, #845ec2);
     border-image-slice: 1;
@@ -634,9 +630,6 @@ a.active {
 }
 
 @media (max-width: 460px){
-    nav{
-        width: 97%;
-    }
     #nav-logo > img{
         max-height: 40px;
     }
