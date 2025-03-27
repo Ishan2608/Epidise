@@ -736,6 +736,10 @@ section.contact-vision .right:hover{
     transition: transform 200ms ease-in-out;
 }
 
+#vision-click-here{
+    font-weight: 900;
+}
+
 /* Download Buttons */
 
 section.download-btns {
@@ -808,6 +812,9 @@ footer {
     padding: 20px;   
 }
 
+footer a{
+    color: white;
+}
 
 footer div.footer-head {
     flex: 1;
