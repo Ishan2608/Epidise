@@ -22,6 +22,64 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
+  // Process Collapsing and Expanding Cards Cards
+  
+  const cards = document.querySelectorAll('#process-sect .cards-container > div');
+    const firstCard = document.querySelector('#step1');
+    const cardsContainer = document.querySelector('#process-sect .cards-container');
+
+    function collapseOthers() {
+        cards.forEach(card => {
+            if (card !== firstCard) {
+                card.style.flex = '1';
+                card.querySelector('p').style.display = 'none';
+            }
+        });
+        firstCard.style.flex = '1.3';
+        firstCard.querySelector('p').style.display = 'block';
+    }
+
+    function adjustCardStyles() {
+        if (window.innerWidth > 800) {
+            collapseOthers();
+        } else {
+            cards.forEach(card => {
+                card.style.flex = ''; // Reset flex to allow media queries to apply
+                card.querySelector('p').style.display = 'block'; // Show all paragraphs
+            });
+        }
+    }
+
+    adjustCardStyles(); // Initial adjustment
+
+    cards.forEach(card => {
+        card.addEventListener('mouseover', function() {
+            if (window.innerWidth > 800) {
+                cards.forEach(c => {
+                    c.style.flex = '1';
+                    c.querySelector('p').style.display = 'none';
+                });
+                this.style.flex = '1.3';
+                this.querySelector('p').style.display = 'block';
+            }
+        });
+
+        card.addEventListener('mouseout', function() {
+            if (window.innerWidth > 800) {
+                collapseOthers();
+            }
+        });
+    });
+
+    cardsContainer.addEventListener('mouseleave', function() {
+        if (window.innerWidth > 800) {
+            collapseOthers();
+        }
+    });
+
+    window.addEventListener('resize', adjustCardStyles);
+
   // Toggle between feature sections
   const t1Button = document.getElementById("t1");
   const t2Button = document.getElementById("t2");
