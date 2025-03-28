@@ -201,6 +201,11 @@
     }
 }
 
+
+/* ----------------------------------------- */
+
+
+
 /* ----------------------------------------- */
 
 /* Stepper Section */
@@ -217,214 +222,147 @@
     text-align: center;
 }
 
-/* Stepper Container */
-.stepper-container {
+/* Processes */
+
+#process-sect {
+    padding: 20px 0px;
+}
+
+#process-sect .head {
+    padding: 40px 20px;
+}
+
+#process-sect .cards-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: stretch;
-    gap: 25px;
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 10px;
 }
 
-/* Step Styles */
-.step {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+#process-sect .cards-container > div {
+    flex: 1 0 25%;
+    min-height: 250px;
+    padding: 20px 20px;
+    border-radius: 10px;
+    transition: flex 0.3s ease-in-out;
+    overflow: hidden;
     gap: 20px;
-    opacity: 1;
-    transition: opacity 0.5s ease;
-    position: relative;
+    backdrop-filter: blur(50px);
 }
 
-/* Step Number */
-.step-number {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--lighter-gray);
-    color: var(--charcoal);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+#step1 {
+    background-color: var(--f1);
 }
 
-/* Dotted Line (Horizontal) */
-.dotted-line {
-    position: absolute;
-    top: 20px;
-    /* Align with step number */
-    left: 50px;
-    /* Start after the first step number */
-    width: 0;
-    /* Initially hidden */
-    height: 2px;
-    border-top: 8px dotted var(--prim-light);
-    z-index: 1;
-    transition: width 2s ease, height 2s ease;
-    /* Add transition for height */
+#step2 {
+    background-color: var(--f2);
 }
 
-/* Step Card */
-.step-card {
-    padding: 25px 5px;
-    background-color: white;
-    color: #333;
-    border-radius: 12px;
-    /* box-shadow: 0 2px 4px rgba(170, 169, 169, 0.075); */
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    margin-top: 10px;
+#step3 {
+    background-color: var(--f3);
 }
 
-.step-card>* {
-    padding: 10px 0px;
-    text-align: left;
+#step4 {
+    background-color: var(--f4);
 }
 
-.step-card h4 {
-    font-size: 20px;
-    color: #2C3E50;
+#process-sect .cards-container > div p {
+    display: none;
+    letter-spacing: 1px;
 }
 
-.step-card p {
-    font-size: 14px;
-    color: #666;
+#step1 p {
+    display: block;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .stepper-container {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
+/* Media Queries for Smaller Screens (Horizontal Scroll) */
+@media screen and (max-width: 800px){
+    
+    #process-sect .cards-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
+        padding: 20px 0px;
     }
 
-    .step {
-        width: 100%;
-        margin-bottom: 0;
-        flex-direction: row;
-        align-items: center;
-        gap: 30px;
+    #process-sect .cards-container::-webkit-scrollbar {
+        height: 8px;
     }
 
-    .step-card {
-        flex: 1;
-        aspect-ratio: inherit;
-
+    #process-sect .cards-container::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        opacity: 0.5;
     }
 
-    .step-number {
-        margin-bottom: 0;
+    #process-sect .cards-container::-webkit-scrollbar-track {
+        background: transparent;
     }
 
-    /* Dotted Line (Vertical) */
-    .dotted-line {
-        /* Adjust based on step number position */
-        top: 45px;
-        /* Align with step number */
-        left: 20px;
-        width: 2px;
-        height: 0;
-        /* Initially hidden */
-        border-top: none;
-        border-left: 8px dotted var(--prim-light);
-        /* Add transition for height */
-        transition: width 2s ease, height 2s ease;
+    #process-sect .cards-container  div {
+        flex: 0 0 calc(32% - 20px);
+        min-height: auto;
+        overflow: visible;
+        aspect-ratio: 2/2.25;
     }
 
-    /* Animate vertical dotted line */
-    .dotted-line.animate {
-        /* Adjust height to fit between step numbers */
-        height: calc(100% - 50px);
-        width: 2px;
-        /* Ensure width is set for vertical line */
+    #process-sect .cards-container  div p {
+        display: block;
     }
 }
 
-@media (max-width: 526px) {
+@media screen and (max-width: 720px){
 
-    .stepper-section {
-        padding: 50px 15px;
-    }
-
-    /* Step Number */
-    .step-number {
-        padding: 10px 10px;
-        font-size: 16px;
-        width: fit-content;
-        aspect-ratio: 1;
-    }
-
-    /* Dotted Line (Vertical) */
-    .dotted-line {
-        /* Adjust based on step number position */
-        top: 55px;
-        /* Align with step number */
-        left: 20px;
-        width: 2px;
+    #process-sect .cards-container div {
+        flex: 0 0 calc(43% - 20px);
+        min-height: auto;
+        overflow: visible;
     }
 }
 
-@media (max-width: 380px) {
-    .stepper-container {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .stepper-section {
-        padding: 30px 10px;
-    }
-
-    .step {
-        gap: 15px;
-    }
-
-    /* Step Number */
-    .step-number {
-        padding: 8px 8px;
-        font-size: 14px;
-        width: 32px;
-        height: 32px;
-        aspect-ratio: 1;
-    }
-
-    /* Dotted Line (Vertical) */
-    .dotted-line {
-        /* Adjust based on step number position */
-        top: 55px;
-        /* Align with step number */
-        left: 15px;
-        width: 2px;
-        border-left: 4px dotted #D2DEF2;
-
+@media (max-width: 600px){
+    #process-sect .cards-container  div {
+        flex: 0 0 calc(55% - 20px);
+        min-height: auto;
+        overflow: visible;
     }
 }
 
-@media (max-width:290px) {
-    .dotted-line {
-        /* Adjust based on step number position */
-        top: 45px;
-        /* Align with step number */
-        left: 15px;
-        width: 2px;
-        border-left: 4px dotted #D2DEF2;
-
+@media (max-width: 499px){
+    #process-sect .cards-container  div {
+        flex: 0 0 calc(70% - 20px);
+        min-height: auto;
+        overflow: visible;
     }
 }
+
+@media (max-width: 449px){
+    #process-sect .cards-container  div {
+        flex: 0 0 calc(70% - 10px);
+        min-height: auto;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 398px) {
+    #process-sect .cards-container  div {
+        aspect-ratio: none;
+        flex: 0 0 calc(80% - 10px);
+        min-height: auto;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 360px) {
+    #process-sect .cards-container div {
+        flex: 0 0 calc(95% - 5px);
+        min-height: auto;
+        overflow: visible;
+    }
+}
+
+/* Main Section */
 
 #home-main {
     padding: 0;
@@ -571,7 +509,6 @@ span#meds {
     max-height: 50px;
     max-width: 50px;
     aspect-ratio: 1;
-    /* background-color: white; */
     border-radius: 50%;
     padding: 5px 5px;
 }
@@ -661,8 +598,6 @@ span#meds {
         flex: 0 0 calc(95% - 5px);
     }
 }
-
-/* Additional Animation CSS */
 
 
 /* Diseases Section */
