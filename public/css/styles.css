@@ -3,9 +3,10 @@
 /* --------------------------------- */
 
 #home-header{
-    background-color: rgba(213, 216, 253, 0.096);
+    background-color: rgba(187, 191, 235, 0.096);
     backdrop-filter: blur(100px);
-    padding: 20px 20px;
+    padding: 0px 20px;
+    padding-top: 30px;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -204,32 +205,10 @@
 
 /* ----------------------------------------- */
 
-
-
-/* ----------------------------------------- */
-
-/* Stepper Section */
-
-.stepper-section{
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-
-.stepper-heading {
-    padding: 20px 20px;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
 /* Processes */
 
 #process-sect {
     padding: 20px 0px;
-}
-
-#process-sect .head {
-    padding: 40px 20px;
 }
 
 #process-sect .cards-container {
@@ -275,9 +254,8 @@
     display: block;
 }
 
-/* Media Queries for Smaller Screens (Horizontal Scroll) */
-@media screen and (max-width: 800px){
-    
+
+@media screen and (max-width: 800px){    
     #process-sect .cards-container {
         flex-wrap: nowrap;
         overflow-x: auto;
@@ -313,7 +291,6 @@
 }
 
 @media screen and (max-width: 720px){
-
     #process-sect .cards-container div {
         flex: 0 0 calc(43% - 20px);
         min-height: auto;
@@ -369,8 +346,8 @@
     margin: 0;
 }
 
-/* Quote Section */
 
+/* Quote Section */
 section.quote {
     padding: 40px 20px;
     text-align: center;
@@ -437,7 +414,6 @@ span#meds {
     justify-content: flex-start;
     gap: 20px;
     padding: 30px 0px;
-
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;

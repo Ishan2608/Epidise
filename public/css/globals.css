@@ -257,6 +257,7 @@ strong, b, bold{
     color: #333;
 }
 
+
 .highlight {
     padding: 0%;
     color: var(--btn-prim);
@@ -428,7 +429,6 @@ nav{
     box-shadow: 0px 0px 20px rgba(235, 235, 235, 0.144);
     background-color: rgba(255, 255, 255, 0.932);
     backdrop-filter: blur(20px);
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -484,22 +484,19 @@ a.nav-link {
 
 a.active {
     font-weight: 700;
-    border-bottom: 3px solid transparent;
-    border-image: linear-gradient(90deg, #6bffeb, #845ec2);
-    border-image-slice: 1;
-
-    background: linear-gradient(90deg, #6bffeb, #845ec2);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    border-bottom: 3px solid var(--f2);
+    color: var(--f2);
 }
 
+nav > .wrapper{
+    gap: 10px;
+}
 
 .partner-up{
+    height: 100%;
     border: none;
     padding: 12px 14px;
     color: white;
-    /* background: linear-gradient(90deg, #6bffeb, #845ec2); */
     background-color: var(--f2);
     border-radius: 50px;
     font-weight: 600;
@@ -507,12 +504,7 @@ a.active {
 
 .partner-up:hover{
     background-color: white;
-    
-    background: linear-gradient(90deg, #6bffeb, #845ec2);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
+    color: var(--f2);
     transition: all 200ms ease-in-out;
 }
 
@@ -520,7 +512,7 @@ a.active {
 .hamburger {
     display: none;
     cursor: pointer;
-    background: linear-gradient(90deg, #6bffeb, #845ec2);
+    background-color: var(--f2);
     height: 50px;
     width: auto;
     aspect-ratio: 1/1;
@@ -622,9 +614,6 @@ a.active {
 
     nav {
         justify-content: space-between;
-    }
-    #d-partner-up-cont{
-        display: none;
     }
 }
 
