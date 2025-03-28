@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 :root {
     --prim-dark: #242E49;
     --prim-light: #D0E4FF;
     --prim-light2: #E7F0FF;
-    --nav-bg: #F4F7FF;
     --btn-prim: #1264FF;
     --btn-prim-hover: #104cbd;
     --blueish: #6C63FF;
@@ -24,12 +25,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 /* Webkit Browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
-    width: 8px; /* Adjust width for desktop */
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -73,19 +73,22 @@
   .txt-2xl { font-size: 2.25rem; /* 36px */ }
   .txt-3xl { font-size: 2.75rem; /* 44px */ }
   .txt-4xl { font-size: 3.25rem; /* 52px */ }
-  .txt-5xl { font-size: 3.7rem; /* 52px */ }
+  .txt-5xl { font-size: 3.5rem; /* 52px */ }
 }
 
-@media (max-width: 850px){
-    .txt-4xl { font-size: 3rem; }  
+@media (max-width: 900px){
+    .txt-5xl{
+        font-size: 3.25rem;
+    }
+    .txt-xl { font-size: 1.7rem; }  
 }
 
-@media (max-width: 780px) {
+@media (max-width: 830px) {
   .txt-xs { font-size: 0.75rem; }
   .txt-sm { font-size: 0.875rem; }
   .txt-md { font-size: 1rem; }
   .txt-lg { font-size: 1.125rem; }
-  .txt-xl { font-size: 1.75rem; }
+  .txt-xl { font-size: 1.6rem; }
   .txt-2xl { font-size: 2rem;  }
   .txt-3xl { font-size: 2.5rem; }
   .txt-4xl { font-size: 2.75rem; }
@@ -134,7 +137,8 @@
 
 body {
     padding: 20px 0px;
-    font-family: "Ubuntu", sans-serif;
+    font-family: "Manrope", sans-serif;
+    /* font-family: "Ubuntu", sans-serif; */
     font-optical-sizing: auto;
     font-weight: normal;
     font-style: normal;
@@ -421,7 +425,7 @@ nav{
     position: sticky;
     z-index: 997;
     top: 10px;
-    box-shadow: 0px 0px 20px rgba(196, 196, 196, 0.144);
+    box-shadow: 0px 0px 20px rgba(235, 235, 235, 0.144);
     background-color: rgba(255, 255, 255, 0.932);
     backdrop-filter: blur(20px);
 
@@ -430,13 +434,6 @@ nav{
     align-items: center;
     color: black;
     padding: 0px 10px;
-}
-
-@media (min-width: 500px){
-    nav{
-        width: 70%;
-        margin: 0px auto 20px auto;
-    }
 }
 
 #nav-logo:hover {
@@ -486,7 +483,7 @@ a.nav-link {
 }
 
 a.active {
-    font-weight: 500;
+    font-weight: 700;
     border-bottom: 3px solid transparent;
     border-image: linear-gradient(90deg, #6bffeb, #845ec2);
     border-image-slice: 1;
@@ -502,8 +499,10 @@ a.active {
     border: none;
     padding: 12px 14px;
     color: white;
-    background: linear-gradient(90deg, #6bffeb, #845ec2);
+    /* background: linear-gradient(90deg, #6bffeb, #845ec2); */
+    background-color: var(--f2);
     border-radius: 50px;
+    font-weight: 600;
 }
 
 .partner-up:hover{

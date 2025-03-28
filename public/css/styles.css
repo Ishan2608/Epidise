@@ -3,8 +3,8 @@
 /* --------------------------------- */
 
 #home-header{
-    background-color: rgba(230, 230, 230, 0.096);
-    backdrop-filter: blur(50px);
+    background-color: rgba(213, 216, 253, 0.096);
+    backdrop-filter: blur(100px);
     padding: 20px 20px;
     border-radius: 20px;
     overflow: hidden;
@@ -14,32 +14,32 @@
     margin-bottom: 40px;
 }
 
-#home-header #wrapper{
+#home-header > #wrapper{
     position: relative;
+    z-index: -5;
 }
 
 
-#home-header #wrapper .bg-circle{
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    transform: translate(60%, 10%);
-    width: 50%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-    background-color: var(--f3);
-    z-index: -1;
-    opacity: 0.9;
-    filter: blur(70px);
-}
-
-#home-header .txt-area{
+#home-header  > #wrapper > .txt-area{
     gap: 20px;
     flex: 1.5;
-    padding: 20px 20px;
+    padding: 20px 30px;
 }
 
-#home-header .txt-area .download-btns .d-btn{
+#home-header  > #wrapper > .txt-area > h1{
+    font-weight: 700;
+}
+
+#home-header-para{
+    letter-spacing: 1px;
+}
+
+#home-header > #wrapper > .txt-area > .download-btns{
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#home-header > #wrapper > .txt-area > .download-btns .d-btn{
     max-height: 40px;
 }
 
@@ -52,40 +52,49 @@
     position: relative;
 }
 
-@media (min-width: 801px){
-    #hero-mockup{
-        align-items: end;
-    }
-}
-
 .circle{
     position: absolute;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    z-index: -1;
-    opacity: 0.8;
-    filter: blur(50px);
+    z-index: -10;
 }
 
 #c1{
-    top: -5%;
-    right: -10%;
-    width: 50%;
-    background-color: var(--f1);
+    bottom: 50%;
+    right: 0%;
+    transform: translate(0%, 50%);
+    width: 70%;
+    background-color: rgb(51, 209, 122);
+    opacity: 0.3;
+    filter: blur(50px);
 }
 
 #c2{
-    bottom: 0%;
-    right: -10%;
-    width: 55%;
+    top: 50%;
+    left: 45%;
+    width: 60%;
     background-color: var(--f2);
+    filter: blur(30px);
+    opacity: 0.5;
 }
 
 #c3{
-    bottom: -3%;
-    left: -20%;
+    bottom: 0%;
+    right: 50%;
+    width: 50%;
+
+    background-color: rgb(250, 239, 219);
+    filter: blur(60px);
+}
+
+#c4{
+    top: 5%;
+    right: 50%;
+    transform: translate(10%, 0%);
     width: 70%;
-    background-color: var(--f3);
+    background-color: #d8cdff;
+    filter: blur(50px);
+    opacity: 0.8;
 }
 
 #home-mock{
@@ -93,6 +102,7 @@
     object-fit: contain;
     z-index: 100;
     max-height: 500px;
+    filter: drop-shadow(0px 0px 10px rgba(85, 85, 85, 0.5));
 }
 
 @media (min-width: 1000px){
@@ -114,6 +124,7 @@
     #home-header #wrapper .txt-area,
     #home-header #wrapper #hero-mockup{
         flex: 0;
+        width: 100%;
     }
 
     #home-header #wrapper .txt-area{
@@ -160,6 +171,12 @@
 }
 
 @media (max-width: 440px){
+    #home-header > #wrapper > .txt-area{
+        padding: 20px 10px;
+    }
+    #home-header-para{
+        font-size: 16px;
+    }
     #c1, #c2{
         right: 0%;
         left: auto;
@@ -167,6 +184,9 @@
     #c3{
         left: 0%;
         right: auto;
+    }
+    #home-header > #wrapper > .txt-area > .download-btns{
+        justify-content: center;
     }
     #home-mock{
         height: 90%;
@@ -177,7 +197,7 @@
 @media (max-width: 330px){
     #home-mock{
         height: auto;
-        width: 100%;
+        width: 95%;
     }
 }
 
@@ -185,13 +205,16 @@
 
 /* Stepper Section */
 
-.stepper-section {
-    padding: 60px 20px;
+.stepper-section{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+
 .stepper-heading {
-    padding: 30px 20px;
+    padding: 20px 20px;
     margin-bottom: 30px;
+    text-align: center;
 }
 
 /* Stepper Container */
@@ -403,10 +426,12 @@
     }
 }
 
-/* Quote Section */
 #home-main {
     padding: 0;
+    margin: 0;
 }
+
+/* Quote Section */
 
 section.quote {
     padding: 40px 20px;
@@ -473,7 +498,7 @@ span#meds {
     flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 20px;
-    padding: 30px 20px;
+    padding: 30px 0px;
 
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -497,8 +522,8 @@ span#meds {
 
 .feature-cards .feature {
     flex: 0 0 auto;
-    aspect-ratio: 3 / 4;
-    border-radius: 5px;
+    aspect-ratio: 3 / 3.5;
+    border-radius: 10px;
     padding: 20px;
     background-color: #8E94A4;
 
@@ -678,14 +703,16 @@ section.diseases .text-area .para {
 }
 
 .round-icon-container {
-    height: fit-content;
+    height: 30px;
     width: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
+    padding: 5px;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+
 }
 
 .round-icon-container.ques-ico-cont {
@@ -1081,6 +1108,11 @@ section.app-features {
     border-top-right-radius: 15px;
 }
 
+.easy .cards-cont .card .easy-card-heading.centered{
+    display: flex;
+    align-items: center;
+}
+
 .easy .cards-cont .card p {
     border-bottom-right-radius: 15px;
 }
@@ -1243,6 +1275,9 @@ section.app-features {
 /* --------------------------------- */
 
 .contact-container {
+    margin: 0px 10px;
+    padding: 20px 20px;
+    border-radius: 20px;
     height: 90%;
     background-color: rgba(230, 230, 230, 0.096);
     backdrop-filter: blur(50px);
