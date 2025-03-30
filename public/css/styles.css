@@ -232,7 +232,7 @@
 
 #process-sect .cards-container > div > .pbgc{
     position: absolute;
-    width: 90%;
+    width: 70%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     bottom: -15%;
@@ -400,13 +400,9 @@ section.quote h1 span.ico-cont img {
     margin: auto;
 }
 
-span#dna {
+span#health-plat {
     padding: 10px;
     background-color: var(--f4);
-}
-
-span#dna img{
-    transform: rotate(45deg);
 }
 
 span#stethoscope {
