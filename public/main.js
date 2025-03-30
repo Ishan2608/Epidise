@@ -25,60 +25,81 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Process Collapsing and Expanding Cards Cards
   
-  const cards = document.querySelectorAll('#process-sect .cards-container > div');
-    const firstCard = document.querySelector('#step1');
-    const cardsContainer = document.querySelector('#process-sect .cards-container');
+  // Process Collapsing and Expanding Cards Cards
 
-    function collapseOthers() {
-        cards.forEach(card => {
-            if (card !== firstCard) {
-                card.style.flex = '1';
-                card.querySelector('p').style.display = 'none';
-            }
-        });
-        firstCard.style.flex = '1.3';
-        firstCard.querySelector('p').style.display = 'block';
-    }
+const cards = document.querySelectorAll('#process-sect .cards-container > div');
+const firstCard = document.querySelector('#step1');
+const cardsContainer = document.querySelector('#process-sect .cards-container');
 
-    function adjustCardStyles() {
-        if (window.innerWidth > 800) {
-            collapseOthers();
-        } else {
-            cards.forEach(card => {
-                card.style.flex = ''; // Reset flex to allow media queries to apply
-                card.querySelector('p').style.display = 'block'; // Show all paragraphs
-            });
-        }
-    }
+// Store original background colors
+const originalBackgroundColors = {};
+cards.forEach(card => {
+    originalBackgroundColors[card.id] = getComputedStyle(card).backgroundColor;
+});
 
-    adjustCardStyles(); // Initial adjustment
-
+function collapseOthers() {
     cards.forEach(card => {
-        card.addEventListener('mouseover', function() {
-            if (window.innerWidth > 800) {
-                cards.forEach(c => {
-                    c.style.flex = '1';
-                    c.querySelector('p').style.display = 'none';
-                });
-                this.style.flex = '1.3';
-                this.querySelector('p').style.display = 'block';
-            }
-        });
+        if (card !== firstCard) {
+            card.style.flex = '1';
+            card.querySelector('p').style.display = 'none';
+            card.querySelector('.pbgc').style.display = 'none';
+            card.style.backgroundColor = originalBackgroundColors[card.id];
+            card.style.backdropFilter = ''; // Reset backdrop filter
+        }
+    });
+    firstCard.style.flex = '1.3';
+    firstCard.querySelector('p').style.display = 'block';
+    firstCard.querySelector('.pbgc').style.display = 'block';
+    firstCard.style.backgroundColor = originalBackgroundColors[firstCard.id];
+    firstCard.style.backdropFilter = ''; // Reset backdrop filter
+}
 
-        card.addEventListener('mouseout', function() {
-            if (window.innerWidth > 800) {
-                collapseOthers();
-            }
+function adjustCardStyles() {
+    if (window.innerWidth > 800) {
+        collapseOthers();
+    } else {
+        cards.forEach(card => {
+            card.style.flex = ''; // Reset flex to allow media queries to apply
+            card.querySelector('p').style.display = 'block'; // Show all paragraphs
+            card.querySelector('.pbgc').style.display = 'block';
+            card.style.backgroundColor = 'rgba(187, 191, 235, 0.096)';
+            card.style.backdropFilter = 'blur(100px)';
         });
+    }
+}
+
+adjustCardStyles(); // Initial adjustment
+
+cards.forEach(card => {
+    card.addEventListener('mouseover', function() {
+        if (window.innerWidth > 800) {
+            cards.forEach(c => {
+                c.style.flex = '1';
+                c.querySelector('p').style.display = 'none';
+                c.querySelector('.pbgc').style.display = 'none';
+            });
+            this.style.flex = '1.3';
+            this.querySelector('p').style.display = 'block';
+            this.querySelector('.pbgc').style.display = 'block';
+            this.style.backgroundColor = 'rgba(187, 191, 235, 0.096)';
+            this.style.backdropFilter = 'blur(100px)';
+        }
     });
 
-    cardsContainer.addEventListener('mouseleave', function() {
+    card.addEventListener('mouseout', function() {
         if (window.innerWidth > 800) {
             collapseOthers();
         }
     });
+});
 
-    window.addEventListener('resize', adjustCardStyles);
+cardsContainer.addEventListener('mouseleave', function() {
+    if (window.innerWidth > 800) {
+        collapseOthers();
+    }
+});
+
+window.addEventListener('resize', adjustCardStyles);
 
   // Toggle between feature sections
   const t1Button = document.getElementById("t1");
