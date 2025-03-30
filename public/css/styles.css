@@ -11,9 +11,9 @@
     overflow: hidden;
 }
 
-#home-header > nav{
+/* #home-header > nav{
     margin-bottom: 40px;
-}
+} */
 
 #home-header > #wrapper{
     position: relative;
@@ -226,23 +226,55 @@
     transition: flex 0.3s ease-in-out;
     overflow: hidden;
     gap: 20px;
-    backdrop-filter: blur(50px);
+    position: relative;
+    overflow: hidden;
+}
+
+#process-sect .cards-container > div > .pbgc{
+    position: absolute;
+    width: 90%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    bottom: -15%;
+    right: -10%;
+    z-index: -1;
+}
+
+#pbgc1{
+    background-color: #d8cdff;
+    filter: blur(50px);
+    opacity: 0.8;
+}
+#pbgc2{
+    background-color: rgb(51, 209, 122);
+    opacity: 0.3;
+    filter: blur(50px);
+}
+#pbgc3{
+    background-color: var(--f2);
+    filter: blur(30px);
+    opacity: 0.7;
+}
+#pbgc4{
+    background-color: rgb(250, 239, 219);
+    filter: blur(60px);
 }
 
 #step1 {
-    background-color: var(--f1);
+    background-color: #d8cdff;
 }
 
 #step2 {
-    background-color: var(--f2);
+    /* background-color: rgb(51, 209, 122); */
+    background-color: var(--f1);
 }
 
 #step3 {
-    background-color: var(--f3);
+    background-color: var(--f2);
 }
 
 #step4 {
-    background-color: var(--f4);
+    background-color: rgb(250, 239, 219);
 }
 
 #process-sect .cards-container > div p {
@@ -281,7 +313,6 @@
     #process-sect .cards-container  div {
         flex: 0 0 calc(32% - 20px);
         min-height: auto;
-        overflow: visible;
         aspect-ratio: 2/2.25;
     }
 
@@ -293,32 +324,24 @@
 @media screen and (max-width: 720px){
     #process-sect .cards-container div {
         flex: 0 0 calc(43% - 20px);
-        min-height: auto;
-        overflow: visible;
     }
 }
 
 @media (max-width: 600px){
     #process-sect .cards-container  div {
         flex: 0 0 calc(55% - 20px);
-        min-height: auto;
-        overflow: visible;
     }
 }
 
 @media (max-width: 499px){
     #process-sect .cards-container  div {
         flex: 0 0 calc(70% - 20px);
-        min-height: auto;
-        overflow: visible;
     }
 }
 
 @media (max-width: 449px){
     #process-sect .cards-container  div {
         flex: 0 0 calc(70% - 10px);
-        min-height: auto;
-        overflow: visible;
     }
 }
 
@@ -326,16 +349,12 @@
     #process-sect .cards-container  div {
         aspect-ratio: none;
         flex: 0 0 calc(80% - 10px);
-        min-height: auto;
-        overflow: visible;
     }
 }
 
 @media (max-width: 360px) {
     #process-sect .cards-container div {
         flex: 0 0 calc(95% - 5px);
-        min-height: auto;
-        overflow: visible;
     }
 }
 
@@ -1185,23 +1204,29 @@ section.app-features {
 /* CONTACT US PAGE */
 /* --------------------------------- */
 
-.contact-container {
-    margin: 0px 10px;
-    padding: 20px 20px;
+.contact-container{
     border-radius: 20px;
-    height: 90%;
-    background-color: rgba(230, 230, 230, 0.096);
-    backdrop-filter: blur(50px);
+    margin: 0px 10px;
+    background-color: rgba(187, 191, 235, 0.096);
+    backdrop-filter: blur(100px);
+    overflow: hidden;
+}
+
+.contact-container > .wrapper{
+    padding: 20px 20px;
+    width: 100%;
+    height: 100%;
+    
     display: flex;
     justify-content: space-evenly;
     gap: 20px;
     flex-wrap: wrap;
 
     position: relative;
-    overflow: hidden;
+    
 }
 
-.contact-container .bg-blur-circle{
+.contact-container > .wrapper > .bg-blur-circle{
     width: 50%;
     aspect-ratio: 1/1;
     border-radius: 50%;
@@ -1223,15 +1248,15 @@ section.app-features {
     right: -15%;
 }
 
-.contact-container .contact-info {
+.contact-container > .wrapper >.contact-info {
     width: 70%;
     flex: 2;
     padding: 20px;
 }
 
-.contact-container .contact-form {
+.contact-container > .wrapper > .contact-form {
     width: 30%;
-    min-width: 330px;
+    min-width: 350px;
     flex: 1;
     background-color: white;
     border-radius: 20px;
@@ -1240,7 +1265,7 @@ section.app-features {
     flex-direction: column;
     justify-content: space-evenly;
     gap: 20px;
-    box-shadow: 0px 0px 10px rgba(211, 211, 211, 0.171)
+    box-shadow: 0px 0px 12px rgb(230, 230, 230)
 }
 
 .contact-info .support-sections {
@@ -1263,7 +1288,7 @@ section.app-features {
     font-size: 12px;
 }
 
-.contact-container .contact-info .text-area {
+.contact-container > .wrapper > .contact-info .text-area {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -1271,11 +1296,11 @@ section.app-features {
     padding: 10px 0px;
 }
 
-.contact-container .contact-info .text-area p {
+.contact-container > .wrapper > .contact-info .text-area p {
     width: 100%;
 }
 
-.contact-container .contact-form .head-grp p {
+.contact-container > .wrapper > .contact-form .head-grp p {
     margin-top: 5px;
 }
 
@@ -1347,12 +1372,12 @@ form {
 /* Media Queries */
 @media (max-width: 1200px) {
 
-    .contact-container .contact-info,
-    .contact-container .contact-form {
+    .contact-container > .wrapper > .contact-info,
+    .contact-container > .wrapper > .contact-form {
         width: 100%;
     }
 
-    .contact-container .contact-info .text-area p {
+    .contact-container > .wrapper > .contact-info .text-area p {
         width: 100%;
     }
 
@@ -1360,14 +1385,14 @@ form {
         width: 100%;
     }
 
-    .contact-container .contact-form {
+    .contact-container > .wrapper > .contact-form {
         width: 35%;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 
-    .contact-container {
+    .contact-container > .wrapper {
         flex-direction: column;
         align-items: center;
     }
@@ -1384,8 +1409,8 @@ form {
         height: 60%;
         width: auto;
     }
-    .contact-container .contact-info,
-    .contact-container .contact-form {
+    .contact-container > .wrapper > .contact-info,
+    .contact-container > .wrapper > .contact-form {
         width: 100%;
     }
 
@@ -1411,7 +1436,7 @@ form {
 
 @media (max-width: 480px) {
 
-    .contact-container .contact-info .text-area p {
+    .contact-container > .wrapper > .contact-info .text-area p {
         width: 100%;
     }
 
@@ -1421,11 +1446,11 @@ form {
 }
 
 @media (max-width: 410px) {
-    .contact-container .contact-form {
+    .contact-container > .wrapper > .contact-form {
         min-width: 0px;
     }
 
-    .contact-container .contact-form .form-grp form .name-grp {
+    .contact-container > .wrapper > .contact-form .form-grp form .name-grp {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -1433,7 +1458,7 @@ form {
         gap: 10px;
     }
 
-    .contact-container .contact-form .form-grp form .name-grp input {
+    .contact-container > .wrapper > .contact-form .form-grp form .name-grp input {
         width: 100%;
     }
 

@@ -5,10 +5,8 @@
 :root {
     --prim-dark: #242E49;
     --prim-light: #D0E4FF;
-    --prim-light2: #E7F0FF;
     --btn-prim: #1264FF;
     --btn-prim-hover: #104cbd;
-    --blueish: #6C63FF;
     --dark-gray: gray;
     --light-gray: rgb(209, 209, 209);
     --lighter-gray: #F8F8F8;
@@ -133,7 +131,6 @@
     background-clip: text;
     color: transparent;
 }
-
 
 body {
     padding: 20px 0px;
@@ -407,9 +404,9 @@ button:hover,
 
 /* Focus state for input, select, and textarea */
 input:focus, select:focus, textarea:focus {
-    border-color: var(--btn-prim); /* Change border color on focus */
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 2px rgba(18, 101, 255, 0.329); /* Add a subtle box shadow for emphasis */
+    border-color: var(--btn-prim);
+    outline: none;
+    box-shadow: 0 0 4px rgba(18, 101, 255, 0.329);
 }
 
 .mid-center {
@@ -422,18 +419,17 @@ input:focus, select:focus, textarea:focus {
 
 nav{
     border-radius: 50px;
-    margin: 0px 10px 20px 10px;
-    position: sticky;
-    z-index: 997;
-    top: 10px;
+    margin: 0px auto 30px auto;
     box-shadow: 0px 0px 20px rgba(235, 235, 235, 0.144);
-    background-color: rgba(255, 255, 255, 0.932);
-    backdrop-filter: blur(20px);
+    background-color: white;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     color: black;
     padding: 0px 10px;
+    width: 70%;
 }
 
 #nav-logo:hover {
@@ -447,13 +443,12 @@ nav{
 }
 
 #nav-logo img {
-    height: 80%;
+    height: 100%;
     width: auto;
     border-radius: 50%;
     object-fit: contain;
     max-height: 50px;
 }
-
 
 .nav-link:hover {
     font-weight: 500;
@@ -600,9 +595,10 @@ nav > .wrapper{
 }
 
 /* Media Query for Mobile Navigation */
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     nav{
         padding: 10px 10px;
+        width: 100%;
     }
     .hamburger {
         display: flex;
@@ -614,6 +610,12 @@ nav > .wrapper{
 
     nav {
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 550px) {
+    nav{
+        width: calc(100% - 40px);
     }
 }
 
@@ -633,9 +635,33 @@ nav > .wrapper{
     }
 }
 
+@media (max-width: 300px){
+    nav{
+        width: calc(100% - 20px);
+        height: 50px;
+        padding: 7px;
+    }
+    #nav-logo > img{
+        max-height: none;
+    }
+    .hamburger{
+        height: 100%;
+    }
+    .hamburger > .wrapper{
+        gap: 5px;
+    }
+    #d-partner-up-cont{
+        height: 100%;
+    }
+    #d-partner-up{
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
 /* Show mobile navigation */
 .mobile-nav.active {
-    left: 0; /* Slide in from the left */
+    left: 0;
 }
 
 .body-overlay.active {
