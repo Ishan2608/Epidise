@@ -242,14 +242,14 @@
     opacity: 0.8;
 }
 #pbgc2{
-    background-color: rgb(51, 209, 122);
-    opacity: 0.3;
+    background-color: #6bf594;
+    opacity: 0.2;
     filter: blur(50px);
 }
 #pbgc3{
     background-color: var(--f2);
     filter: blur(30px);
-    opacity: 0.7;
+    opacity: 0.6;
 }
 #pbgc4{
     background-color: rgb(250, 239, 219);
@@ -257,12 +257,11 @@
 }
 
 #step1 {
-    background-color: #d8cdff;
+    background-color: #DFCCFB;
 }
 
 #step2 {
-    /* background-color: rgb(51, 209, 122); */
-    background-color: var(--f1);
+    background-color: #DCFFB7;
 }
 
 #step3 {
@@ -270,7 +269,7 @@
 }
 
 #step4 {
-    background-color: rgb(250, 239, 219);
+    background-color: #FFEECC;
 }
 
 #process-sect .cards-container > div p {
@@ -871,72 +870,6 @@ section.app-features {
     }
 }
 
-/* --------------------------------- */
-/* ABOUT US PAGE */
-/* --------------------------------- */
-
-#about-hero{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-#about-hero .txt-area{
-    margin-bottom: 20px;
-}
-
-#about-hero .mockups{
-    padding: 0;
-}
-
-#about-hero .mockups img{
-    width: 100%;
-    height: auto;
-    margin-bottom: -5px;
-    border: 0.5px solid rgba(134, 134, 134, 0.13);
-    border-radius: 20px;
-    object-fit: contain;
-}
-
-#about-hero .mockups img.tab-mock{
-    max-width: 300px;
-    margin-top: 20px;
-}
-
-@media (min-width:701px){
-    #about-hero .mockups img.tab-mock{
-        display: none;
-    }
-}
-
-@media (max-width:700px){
-    #about-hero .mockups img.desk-mock{
-        display: none;
-    }
-    #about-hero .mockups{
-        max-width: 400px;
-        margin: auto;
-    }
-    #about-hero .mockups img.tab-mock{
-        display: block;
-    }
-}
-
-@media (max-width:400px) {
-    #about-hero {
-        padding: 10px 10px;
-    }
-
-    #about-hero h1 {
-        font-size: 28px;
-        padding: 8px 8px;
-    }
-}
-
 
 /* Easy Cards Section */
 
@@ -1199,7 +1132,7 @@ section.app-features {
 .contact-container{
     border-radius: 20px;
     margin: 0px 10px;
-    background-color: rgba(187, 191, 235, 0.2);
+    background-color: rgba(187, 191, 235, 0.175);
     backdrop-filter: blur(100px);
     overflow: hidden;
 }
@@ -1224,7 +1157,7 @@ section.app-features {
 
     background-color: var(--f2);
     filter: blur(70px);
-    opacity: 0.6;
+    opacity: 0.8;
     position: absolute;
     z-index: -1;
 }
@@ -1232,7 +1165,7 @@ section.app-features {
 #bbc1{
     top: -30%;
     left: -15%;
-    background-color: var(--f3);
+    opacity: 0.4;
 }
 #bbc2{
     bottom: -20%;
