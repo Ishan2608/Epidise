@@ -452,7 +452,7 @@ span#meds {
 .feature-cards .feature {
     flex: 0 0 auto;
     aspect-ratio: 3 / 3.5;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     background-color: #8E94A4;
 
