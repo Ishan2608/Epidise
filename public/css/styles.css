@@ -3,7 +3,7 @@
 /* --------------------------------- */
 
 #home-header{
-    background-color: rgba(187, 191, 235, 0.2);
+    background-color: rgba(187, 191, 235, 0.17);
     backdrop-filter: blur(100px);
     padding: 0px 20px;
     padding-top: 30px;
@@ -151,7 +151,7 @@
 
 @media (max-width: 550px){
     #home-header{
-        padding: 20px 0px;
+        padding-top: 20px;
     }
     #home-header #wrapper .bg-circle{
         top: -10%;
@@ -197,7 +197,6 @@
         width: 95%;
     }
 }
-
 
 /* ----------------------------------------- */
 
@@ -255,6 +254,7 @@
     background-color: rgb(250, 225, 179);
     filter: blur(60px);
 }
+
 
 #step1 {
     background-color: #DFCCFB;
@@ -397,7 +397,7 @@ section.quote h1 span.ico-cont img {
 
 span#health-plat {
     padding: 10px;
-    background-color: var(--f4);
+    background-color: #FFEECC;
 }
 
 span#stethoscope {
@@ -406,7 +406,7 @@ span#stethoscope {
 
 span#meds {
     padding: 10px;
-    background-color: var(--f1);
+    background-color: #DCFFB7;
 }
 
 
