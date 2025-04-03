@@ -506,7 +506,7 @@ nav > .wrapper{
 .hamburger {
     display: none;
     cursor: pointer;
-    background-color: var(--f2);
+    background-color: black;
     height: 50px;
     width: auto;
     aspect-ratio: 1/1;
