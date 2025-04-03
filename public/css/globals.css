@@ -419,7 +419,7 @@ input:focus, select:focus, textarea:focus {
 
 nav{
     border-radius: 50px;
-    margin: 0px auto 30px auto;
+    margin:0px auto 20px auto;
     box-shadow: 0px 0px 20px rgba(235, 235, 235, 0.144);
     background-color: white;
 
