@@ -429,7 +429,6 @@ nav{
 
     color: black;
     padding: 0px 10px;
-    width: 70%;
 }
 
 #nav-logo:hover {
@@ -478,9 +477,8 @@ a.nav-link {
 }
 
 a.active {
-    font-weight: 700;
-    border-bottom: 3px solid var(--f2);
-    color: var(--f2);
+    font-weight: 900;
+    border-bottom: 3px solid black;
 }
 
 nav > .wrapper{
@@ -492,15 +490,16 @@ nav > .wrapper{
     border: none;
     padding: 12px 14px;
     color: white;
-    background-color: var(--f2);
+    background-color: black;
     border-radius: 50px;
     font-weight: 600;
 }
 
 .partner-up:hover{
     background-color: white;
-    color: var(--f2);
+    color: black;
     transition: all 200ms ease-in-out;
+    border: 2px solid black;
 }
 
 /* Hamburger Menu */
