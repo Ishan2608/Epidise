@@ -62,7 +62,7 @@ function adjustCardStyles() {
             card.style.flex = ''; // Reset flex to allow media queries to apply
             card.querySelector('p').style.display = 'block'; // Show all paragraphs
             card.querySelector('.pbgc').style.display = 'block';
-            card.style.backgroundColor = 'rgba(187, 191, 235, 0.2)';
+            card.style.backgroundColor = 'rgba(187, 191, 235, 0.1)';
             card.style.backdropFilter = 'blur(100px)';
         });
     }
@@ -81,7 +81,7 @@ cards.forEach(card => {
             this.style.flex = '1.3';
             this.querySelector('p').style.display = 'block';
             this.querySelector('.pbgc').style.display = 'block';
-            this.style.backgroundColor = 'rgba(187, 191, 235, 0.2)';
+            this.style.backgroundColor = 'rgba(187, 191, 235, 0.1)';
             this.style.backdropFilter = 'blur(100px)';
         }
     });
