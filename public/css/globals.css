@@ -23,6 +23,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+    /* font-family: "Ubuntu", sans-serif; */
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings: 100;
 }
 
 /* Webkit Browsers (Chrome, Edge, Safari) */
@@ -134,12 +140,6 @@
 
 body {
     padding: 20px 0px;
-    font-family: "Manrope", sans-serif;
-    /* font-family: "Ubuntu", sans-serif; */
-    font-optical-sizing: auto;
-    font-weight: normal;
-    font-style: normal;
-    font-variation-settings: 100;
     max-width: 1400px;
     margin: 0 auto;
     overflow-x: hidden !important;
