@@ -228,7 +228,7 @@
 
 #process-sect .cards-container > div > .pbgc{
     position: absolute;
-    width: 70%;
+    width: 75%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     bottom: -15%;
@@ -242,7 +242,7 @@
     opacity: 0.8;
 }
 #pbgc2{
-    background-color: #6bf594;
+    background-color: rgb(51, 209, 122);
     opacity: 0.2;
     filter: blur(50px);
 }
@@ -252,7 +252,7 @@
     opacity: 0.6;
 }
 #pbgc4{
-    background-color: rgb(250, 239, 219);
+    background-color: rgb(250, 225, 179);
     filter: blur(60px);
 }
 
