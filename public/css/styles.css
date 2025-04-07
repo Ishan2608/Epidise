@@ -3,10 +3,9 @@
 /* --------------------------------- */
 
 #home-header{
-    background-color: rgba(187, 191, 235, 0.17);
+    background-color: rgba(175, 178, 238, 0.2);
     backdrop-filter: blur(100px);
-    padding: 0px 20px;
-    padding-top: 30px;
+    padding: 20px 20px 0px 20px;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -16,11 +15,10 @@
     z-index: -5;
 }
 
-
 #home-header  > #wrapper > .txt-area{
     gap: 20px;
     flex: 1.5;
-    padding: 20px 30px;
+    padding: 20px 30px 40px 30px;
 }
 
 #home-header  > #wrapper > .txt-area > h1{
@@ -47,6 +45,18 @@
 #hero-mockup{
     flex: 1;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+}
+
+#home-mock{
+    width: 80%;
+    object-fit: contain;
+    z-index: 100;
+    max-height: 500px;
+    filter: drop-shadow(0px 0px 10px rgba(85, 85, 85, 0.5));
 }
 
 .circle{
@@ -57,11 +67,11 @@
 }
 
 #c1{
-    bottom: 50%;
+    bottom: 55%;
     right: 0%;
     transform: translate(0%, 50%);
     width: 70%;
-    background-color: rgb(51, 209, 122);
+    background-color: rgba(51, 209, 122, 0.918);
     opacity: 0.3;
     filter: blur(50px);
 }
@@ -72,34 +82,26 @@
     width: 60%;
     background-color: var(--f2);
     filter: blur(30px);
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 #c3{
     bottom: 0%;
-    right: 50%;
-    width: 50%;
-
-    background-color: rgb(250, 239, 219);
+    right: 55%;
+    width: 60%;
+    background-color: rgb(252, 238, 213);
     filter: blur(60px);
+    opacity: 0.6;
 }
 
 #c4{
-    top: 5%;
+    top: 0%;
     right: 50%;
     transform: translate(10%, 0%);
-    width: 70%;
-    background-color: #d8cdff;
-    filter: blur(50px);
-    opacity: 0.8;
-}
-
-#home-mock{
     width: 75%;
-    object-fit: contain;
-    z-index: 100;
-    max-height: 500px;
-    filter: drop-shadow(0px 0px 10px rgba(85, 85, 85, 0.5));
+    background-color: #d8cdff;
+    filter: blur(20px);
+    opacity: 0.8;
 }
 
 @media (min-width: 1000px){
@@ -238,11 +240,11 @@
 #pbgc1{
     background-color: #d8cdff;
     filter: blur(50px);
-    opacity: 0.8;
+    opacity: 0.5;
 }
 #pbgc2{
-    background-color: rgb(51, 209, 122);
-    opacity: 0.2;
+    background-color: #9cfaa0;
+    opacity: 0.5;
     filter: blur(50px);
 }
 #pbgc3{
@@ -253,6 +255,7 @@
 #pbgc4{
     background-color: rgb(250, 225, 179);
     filter: blur(60px);
+    opacity: 0.8;
 }
 
 
@@ -261,7 +264,7 @@
 }
 
 #step2 {
-    background-color: #DCFFB7;
+    background-color: #b7ffbb;
 }
 
 #step3 {
@@ -406,7 +409,7 @@ span#stethoscope {
 
 span#meds {
     padding: 10px;
-    background-color: #DCFFB7;
+    background-color: #b7ffbb;
 }
 
 

@@ -29,6 +29,7 @@
     font-weight: normal;
     font-style: normal;
     font-variation-settings: 100;
+    /* border: 2px solid black; */
 }
 
 /* Webkit Browsers (Chrome, Edge, Safari) */
@@ -136,6 +137,11 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.glass-bg{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(160, 212, 255, 0.295);
 }
 
 body {
