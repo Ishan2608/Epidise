@@ -41,7 +41,7 @@ function collapseOthers() {
             card.querySelector('p').style.display = 'none';
             card.querySelector('.pbgc').style.display = 'none';
             card.style.backgroundColor = originalBackgroundColors[card.id];
-            card.style.backdropFilter = ''; // Reset backdrop filter
+            card.style.backdropFilter = '';
             card.classList.remove('glass-bg');
         }
     });
@@ -49,8 +49,7 @@ function collapseOthers() {
     firstCard.querySelector('p').style.display = 'block';
     firstCard.querySelector('.pbgc').style.display = 'block';
     firstCard.style.backgroundColor = originalBackgroundColors[firstCard.id];
-    firstCard.style.backdropFilter = ''; // Reset backdrop filter
-    firstCard.classList.add('glass-bg');
+    firstCard.style.backdropFilter = '';
 }
 
 function adjustCardStyles() {
@@ -58,12 +57,11 @@ function adjustCardStyles() {
         collapseOthers();
     } else {
         cards.forEach(card => {
-            card.style.flex = ''; // Reset flex to allow media queries to apply
-            card.querySelector('p').style.display = 'block'; // Show all paragraphs
+            card.style.flex = '';
+            card.querySelector('p').style.display = 'block';
             card.querySelector('.pbgc').style.display = 'block';
             card.style.backgroundColor = getGlassMorphismColor(originalBackgroundColors[card.id]);
             card.style.backdropFilter = 'blur(20px)';
-            card.classList.add('glass-bg');
         });
     }
 }
@@ -71,7 +69,7 @@ function adjustCardStyles() {
 function getGlassMorphismColor(originalColor) {
     const rgba = originalColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
     if (rgba) {
-        return `rgba(${rgba[1]}, ${rgba[2]}, ${rgba[3]}, 0.4)`; // Adjust alpha as needed
+        return `rgba(${rgba[1]}, ${rgba[2]}, ${rgba[3]}, 0.3)`;
     }
     return 'rgba(255, 255, 255, 0.1)'; // Default if original color is invalid
 }
@@ -87,14 +85,12 @@ cards.forEach(card => {
                 c.querySelector('.pbgc').style.display = 'none';
                 c.style.backgroundColor = originalBackgroundColors[c.id];
                 c.style.backdropFilter = '';
-                c.classList.remove('glass-bg');
             });
             this.style.flex = '1.3';
             this.querySelector('p').style.display = 'block';
             this.querySelector('.pbgc').style.display = 'block';
             this.style.backgroundColor = getGlassMorphismColor(originalBackgroundColors[this.id]);
             this.style.backdropFilter = 'blur(100px)';
-            this.classList.add('glass-bg');
         }
     });
 
