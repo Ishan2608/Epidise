@@ -28,47 +28,48 @@
       </div>
     </div>
   </div>
+
  <!-- Desktop and Tablet Navigation -->
-    <nav class="txt-md">
+  <nav class="txt-md">
 
-      <!-- Left Part - Logo -->
-      <div class="logo-container mid-center">
-        <a id="nav-logo" href="index.html">
-          <img src="/public/assets/logo.jpg" alt="">
-        </a>
+    <!-- Left Part - Logo -->
+    <div class="logo-container mid-center">
+      <a id="nav-logo" href="index.html">
+        <img src="/public/assets/logo.jpg" alt="">
+      </a>
+    </div>
+
+    <!-- Middle Part - Navigation Links -->
+    <div class="menu">
+      <ul>
+        <li class="menu-item">
+          <a class="nav-link" href="index.html"> Home </a>
+        </li>
+        <li class="menu-item">
+          <a class="nav-link active" href="contact-us.html">Contacts Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="wrapper flex-row-even-stretch">
+      <!-- Partner Button on Right -->
+      <div id="d-partner-up-cont">
+        <button id="d-partner-up" class="txt-md partner-up">
+          Partner Up
+        </button>
       </div>
 
-      <!-- Middle Part - Navigation Links -->
-      <div class="menu">
-        <ul>
-          <li class="menu-item">
-            <a class="nav-link" href="index.html"> Home </a>
-          </li>
-          <li class="menu-item">
-            <a class="nav-link active" href="contact-us.html">Contacts Us</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="wrapper flex-row-even-stretch">
-        <!-- Partner Button on Right -->
-        <div id="d-partner-up-cont">
-          <button id="d-partner-up" class="txt-md partner-up">
-            Partner Up
-          </button>
+      <!-- Hamburger Symbol on Extreme Right Only When on Mobile -->
+      <div class="hamburger" id="hamburger">
+        <div class="wrapper mid-center">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-
-        <!-- Hamburger Symbol on Extreme Right Only When on Mobile -->
-        <div class="hamburger" id="hamburger">
-          <div class="wrapper mid-center">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
       </div>
+    </div>
 
-    </nav>
+  </nav>
   <!-- Mobile Navigation -->
   <div class="body-overlay" id="body-overlay"></div>
   <div class="mobile-nav" id="mobile-nav">
@@ -93,8 +94,6 @@
   </div>
 
   <main class="contact-container">
-
-    
     <div class="wrapper">
       <div id="bbc1" class="bg-blur-circle"></div>
       <div id="bbc2" class="bg-blur-circle"></div>
@@ -102,7 +101,7 @@
         <div class="text-area">
           <h1 class="txt-2xl">Contact Us</h1>
           <p>
-            Reach out anytime for support, inquiries, or assistance. We’re here to help!
+            Reach out anytime for support, inquiries, or assistance. We're here to help!
           </p>
           <p> <strong> Our Email: </strong> epidise@gmail.com </p>
         </div>
@@ -146,7 +145,6 @@
             <div class="icon-grp">
 
               <span class="mid-center">
-                <!-- <i class="fa-solid fa-envelope"></i> -->
                 <i class="fa-regular fa-envelope"></i>
               </span>
 
@@ -213,8 +211,8 @@
     <div class="wrapper flex-col-even-center">
       <h1 class="txt-2xl">Launching Soon!</h1>
       <div class="download-btn-container">
-        <img class="d-btn" src="./public/assets/google-play-btn.svg">
-        <img class="d-btn" src="./public/assets/apple-store-btn.svg">
+        <img onclick="showModal()" class="d-btn" src="./public/assets/google-play-btn.svg">
+        <img onclick="showModal()" class="d-btn" src="./public/assets/apple-store-btn.svg">
       </div>
     </div>
   </section>
