@@ -283,42 +283,11 @@ strong, b, bold{
     }
 }
 
-.dl-btns{
-    display: flex;
-    justify-content: start;
-    gap: 20px;
-    width: fit-content;
-    height: fit-content;
-}
 
-.dl-btn{
-    height: 45px;
-    width: auto;
-}
-
-.dl-btns .dl-btn:hover{
+.d-btn:hover{
     cursor: pointer;
     transform: scale(1.05);
     transition: transform 200ms linear;
-}
-
-@media (max-width: 480px){
-    .dl-btns .dl-btn{
-        gap: 15px;
-        height: 40px;
-    }
-}
-
-@media (max-width: 330px){
-    .dl-btns{
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .dl-btns .dl-btn{
-        height: 35px;
-    }
 }
 
 .hero{
