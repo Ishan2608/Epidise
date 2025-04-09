@@ -418,14 +418,13 @@ span#meds {
     }
 }
 
-
 /* Features Section */
 
 .feature-cards {
     flex-wrap: nowrap;
     justify-content: flex-start;
     gap: 20px;
-    padding: 30px 0px;
+    padding: 30px 20px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
@@ -1135,8 +1134,9 @@ section.app-features {
 .contact-container{
     border-radius: 20px;
     margin: 0px 10px;
-    background-color: rgba(187, 191, 235, 0.175);
-    backdrop-filter: blur(100px);
+    background-color: rgba(171, 196, 248, 0.2);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     overflow: hidden;
 }
 
@@ -1153,27 +1153,9 @@ section.app-features {
     
 }
 
-.contact-container > .wrapper > .bg-blur-circle{
-    width: 50%;
-    aspect-ratio: 1/1;
-    border-radius: 50%;
-
-    background-color: var(--f2);
-    filter: blur(70px);
-    opacity: 0.8;
-    position: absolute;
-    z-index: -1;
-}
-
-#bbc1{
-    top: -30%;
-    left: -15%;
-    opacity: 0.4;
-}
-#bbc2{
-    bottom: -20%;
-    right: -15%;
-}
+/*
+CODE FOR BLURRY BACKGROUND CIRCLES GOES HERE.
+*/
 
 .contact-container > .wrapper >.contact-info {
     width: 70%;

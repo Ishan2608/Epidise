@@ -29,7 +29,6 @@
     font-weight: normal;
     font-style: normal;
     font-variation-settings: 100;
-    /* border: 2px solid black; */
 }
 
 /* Webkit Browsers (Chrome, Edge, Safari) */
@@ -150,6 +149,7 @@ body {
     margin: 0 auto;
     overflow-x: hidden !important;
     position: relative;
+    background-color: white;
 }
 
 main, section, header, footer {
@@ -205,7 +205,7 @@ strong, b, bold{
 }
 
 .modal::before,
-.modal::after { /* Apply gradient to modal itself */
+.modal::after {
     content: "";
     width: calc(100% + 10px);
     height: calc(100% + 10px);
@@ -228,7 +228,6 @@ strong, b, bold{
     }
 }
 
-/* Modal Content (Inner) */
 .modal-content {
     padding: 20px 0px;
     position: relative;
@@ -241,7 +240,6 @@ strong, b, bold{
     gap: 20px;
 }
 
-/* Close Button */
 .close-modal {
     position: absolute;
     top: 15px;
@@ -259,7 +257,6 @@ strong, b, bold{
 .close-modal:hover {
     color: #333;
 }
-
 
 .highlight {
     padding: 0%;
@@ -283,7 +280,6 @@ strong, b, bold{
     }
 }
 
-
 .d-btn:hover{
     cursor: pointer;
     transform: scale(1.05);
@@ -294,7 +290,6 @@ strong, b, bold{
     padding: 20px 20px;
     text-align: center;
 }
-
 
 .hero .txt-area{
     gap: 25px;
@@ -377,7 +372,7 @@ button:hover,
     background-color: var(--btn-prim-hover);
 }
 
-/* Focus state for input, select, and textarea */
+
 input:focus, select:focus, textarea:focus {
     border-color: var(--btn-prim);
     outline: none;
