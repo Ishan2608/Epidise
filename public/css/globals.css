@@ -140,8 +140,8 @@
 }
 
 .glass-bg{
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(160, 212, 255, 0.295);
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(235, 235, 235, 0.3);
 }
 
 body {
