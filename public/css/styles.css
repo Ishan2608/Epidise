@@ -156,9 +156,6 @@
 }
 
 @media (max-width: 550px){
-    #home-header{
-        padding-top: 20px;
-    }
     #home-header #wrapper .bg-circle{
         top: -10%;
         left: -50%;

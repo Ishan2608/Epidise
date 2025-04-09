@@ -425,8 +425,9 @@ input:focus, select:focus, textarea:focus {
 
 nav{
     border-radius: 50px;
-    margin:0px auto 20px auto;
-    box-shadow: 0px 0px 20px rgba(235, 235, 235, 0.144);
+    padding: 0px 10px;
+    margin: 0px 10px 20px 10px;
+    box-shadow: 0px 0px 20px rgba(204, 204, 204, 0.438);
     background-color: white;
 
     display: flex;
@@ -434,7 +435,6 @@ nav{
     align-items: center;
 
     color: black;
-    padding: 0px 10px;
 }
 
 #nav-logo:hover {
@@ -603,7 +603,6 @@ nav > .wrapper{
 @media (max-width: 800px) {
     nav{
         padding: 10px 10px;
-        width: 100%;
     }
     .hamburger {
         display: flex;
@@ -615,12 +614,6 @@ nav > .wrapper{
 
     nav {
         justify-content: space-between;
-    }
-}
-
-@media (max-width: 550px) {
-    nav{
-        width: calc(100% - 40px);
     }
 }
 
@@ -642,7 +635,6 @@ nav > .wrapper{
 
 @media (max-width: 300px){
     nav{
-        width: calc(100% - 20px);
         height: 50px;
         padding: 7px;
     }
