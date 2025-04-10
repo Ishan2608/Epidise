@@ -791,6 +791,10 @@ footer a{
     color: white;
 }
 
+footer > div{
+    padding: 20px;
+}
+
 footer div.footer-head {
     flex: 1;
     display: flex;
@@ -798,7 +802,6 @@ footer div.footer-head {
     justify-content: center;
     align-items: start;
     gap: 20px;
-    padding: 20px;
 }
 
 footer div.footer-head p > a{
@@ -806,57 +809,20 @@ footer div.footer-head p > a{
     color: var(--light-gray);
 }
 
-footer .links-container {
-    flex: 1;
+footer > .socials{
     gap: 20px;
-    width: 100%;
 }
 
-footer .links-container div {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 20px;
-    flex: 1;
-    min-width: 160px;
-}
-
-footer .links-container div.socials {
-    flex: 1;
-    min-width: 60px;
-}
-
-footer .links-container div.socials .social-icon{
+footer .social-icon{
     font-weight: bolder;
     font-size: 1.5rem;
 }
 
-footer .links-container div.socials .social-icon:hover{
+footer .social-icon:hover{
     cursor: pointer;
     font-size: 1.75rem;
 }
 
-footer .links-container div .footer-links-cont{
-    width: 100%;
-    gap: 15px;
-    list-style: none;
-}
-
-footer .links-container div .footer-links-cont *{
-    width: 100%;
-}
-
-
-footer .links-container div .footer-links-cont li a{
-    text-decoration: none;
-    color: var(--light-gray);
-}
-
-footer .links-container div .footer-links-cont li a:hover{
-    font-size: 18px;
-}
 
 footer .footer-bottom {
     display: flex;
@@ -864,32 +830,11 @@ footer .footer-bottom {
     align-items: center;
     padding: 0px;
     color: var(--light-gray);
-    padding: 10px 20px;
 }
 
-/* Media query for tablet screens */
-@media (max-width: 700px) {
-    footer .links-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    footer .links-container div {
-        width: 100%;
-    }
-
-    footer .links-container div.socials {
-        flex-direction: row;
-        justify-content: start;
-        align-items: center;
-    }
-}
 
 /* Media query for mobile screens */
 @media (max-width: 606px) {
-    footer .links-container div {
-        padding: 15px;
-    }
 
     footer .footer-bottom {
         flex-direction: column;
@@ -902,10 +847,6 @@ footer .footer-bottom {
 
 /* Media query for small mobile screens */
 @media (max-width: 387px) {
-    footer .links-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
 
     footer .links-container div {
         padding: 10px;

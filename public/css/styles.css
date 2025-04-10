@@ -42,7 +42,7 @@
 }
 
 #home-header > #wrapper > .txt-area > .download-btns .d-btn{
-    max-height: 45px;
+    height: 40px;
 }
 
 #home-heading{
@@ -1091,6 +1091,13 @@ section.app-features {
     }
 }
 
+@media (max-width: 550px){
+    .easy .txt-area .para-area{
+        min-width: 0px;
+        width: 100%;
+    }
+}
+
 @media (max-width: 550px) and (min-width: 400px) {
     .easy .cards-cont .card {
         flex: 0 0 calc(85% - 20px);
@@ -1102,7 +1109,7 @@ section.app-features {
 }
 
 @media (max-width: 400px) and (min-width: 300px) {
-
+    
     .easy .cards-cont .card {
         flex: 0 0 calc(90% - 10px);
     }
@@ -1153,9 +1160,16 @@ section.app-features {
     
 }
 
-/*
-CODE FOR BLURRY BACKGROUND CIRCLES GOES HERE.
-*/
+
+.bg-blur-circle{
+    position: absolute;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    z-index: -10;
+    opacity: 0.6;
+    filter: blur(50px);
+}
+
 
 .contact-container > .wrapper >.contact-info {
     width: 70%;
