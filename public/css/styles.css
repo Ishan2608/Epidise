@@ -1160,7 +1160,6 @@ section.app-features {
     
 }
 
-
 .bg-blur-circle{
     position: absolute;
     aspect-ratio: 1/1;
@@ -1170,6 +1169,19 @@ section.app-features {
     filter: blur(50px);
 }
 
+#bbc1{
+    right: -10%;
+    bottom: -5%;
+    height: 70%;
+    background-color: #c2aaf8;
+}
+#bbc2{
+    right: 50%;
+    top: -5%;
+    height: 60%;
+    transform: translate(125%, 0);
+    background-color: #c2aaf8;
+}
 
 .contact-container > .wrapper >.contact-info {
     width: 70%;
@@ -1319,18 +1331,24 @@ form {
         flex-direction: column;
         align-items: center;
     }
+    .bg-blur-circle{
+        opacity: 0.35;
+        filter: blur(70px);
+    }
     #bbc1{
-        top: -10%;
-        left: -10%;
-        height: 40%;
-        width: auto;
+        bottom: 35%;
+        left: -5%;
+        transform: translate(0, 50%);
+        height: 50%;
     }
 
     #bbc2{
         bottom: -5%;
         right: -5%;
+        left: auto;
+        top: auto;
+        transform: translate(0, 0);
         height: 60%;
-        width: auto;
     }
     .contact-container > .wrapper > .contact-info,
     .contact-container > .wrapper > .contact-form {
