@@ -104,21 +104,23 @@ document.addEventListener("DOMContentLoaded", function () {
       firstCard.querySelector('.pbgc').style.display = 'block';
       firstCard.style.backgroundColor = originalBackgroundColors[firstCard.id];
       firstCard.style.backdropFilter = '';
+      firstCard.style.boxShadow = '0px 0px 20px rgba(204, 204, 204, 0.438)'
   }
 
   function adjustCardStyles() {
-      if (window.innerWidth > 800) {
-          collapseOthers();
-      } else {
-          cards.forEach(card => {
-              card.style.flex = '';
-              card.querySelector('p').style.display = 'block';
-              card.querySelector('.pbgc').style.display = 'block';
-              card.style.backgroundColor = getGlassMorphismColor(originalBackgroundColors[card.id]);
-              card.style.backdropFilter = 'blur(20px)';
-          });
-      }
-  }
+    if (window.innerWidth > 800) {
+        collapseOthers();
+    } else {
+        cards.forEach(card => {
+            card.style.flex = '';
+            card.querySelector('p').style.display = 'block';
+            card.querySelector('.pbgc').style.display = 'block';
+            // Remove the direct application of frost effect on smaller screens
+            card.style.backgroundColor = originalBackgroundColors[card.id];
+            card.style.backdropFilter = '';
+        });
+    }
+}
 
   function getGlassMorphismColor(originalColor) {
       const rgba = originalColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
@@ -145,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
               this.querySelector('.pbgc').style.display = 'block';
               this.style.backgroundColor = getGlassMorphismColor(originalBackgroundColors[this.id]);
               this.style.backdropFilter = 'blur(100px)';
+              this.style.boxShadow = '0px 0px 20px rgba(204, 204, 204, 0.438)'
           }
       });
 
