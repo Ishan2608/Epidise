@@ -12,7 +12,7 @@
     --lighter-gray: #F8F8F8;
     --dark-bg-light-txt: #8E94A4;
     --charcoal: #36454F;
-    --f1: #e5f1d5;
+    --f1: #b7ffbb;
     --f2: #d2def2;
     --f3: #e8ffff;
     --f4: #F2F5F9;
@@ -149,7 +149,6 @@ body {
     margin: 0 auto;
     overflow-x: hidden !important;
     position: relative;
-    background-color: white;
 }
 
 main, section, header, footer {
