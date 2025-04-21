@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 :root {
+    --neon-yellow: #ecf95a;
+    --neon-red: #e93e3e;
     --prim-dark: #242E49;
     --prim-light: #D0E4FF;
     --btn-prim: #1264FF;
@@ -12,7 +14,7 @@
     --lighter-gray: #F8F8F8;
     --dark-bg-light-txt: #8E94A4;
     --charcoal: #36454F;
-    --f1: #b7ffbb;
+    --f1: #ffeecc;
     --f2: #d2def2;
     --f3: #e8ffff;
     --f4: #F2F5F9;
@@ -29,7 +31,7 @@
     font-weight: normal;
     font-style: normal;
     font-variation-settings: 100;
-    /* border: 1px solid gray; */
+    border-color: 1px solid gray;
 }
 
 /* Webkit Browsers (Chrome, Edge, Safari) */
@@ -114,7 +116,7 @@
   .txt-xs { font-size: 0.6875rem; }
   .txt-sm { font-size: 0.8125rem; }
   .txt-md { font-size: 0.9375rem; }
-  .txt-lg { font-size: 1rem; }
+  .txt-lg { font-size: 1.35rem; }
   .txt-xl { font-size: 1.5rem; }
   .txt-2xl { font-size: 1.75rem; }
   .txt-3xl { font-size: 2rem; }
@@ -145,11 +147,12 @@
 }
 
 body {
-    padding: 20px 0px;
+    padding: 10px 0px;
     max-width: 1400px;
     margin: 0 auto;
     overflow-x: hidden !important;
     position: relative;
+    background-color: var(--lighter-gray);
 }
 
 main, section, header, footer {
@@ -351,6 +354,21 @@ strong, b, bold{
     display: none;
 }
 
+.feature-icon-cont {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    aspect-ratio: 1;
+    padding: 5px 5px;
+    border-radius: 5px;
+}
+
+.feature-icon-cont img{
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
 input, select {
     padding: 10px 15px;
     border-radius: 20px;
@@ -391,8 +409,8 @@ nav{
     border-radius: 50px;
     padding: 0px 10px;
     margin: 0px 10px 20px 10px;
-    box-shadow: 0px 0px 20px rgba(204, 204, 204, 0.438);
-    background-color: white;
+    /* box-shadow: 0px 0px 20px rgba(204, 204, 204, 0.438); */
+    /* background-color: white; */
 
     display: flex;
     justify-content: space-between;
@@ -711,7 +729,7 @@ section.contact-vision .right:hover{
     transition: transform 200ms ease-in-out;
 }
 
-#vision-click-here{
+section.contact-vision b{
     font-weight: 900;
 }
 
@@ -783,7 +801,7 @@ footer {
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    gap: 40px;
+    gap: 20px;
     padding: 20px;   
 }
 
@@ -805,8 +823,10 @@ footer div.footer-head {
 }
 
 footer div.footer-head p > a{
-    text-decoration: none;
+    text-decoration: underline;
+    padding: 0px 5px;
     color: var(--light-gray);
+    font-weight: 700;
 }
 
 footer > .socials{
