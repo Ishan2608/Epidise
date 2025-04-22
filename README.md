@@ -1,2 +1,2 @@
 View the new Epidise website at:
- https://soft-halva-719b54.netlify.app/
+[https://epidise.netlify.app/](https://epidise.netlify.app/)
