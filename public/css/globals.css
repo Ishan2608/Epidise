@@ -369,7 +369,7 @@ strong, b, bold{
     object-fit: contain;
 }
 
-input, select {
+input, select, #submit {
     padding: 10px 15px;
     border-radius: 20px;
     border: 1px solid var(--dark-gray);

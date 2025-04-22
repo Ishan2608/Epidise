@@ -4,7 +4,7 @@
 
 #home-header{
     padding: 0;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 #home-header > #wrapper{
@@ -254,6 +254,9 @@
 }
 
 @media (max-width: 850px){
+    #home-header{
+        margin-bottom: 30px;
+    }
     #home-header #wrapper{
         flex-direction: column;
         gap: 25px;
@@ -498,7 +501,7 @@ section.quote h1 span.light {
 
 section.quote h1 span {
     height: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
 }
 
 section.quote h1 span.ico-cont {
@@ -615,7 +618,7 @@ span#meds {
 .feature-cards .feature.ico-head-div .ico-cont{
     max-height: 50px;
     max-width: 50px;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     padding: 5px 5px;
 }
@@ -833,7 +836,7 @@ section.diseases .text-area .para {
 
     .round-icon-container.check-cont {
         /* max-height: 14px; */
-        aspect-ratio: 1;
+        aspect-ratio: 1/1;
     }
 }
 
@@ -951,6 +954,11 @@ section.app-features {
     justify-content: space-between;
     align-items: start;
     gap: 10px;
+}
+
+.app-feature-list .app-f-cont .stack-container .stack .app-f > span.feature-icon-cont{
+    width: 40px;
+    height: 40px;
 }
 
 @media (max-width: 700px) {
@@ -1120,7 +1128,7 @@ section.app-features {
 
 .easy .cards-cont .card .icons-cont .white-bg .curvy-wrapper .wrapper {
     width: 50px;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     background-color: var(--easy);
     border-radius: 50%;
     padding: 10px 10px;
@@ -1139,14 +1147,14 @@ section.app-features {
     background-color: transparent;
     height: 100%;
     width: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     color: var(--btn-prim);
 }
 
 .easy .fa-check{
     height: 85%;
     width: auto;
-    aspect-ratio: 1;
+    aspect-ratio: 1/1;
     color: var(--btn-prim);
 }
 
