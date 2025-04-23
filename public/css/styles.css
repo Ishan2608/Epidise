@@ -120,9 +120,32 @@
 }
 
 #home-header > #wrapper > #home-seel > .wrapper > img{
+    position: absolute;
+    top: 0%;
+    left: 0%;
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+#hsi-bg{
+    z-index: 10;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+#hsi-fg{
+    z-index: 11;
 }
 
 #home-header  > #wrapper > .txt-area > *{

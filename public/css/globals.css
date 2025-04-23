@@ -386,10 +386,10 @@ button:hover,
 #submit:hover{
     cursor: pointer;
 }
+
 #submit:hover{
     background-color: var(--btn-prim-hover);
 }
-
 
 input:focus, select:focus, textarea:focus {
     border-color: var(--btn-prim);
