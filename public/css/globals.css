@@ -590,6 +590,10 @@ nav > .wrapper{
         display: flex;
     }
 
+    .hamburger .wrapper span{
+        width: 55%;
+    }
+
     .menu {
         display: none;
     }
@@ -607,7 +611,7 @@ nav > .wrapper{
         height: 40px;
     }
     .hamburger .wraper{
-        gap: 5px;
+        gap: 4px;
     }
 
     .hamburger .wraper span{
