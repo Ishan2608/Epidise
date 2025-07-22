@@ -57,14 +57,21 @@ document.addEventListener("DOMContentLoaded", function () {
       bodyOverlay.classList.remove("active");
     });
   }
+  // EEARLY BIRD DISCOUNT
+  const visionCard = document.querySelector("#vision-right");
+  visionCard.addEventListener("click", function () {
+      let visionLink = document.createElement('a');
+      visionLink.href = "https://forms.gle/97pDD7CitRqeS8iC9";
+      visionLink.target = "_blank"; // Open in a new tab
+      visionLink.click(); // Simulate click to open the link
+    
+  })
   // DOWNLOAD BUTTONS
-
   // Select all download buttons
   const downloadButtons = document.querySelectorAll('img.d-btn');
   // Select the modal and overlay elements
   const modal = document.querySelector('.modal');
   const overlay = document.querySelector('.overlay');
-  const visionCard = document.querySelector("#vision-right");
 
   function openModal(){
       // Show the modal and overlay
@@ -74,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.style.overflow = 'hidden';
   }
 
-  visionCard.addEventListener('click', openModal);
   // Add event listeners to each button
   downloadButtons.forEach(button => {
     button.addEventListener('click', openModal);

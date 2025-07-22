@@ -1,43 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <!-- Primary Meta Tags -->
   <title>Epidise</title>
   <meta name="title" content="Epidise" />
   <meta name="description" content="Connect with skincare experts anytime, anywhere, with Epidise from the comfort of your home." />
-
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.epidise.com" />
   <meta property="og:title" content="Epidise" />
   <meta property="og:description" content="Epidise: Online skincare consultations with expert dermatologists. Get expert skincare advice, treatment, and e-prescriptions from the comfort of your home." />
-  <meta property="og:image" content="/public/assets/logo.png" />
-
+  <meta property="og:image" content="./assets/logo.svg" />
   <!-- Twitter -->
-  <meta property="twitter:card" content="/public/assets/logo.png" />
+  <meta property="twitter:card" content="./assets/logo.svg" />
   <meta property="twitter:url" content="https://www.epidise.com" />
   <meta property="twitter:title" content="Epidise" />
   <meta property="twitter:description" content="Epidise: Online skincare consultations with expert dermatologists. Get expert skincare advice, treatment, and e-prescriptions from the comfort of your home." />
-  <meta property="twitter:image" content="/public/assets/logo.png" />
-
+  <meta property="twitter:image" content="./assets/logo.svg" />
   <!-- Social Media Links for Knowledge Panel -->
   <link rel="publisher" href="https://www.linkedin.com/company/epidise">
   <link rel="me" href="https://www.instagram.com/epidise_healthcare">
+  <link rel="stylesheet" defer href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap">
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="icon" type="image/x-icon" href="./assets/logo.svg">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js"
-    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="public/css/globals.css">
-  <link rel="stylesheet" href="public/css/styles.css" />
-  <link rel="icon" type="image/x-icon" href="public/assets/logo.png">
+  <style>
+    #loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1000;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease-out;
+    }
+    .loader {
+      display: inline-block;
+      position: relative;
+      width: 80px;
+      height: 80px;
+    }
+    .loader div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border: 8px solid #3498db;
+      border-radius: 50%;
+      animation: loader-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: #3498db transparent transparent transparent;
+    }
+    .loader div:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    .loader div:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    .loader div:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+    @keyframes loader-spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  
+    .loader-hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
   
 </head>
 
 <body>
+
+  <div id="loader-wrapper">
+    <div class="loader">
+      <div></div> <div></div> <div></div> <div></div>
+    </div>
+  </div>
+
   <div class="overlay"></div>
   <div class="modal">
     <div class="modal-content">
@@ -50,48 +100,36 @@
       </div>
     </div>
   </div>
-
   <!-- Desktop and Tablet Navigation -->
   <nav class="txt-md">
-
     <!-- Left Part - Logo -->
     <div class="logo-container mid-center">
       <a id="nav-logo" href="index.html">
-        <img src="/public/assets/logo.png" alt="">
+        <img src="./assets/logo.svg" alt="">
       </a>
     </div>
-
     <!-- Middle Part - Navigation Links -->
     <div class="menu">
       <ul>
-        <li class="menu-item">
-          <a class="nav-link active" href="index.html"> Home </a>
-        </li>
-        <li class="menu-item">
-          <a class="nav-link" href="contact-us.html">Contacts Us</a>
-        </li>
+        <li class="menu-item"> <a class="nav-link active" href="index.html"> Home </a> </li>
+        <li class="menu-item"> <a class="nav-link" href="contact-us.html">Contacts Us</a> </li>
       </ul>
     </div>
-
     <!-- Right Part - Hamburger and Partner-Up Button -->
     <div class="wrapper flex-row-even-stretch">
       <!-- Partner Button on Right -->
-      <div id="d-partner-up-cont">
-        <button id="d-partner-up" class="txt-md partner-up">
-          Partner Up
-        </button>
+      <div id="m-partner-up-cont">
+        <a href="https://forms.gle/HB9g4WkWFZyjuMmm7" target="_blank">
+          <button id="m-partner-up" class="txt-md partner-up">
+            Partner Up
+          </button>
+        </a>
       </div>
-
       <!-- Hamburger Symbol on Extreme Right Only When on Mobile -->
       <div class="hamburger" id="hamburger">
-        <div class="wrapper mid-center">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <div class="wrapper mid-center"> <span></span> <span></span> <span></span> </div>
       </div>
     </div>
-
   </nav>
 
   <!-- Mobile Navigation -->
@@ -100,55 +138,28 @@
     <div class="mobile-nav-header">
       <span class="close-btn" id="close-btn">&times;</span>
     </div>
-
     <ul class="mobile-nav-menu">
-      <li class="menu-item">
-        <a class="nav-link active" href="index.html">Home</a>
-      </li>
-      <li class="menu-item">
-        <a class="nav-link" href="contact-us.html">Contact Us</a>
-      </li>
+      <li class="menu-item"> <a class="nav-link active" href="index.html">Home</a> </li>
+      <li class="menu-item"> <a class="nav-link" href="contact-us.html">Contact Us</a> </li>
     </ul>
-
-    <div id="m-partner-up-cont">
-      <button id="m-partner-up" class="txt-md partner-up">
-        Partner Up
-      </button>
-    </div>
   </div>
 
   <!-- Hero Section -->
   <header id="home-header">
-
     <div id="wrapper" class="flex-row-even-stretch">
-
       <div class="txt-area flex-col-even-stretch">
-        <h1 id="home-heading" class="txt-4xl">
-          Connect with skin care experts anytime, anywhere, with Epidise.
-          <!-- Skin Issues Ruining Your Charisma? -->
-          <!-- We Make Skincare Simpler. -->
-        </h1>
-        <p class="txt-lg" id="home-header-para">
-          <!-- Connect with skin care experts anytime, anywhere, with Epidise. -->
-           <!-- Skin Issues Ruining Your Charisma? -->
-            Doctor Tak Race? Ab No Stress, Epidise Is The Place.
-
-        </p>
-
+        <h1 id="home-heading" class="txt-4xl"> Connect with skin care experts anytime, anywhere, with Epidise. </h1>
+        <p class="txt-lg" id="home-header-para"> Doctor Tak Race? Ab No Stress, Epidise Is The Place. </p>
         <div class="download-btns flex-row-start">
-          <img class="d-btn" src="./public/assets/google-play-btn.svg">
-          <img class="d-btn" src="./public/assets/apple-store-btn.svg">
+          <img class="d-btn" src="./assets/google-play-btn.svg">
+          <img class="d-btn" src="./assets/apple-store-btn.svg">
         </div>
-
-      </div> <!--Text Area Ends-->
-
-      <div id="hero-mockup" class="mid-center">
-        <img id="home-mock" src="/public/assets/hero-mock.png" alt="">
       </div>
-
+      <div id="hero-mockup" class="mid-center">
+        <img id="home-mock" fetchpriority="high" src="./assets/hero-mock.svg" alt="">
+      </div>
       <div id="home-seel">
         <div class="wrapper">
-
           <!-- top-left curve -->
           <div id="ic1" class="inner-curve">
             <div class="wrapper">
@@ -163,7 +174,7 @@
           </div>
           <!-- bottom-right curve -->
           <div id="ic3" class="inner-curve">
-            <img src="/public/assets/Curve.png">
+            <img data-src="./assets/Curve.webp">
           </div>
           <!-- bottom-left curve -->
           <div id="ic4" class="inner-curve">
@@ -171,83 +182,56 @@
               <div id="iic4" class="curve"> </div>
             </div>
           </div>
-
-          <img id="hsi-bg" src="/public/assets/1.png">
-          <img id="hsi-fg" src="/public/assets/2.png">
-
+          <img id="hsi-bg" src="./assets/1.webp">
+          <img id="hsi-fg" src="./assets/2.webp">
         </div>
       </div>
-
       <div id="hmro">
         <div class="wrapper">
-          <img id="hmro-trc" src="/public/assets/Curve.png">
-          <img id="hmro-blc" src="/public/assets/Curve.png">
-          <p class="txt-md">
-            Skincare isn't that difficult.
-          </p>
+          <img id="hmro-trc" data-src="./assets/Curve.webp">
+          <img id="hmro-blc" data-src="./assets/Curve.webp">
+          <p class="txt-md"> Skincare isn't that difficult. </p>
         </div>
       </div>
-
     </div>
-
   </header>
-
   <section id="process-sect">
     <div class="heading-area">
       <h1 class="txt-2xl" >Process at Epidise is Simpler</h1>
-      <p class="process-para txt-lg">
-        You can book an appointment with a skin care expert and find your solution faster and easier than you imagined.
-      </p>
+      <p class="process-para txt-lg"> You can book an appointment with a skin care expert and find your solution faster and easier than you imagined. </p>
     </div>
-
     <div class="cards-container">
       <div id="step1" class="process-step flex-col-even-stretch">
         <span class="feature-icon-cont mid-center">
-          <img src="/public/assets/p1.png" alt="">
+          <img data-src="./assets/p1.webp" alt="">
         </span>
-
         <div class="wrapper flex-col-even-stretch">
-
           <h1 class="txt-lg"> 1. Find Skin Experts</h1>
-          <p class="txt-md">
-            No more doctor hunts! Just scroll, filter, and pick your perfect skin & hair expert in seconds.
-          </p>
+          <p class="txt-md"> No more doctor hunts! Just scroll, filter, and pick your perfect skin & hair expert in seconds. </p>
         </div>
 
       </div>
       <div id="step2" class="process-step flex-col-even-stretch">
         <span class="feature-icon-cont mid-center">
-          <img src="/public/assets/p2.png" alt="">
+          <img data-src="./assets/p2.webp" alt="">
         </span>
         <div class="wrapper flex-col-even-stretch">
           <h1 class="txt-lg"> 2. Lock Your Spot</h1>
-          <p class="txt-md">
-            Pick a date & time that works for you, book consultation online. Fast and hassle-free.
-          </p>
+          <p class="txt-md"> Pick a date & time that works for you, book consultation online. Fast and hassle-free. </p>
         </div>
-
       </div>
       <div id="step3" class="process-step flex-col-even-stretch">
-        <span class="feature-icon-cont mid-center">
-          <img src="/public/assets/p3.png" alt="">
-        </span>
+        <span class="feature-icon-cont mid-center"> <img data-src="./assets/p3.webp" alt=""> </span>
         <div class="wrapper flex-col-even-stretch">
           <h1 class="txt-lg"> 3. Sit Back and Relax</h1>
-          <p class="txt-md">
-            Secure your booking with an easy payment—no stress, no fuss. Get a reminder so you never miss it.
-          </p>
+          <p class="txt-md"> Secure your booking with an easy payment—no stress, no fuss. Get a reminder so you never miss it.</p>
         </div>
       </div>
       <div id="step4" class="process-step flex-col-even-stretch">
-        <span class="feature-icon-cont mid-center">
-          <img src="/public/assets/p4.png" alt="">
-        </span>
+        <span class="feature-icon-cont mid-center"> <img data-src="./assets/p4.webp" alt=""> </span>
         <div class="wrapper flex-col-even-stretch">
           <h1 class="txt-lg"> 4. Consult, Click, and Cure</h1>
-          <p class="txt-md">
-            Hop on a call, get expert advice, and receive your E-Prescription. <br>
-            Done and dusted!
-          </p>
+          <p class="txt-md"> Hop on a call, get expert advice, and receive your E-Prescription. <br> Done and dusted! </p>
         </div>
       </div>
     </div>
@@ -255,207 +239,105 @@
 
   <!-- Main section - Quote of Epidise and its Features -->
   <main id="home-main">
-
     <!-- Quote Section -->
     <section class="quote">
-      <h1 class="txt-4xl">
-        Our
-        revolutionary
-        <span class="word light">telederma</span>
-        <span class="word light">platform</span>
-        <span id="health-plat" class="ico-cont mid-center">
-          <img src="/public/assets/health.png" alt="">
-        </span>
-        delivers
-        <span class="word light">expert</span>
-        <span class="word light">care</span>
-        <span id="stethoscope" class="ico-cont">
-          <img src="/public/assets/stethoscope.png" alt="">
-        </span>
-        to
-        your
-        doorstep,
-        transforming
-        <span class="word light">healthcare</span>
-        <span id="meds" class="ico-cont">
-          <img src="/public/assets/meds.png" alt="">
-        </span>
-        access
-
-      </h1>
+      <h1 class="txt-4xl"> Our revolutionary <span class="word light">telederma</span> <span class="word light">platform</span> <span id="health-plat" class="ico-cont mid-center"> <img data-src="./assets/health.webp" alt=""> </span> delivers <span class="word light">expert</span> <span class="word light">care</span> <span id="stethoscope" class="ico-cont"> <img data-src="./assets/stethoscope.webp" alt=""> </span>
+        to your doorstep, transforming <span class="word light">healthcare</span> <span id="meds" class="ico-cont"> <img data-src="./assets/meds.webp" alt=""> </span> access </h1>
     </section>
-
     <!-- Features Section -->
     <section class="feature-cards flex-row-even-stretch">
-
       <div class="feature ico-head-div" id="f1">
         <div class="ico-text-h">
-          <div class="ico-cont mid-center">
-            <img src="/public/assets/wall-clock.png" alt="">
-          </div>
-          <br />
+          <div class="ico-cont mid-center"> <img data-src="./assets/wall-clock.webp" alt=""> </div> <br />
           <h2 class="txt-lg">Ultimate Flexibility</h2>
         </div>
-        <p class="txt-lg">
-          Flexible appointment booking and rescheduling as per your convenience.
-        </p>
+        <p class="txt-lg"> Flexible appointment booking and rescheduling as per your convenience. </p>
       </div>
-
-      <div class="feature only-head" id="f2">
-        <h2 class="feature-heading-bottom">Aligned to your needs</h2>
+      <div class="feature only-head" id="f2"> <h2 class="feature-heading-bottom">Aligned to your needs</h2>
       </div>
-
       <div class="feature ico-head-div" id="f3">
         <div class="ico-text-h">
-          <div class="ico-cont">
-            <img src="/public/assets/development.png" alt="">
-          </div>
-          <br />
+          <div class="ico-cont"> <img data-src="./assets/development.webp" alt=""> </div> <br />
           <h2 class="txt-lg">Upcoming Chaos</h2>
         </div>
-        <p class="txt-lg">
-          Future healthcare ecosystem - all in one place
-        </p>
+        <p class="txt-lg"> Future healthcare ecosystem - all in one place. </p>
       </div>
-
-      <div class="feature only-head" id="f4">
-        <h2 class="feature-heading-bottom">Aligned to your needs</h2>
-      </div>
+      <div class="feature only-head" id="f4"> <h2 class="feature-heading-bottom">Aligned to your needs</h2> </div>
     </section>
   </main>
-
   <!-- Diseases Section -->
   <section class="diseases">
     <div class="text-area">
-      <h1 class="txt-2xl">
-        Get Help from
-        <span class="highlight">
-          Expert
-        </span>
-        Dermatologists
-      </h1>
-
+      <h1 class="txt-2xl"> Get Help from <span class="highlight"> Expert </span> Dermatologists </h1>
       <div class="para">
-        <span class="round-icon-container ques-ico-cont mid-center">
-          <i class="fa-solid fa-question"></i>
-        </span>
-        <p>
-          Connect instantly with a verified dermatologist online for convenient and affordable prescription treatment.
-        </p>
+        <span class="round-icon-container ques-ico-cont mid-center"> <i class="fa-solid fa-question"></i> </span>
+        <p> Connect instantly with a verified dermatologist online for convenient and affordable prescription treatment. </p>
       </div>
     </div>
-
     <div class="cards-area flex-row-even-center">
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Acne</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Chicken Pox</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Psoriasis</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Fungal Infection</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Hives</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Eczema</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Dermatitis</h4>
       </div>
-      
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Keratosis Pilaris</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Measles</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Pimple</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Vitiligo</h4>
       </div>
-
       <div class="disease flex-row-start">
-        <span class="round-icon-container check-cont">
-          <i class="fa-solid fa-check"></i>
-        </span>
+        <span class="round-icon-container check-cont"> <i class="fa-solid fa-check"></i> </span>
         <h4 class="disease-name">Skin Allergy</h4>
       </div>
-
     </div>
   </section>
 
   <!-- Vision Section -->
   <section class="contact-vision">
     <div class="left">
-      <h1 class="txt-2xl">
-        Our vision is to empower individuals with
-        <span class="highlight"> personalized </span> skincare solutions
-      </h1>
-      <p class="txt-md">
-        We're making healthcare better with technology, creating solutions that fit your needs. Our first version will
-        have the basics, and we'll keep adding more useful features over time.
-      </p>
+      <h1 class="txt-2xl"> Our vision is to empower individuals with
+        <span class="highlight"> personalized </span> skincare solutions </h1>
+      <p class="txt-md"> We're making healthcare better with technology, creating solutions that fit your needs. Our first version will have the basics, and we'll keep adding more useful features over time.</p>
     </div>
     <div id="vision-right" class="right" title="Join Now">
-      <div class="graphic">
-        <img src="/public/assets/med_icon.png" alt="">
-      </div>
+      <div class="graphic"> <img data-src="./assets/med_icon.webp" alt=""> </div>
       <div class="txt-area">
         <h1 class="txt-lg"> Join our Waiting List</h1>
-        <p class="txt-md">
-          <b> Click here </b>
-          to get your first consultation for <b>FREE</b>
-        </p>
+        <p class="txt-md"> <b> Click here </b> to get your first consultation for <b>FREE</b> </p>
       </div>
     </div>
   </section>
@@ -464,245 +346,132 @@
   <section class="app-features">
     <div class="toggle-area">
       <div class="toggle-btns mid-center">
-        <button id="t1" class="active-toggle txt-md">
-          For User
-        </button>
-        <button id="t2" class="txt-md">
-          For Doctor
-        </button>
+        <button id="t1" class="active-toggle txt-md"> For User </button> <button id="t2" class="txt-md"> For Doctor </button>
       </div>
     </div>
 
     <div id="app-features-t1" class="app-feature-list active">
-      <h1 class="txt-2xl">
-        Your Healthcare At Your Fingertips
-      </h1>
-
+      <h1 class="txt-2xl"> Your Healthcare At Your Fingertips </h1>
       <div class="app-f-cont">
-
         <div class="stack-container flex-col-even-center">
           <div class="stack flex-row-even-stretch">
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="/public/assets/online-booking.png" alt="">
-              </span>
-              <h1 class="txt-md">
-                Easy Appointment Booking
-              </h1>
-              <p class="txt-sm">
-                Book skin consultations anytime, anywhere, with a few simple steps.
-              </p>
-
+              <span class="feature-icon-cont mid-center"> <img data-src="./assets/online-booking.webp" alt=""></span>
+              <h1 class="txt-md">Easy Appointment Booking</h1>
+              <p class="txt-sm"> Book skin consultations anytime, anywhere, with a few simple steps.</p>
             </div>
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="/public/assets/rescheduling.png" alt="">
-              </span>
+              <span class="feature-icon-cont mid-center"><img data-src="./assets/rescheduling.webp" alt=""></span>
               <h1 class="txt-md">Easy Rescheduling</h1>
-              <p class="txt-sm">
-                Modify, cancel, or reschedule your appointment effortlessly without any extra hassle or charges.
-              </p>
+              <p class="txt-sm">Modify, cancel, or reschedule your appointment effortlessly without any extra hassle or charges.</p>
             </div>
           </div>
-
           <div class="stack flex-row-even-stretch">
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="public/assets/flash.png" alt="">
-              </span>
+              <span class="feature-icon-cont mid-center"><img data-src="./assets/flash.webp" alt=""></span>
               <h1 class="txt-md"> Instant Consultation </h1>
-              <p class="txt-sm">
-                Connect with top dermatologists and get expert advice on your skin and hair concerns.
-              </p>
+              <p class="txt-sm">Connect with top dermatologists and get expert advice on your skin and hair concerns.</p>
             </div>
-
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="public/assets/verify.png" alt="">
-              </span>
+              <span class="feature-icon-cont mid-center"><img data-src="./assets/verify.webp" alt=""></span>
               <h1 class="txt-md">Verified Dermatologists </h1>
-              <p class="txt-sm">
-                Consult only certified, experienced dermatologists to ensure safe, effective, and trusted care
-              </p>
-
+              <p class="txt-sm">Consult only certified, experienced dermatologists to ensure safe, effective, and trusted care.</p>
             </div>
           </div>
         </div>
 
-        <div class="mockup-container mid-center">
-          <img src="/public/assets/appf-user.png" alt="" class="floating">
-        </div>
-
+        <div class="mockup-container mid-center"><img data-src="./assets/appf-user.webp" alt="" class="floating"></div>
       </div>
-
     </div>
-
     <div id="app-features-t2" class="app-feature-list hidden">
-      <h1 class="txt-2xl">
-        Reach to More Patients
-      </h1>
-
+      <h1 class="txt-2xl">Reach to More Patients</h1>
       <div class="app-f-cont">
-
         <div class="stack-container flex-col-even-center">
           <div class="stack flex-row-even-stretch">
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="/public/assets/adjust.png" alt="">
-              </span>
+              <span class="feature-icon-cont mid-center"><img data-src="./assets/adjust.webp" alt=""></span>
               <h1 class="txt-md"> Flexible Scheduling </h1>
-              <p class="txt-sm">
-                Set your availability, manage appointments, and control your schedule at your convenience.
-              </p>
+              <p class="txt-sm">Set your availability, manage appointments, and control your schedule at your convenience.</p>
             </div>
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="/public/assets/withdraw.png" alt="">
-              </span>
+              <span class="feature-icon-cont mid-center"><img data-src="./assets/withdraw.webp" alt=""></span>
               <h1 class="txt-md"> Easy Withdrawal </h1>
-              <p class="txt-sm">
-                Withdraw earnings securely and instantly without any complicated processes or long waiting times.
-              </p>
+              <p class="txt-sm">Withdraw earnings securely and instantly without any complicated processes or long waiting times.</p>
             </div>
           </div>
-
           <div class="stack flex-row-even-stretch">
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="/public/assets/online-meeting.png" alt="">
-              </span>
+              <span class="feature-icon-cont mid-center"><img data-src="./assets/online-meeting.webp" alt=""></span>
               <h1 class="txt-md"> Consult Patients Virtually </h1>
-              <p class="txt-sm">
-                Provide expert skin and hair care through seamless video consultations from anywhere.
-              </p>
+              <p class="txt-sm">Provide expert skin and hair care through seamless video consultations from anywhere.</p>
             </div>
-
             <div class="app-f">
-              <span class="feature-icon-cont mid-center">
-                <img src="/public/assets/india_loc2.png" alt="">
-              </span>
+              <span class="feature-icon-cont mid-center"><img data-src="./assets/india_loc2.webp" alt=""></span>
               <h1 class="txt-md"> PAN India Presence </h1>
-              <p class="txt-sm">
-                Expand your reach and treat patients from all across India without location barriers.
-              </p>
+              <p class="txt-sm">Expand your reach and treat patients from all across India without location barriers.</p>
             </div>
           </div>
         </div>
-
-        <div class="mockup-container mid-center">
-          <img src="/public/assets/appf-doc.png" alt="" class="floating">
-        </div>
-
+        <div class="mockup-container mid-center"><img data-src="./assets/appf-doc.webp" alt="" class="floating"></div>
       </div>
-
     </div>
-
   </section>
 
   <!-- Easy Cards Section -->
   <section class="easy">
     <div class="txt-area flex-row-even-stretch">
       <div class="heading-area">
-        <h1 class="txt-2xl">
-          Prioritizing Your
-          <span class="highlight"> Hassle-Free </span>
-          Dermatology Experience!
-        </h1>
+        <h1 class="txt-2xl">Prioritizing Your<span class="highlight"> Hassle-Free </span>Dermatology Experience!</h1>
       </div>
-
       <div class="para-area">
-        <p class="txt-md">
-          We ensure privacy, security, and transparency to provide you with a safe, seamless, and trustworthy
-          dermatology experience.
-        </p>
+        <p class="txt-md">We ensure privacy, security, and transparency to provide you with a safe, seamless, and trustworthydermatology experience.</p>
       </div>
     </div>
-
     <div class="cards-cont flex-row-even-center">
       <div class="card">
-        <h1 class="txt-lg easy-card-heading centered">
-
-          Privacy and Security
-        </h1>
-        <p class="txt-md">
-          Your data is encrypted and protected for a safe healthcare experience.
-        </p>
+        <h1 class="txt-lg easy-card-heading centered">Privacy and Security</h1>
+        <p class="txt-md">Your data is encrypted and protected for a safe healthcare experience.</p>
         <div class="icons-cont">
-          <span class="transparent-bg">
-            <span class="easy-card-icon-wrapper mid-center">
-              <i class="fa-solid fa-shield-halved easy-card-icon"></i>
-            </span>
-          </span>
-
+          <span class="transparent-bg"><span class="easy-card-icon-wrapper mid-center"><i class="fa-solid fa-shield-halved easy-card-icon"></i></span></span>
           <span class="white-bg">
             <div class="curvy-wrapper mid-center">
-              <span class="wrapper mid-center">
-                <i class="fa-solid fa-check"></i>
-              </span>
+              <span class="wrapper mid-center"><i class="fa-solid fa-check"></i></span>
             </div>
           </span>
         </div>
       </div>
       <div class="card">
         <h1 class="txt-lg easy-card-heading">
-          <span class="easy-card-icon-wrapper mid-center">
-            <i class="fa-solid fa-id-card-clip easy-card-icon"></i>
-          </span>
-          <br> <br>
-          Personal Identity Protection
+          <span class="easy-card-icon-wrapper mid-center"><i class="fa-solid fa-id-card-clip easy-card-icon"></i></span>
+          <br> <br> Personal Identity Protection
         </h1>
-        <p class="txt-md">
-          We don't collect chat, call, or video consultation data. It's automatically deleted.
-        </p>
-        <div class="icons-cont">
-          <span class="transparent-bg">
-
-          </span>
+        <p class="txt-md"> We don't collect chat, call, or video consultation data. It's automatically deleted.</p>
+        <div class="icons-cont"><span class="transparent-bg"></span>
           <span class="white-bg">
-            <div class="curvy-wrapper mid-center">
-
-              <span class="wrapper mid-center">
-                <i class="fa-solid fa-check"></i>
-              </span>
+            <div class="curvy-wrapper mid-center"><span class="wrapper mid-center"><i class="fa-solid fa-check"></i></span>
             </div>
           </span>
         </div>
       </div>
       <div class="card">
-        <h1 class="txt-lg easy-card-heading centered">
-          Feedback
-        </h1>
-        <p class="txt-md">
-          Your feedback drives continuous improvement.
-          We're listening!
-        </p>
+        <h1 class="txt-lg easy-card-heading centered">Feedback</h1>
+        <p class="txt-md">Your feedback drives continuous improvement. We're listening!</p>
         <div class="icons-cont">
-          <span class="transparent-bg">
-            <span class="easy-card-icon-wrapper mid-center">
-              <i class="fa-solid fa-comments easy-card-icon"></i>
-            </span>
-          </span>
+          <span class="transparent-bg"><span class="easy-card-icon-wrapper mid-center"><i class="fa-solid fa-comments easy-card-icon"></i></span></span>
           <span class="white-bg">
             <div class="curvy-wrapper mid-center">
-
-              <span class="wrapper mid-center">
-                <i class="fa-solid fa-check"></i>
-              </span>
+              <span class="wrapper mid-center"><i class="fa-solid fa-check"></i></span>
             </div>
           </span>
         </div>
       </div>
     </div>
-
   </section>
-
   <!-- Download Buttons Section -->
   <section class="download-btns mid-center">
     <div class="wrapper flex-col-even-center">
       <h1 class="txt-2xl">Launching Soon!</h1>
-      <div class="download-btn-container">
-        <img class="d-btn" src="./public/assets/google-play-btn.svg">
-        <img class="d-btn" src="./public/assets/apple-store-btn.svg">
+      <div class="download-btn-container"><img class="d-btn" src="./assets/google-play-btn.svg"><img class="d-btn" src="./assets/apple-store-btn.svg">
       </div>
     </div>
   </section>
@@ -711,44 +480,34 @@
   <footer>
     <div class="footer-head">
       <h1 class="txt-2xl">Epidise</h1>
-      <p class="txt-lg">
-        Connect with skin care experts anytime, anywhere, with Epidise
-      </p>
-      <p>
-        View our <a href="privacy.html">Privacy Policies</a>
-      </p>
-      <p>
-        Redg. No. U86909UT2025PTC018838
-      </p>
+      <p class="txt-lg">Connect with skin care experts anytime, anywhere, with Epidise</p>
+      <p>View our<a href="privacy.html" target="_blank">Privacy Policies</a></p><p>Redg. No. U86909UT2025PTC018838</p>
     </div>
-    
     <div class="socials txt-md flex-row-start">
-
-      <p>
-        Our Socials
-      </p>
-      
-      <a href="https://www.linkedin.com/company/epidise" target="_blank">
-        <i class="fa-brands fa-linkedin-in social-icon"></i>
-      </a>  
-      <a href="https://www.instagram.com/epidise_healthcare" target="_blank">
-        <i class="fa-brands fa-instagram social-icon"></i>
-      </a>
+      <p>Our Socials</p>
+      <a href="https://www.linkedin.com/company/epidise" target="_blank"><i class="fa-brands fa-linkedin-in social-icon"></i></a>  
+      <a href="https://www.instagram.com/epidise_healthcare" target="_blank"><i class="fa-brands fa-instagram social-icon"></i></a>
     </div>
     
 
     <div class="footer-bottom">
-      <p>
-        All rights reserved | All lefts reserved.
-      </p>
-      <p>
-        Copyright © Epidise 2025
-      </p>
+      <p>All rights reserved | All lefts reserved.</p><p>Copyright © Epidise 2025</p>
     </div>
     
   </footer>
 
-  <script src="/public/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" async defer 
+    integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="main.js"></script>
+   <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
