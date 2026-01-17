@@ -1,2 +1,2 @@
 View the new Epidise website at:
-[https://epidise.netlify.app/](https://epidise.com/)
+[https://www.epidise.com/](https://epidise.com/)
