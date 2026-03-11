@@ -230,7 +230,7 @@ strong, b, bold {
 
 i{
     font-family: 'Times New Roman';
-    font-weight: 600;
+    font-weight: 500;
     font-style: italic;
 }
 .overlay {
@@ -757,19 +757,6 @@ section.download-btns .wrapper .download-btn-container .d-btn {
         width: 100%;
         height: auto;
     }
-}
-
-.dpiit-certificate > div{
-    width: 50%;
-}
-
-.dpiit-certificate img{
-  width: 100%;
-}
-
-.right-side-text{
-    padding: 20px;
-    gap: 20px;
 }
 
 footer {
@@ -1874,6 +1861,47 @@ section.app-features {
     }
 }
 
+
+.dpiit-certificate > div{
+    width: 50%;
+}
+
+.dpiit-certificate img{
+  width: 100%;
+}
+
+.right-side-text{
+    padding: 20px;
+    gap: 20px;
+}
+
+@media (max-width: 781px){
+    .right-side-text{
+        gap: 10px;
+    }
+}
+
+.dpiit-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #e8f4ee;
+    border: 1px solid #b7dfc9;
+    color: #1a7a45;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.dpiit-badge-icon {
+    font-family: inherit;
+    font-style: normal;
+    color: #1a7a45;
+    font-size: 1rem;
+}
+
+
 @media (max-width: 700px){
   .dpiit-certificate img{
     width: 90%;
@@ -1889,6 +1917,10 @@ section.app-features {
   .dpiit-certificate{
       display: flex;
       flex-direction: column-reverse;
+      color: 
+  }
+  .dpiit-badge{
+    display: block;
   }
   .dpiit-certificate > div{
       width: 100%;
