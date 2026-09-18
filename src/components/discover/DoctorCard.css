@@ -1,0 +1,142 @@
+.doctor-card {
+  display: flex;
+  flex-direction: column; /* Stack top and bottom sections */
+  gap: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.doctor-card:hover {
+  border-color: #b0c4de;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.doctor-card.selected {
+  border: 1.5px solid #2563eb; 
+  background-color: #f8faff;
+}
+
+/* --- Top Info Section --- */
+.doctor-info-section {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.avatar-container {
+  flex-shrink: 0;
+}
+
+.doctor-avatar, .avatar-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.doctor-name {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+.doctor-specialty {
+  margin: 0 0 12px 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.doctor-meta {
+  display: flex;
+  flex-wrap: wrap; /* Allows text to drop to next line if squeezed */
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #334155;
+}
+
+.medical-icon {
+  color: #3b82f6;
+  margin-right: 4px;
+}
+
+/* --- Bottom Action Section --- */
+.doctor-action-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.doctor-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.doctor-rating {
+  font-weight: 600;
+  color: #f59e0b;
+  font-size: 0.95rem;
+}
+
+.doctor-fee {
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.doctor-fee strong {
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.view-slots-btn {
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-slots-btn:hover {
+  background-color: #c7d2fe;
+}
+
+.doctor-card.selected .view-slots-btn {
+  background-color: #4f46e5;
+  color: #ffffff;
+}
+
+/* Mobile Breakpoint */
+@media (max-width: 1200px) {
+  .discover-grid {
+    grid-template-columns: 1fr 350px; /* Hide left column, keep center and right */
+  }
+  .doctor-action-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .view-slots-btn {
+    width: 100%;
+  }
+}
