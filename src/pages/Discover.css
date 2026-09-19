@@ -150,3 +150,19 @@
   background-color: #e2e8f0;
   color: #0f172a;
 }
+
+/* Hide mobile filter toggle and close buttons on desktop */
+@media (min-width: 1201px) {
+  .mobile-filter-btn,
+  .filter-close-btn {
+    display: none !important;
+  }
+}
+
+/* Ensure they display properly on mobile */
+@media (max-width: 1200px) {
+  .mobile-filter-btn,
+  .filter-close-btn {
+    display: flex;
+  }
+}
