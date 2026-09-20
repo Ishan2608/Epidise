@@ -1,7 +1,8 @@
 import './DoctorCard.css';
 
 export default function DoctorCard({ doctor, onSelect, isSelected }: { doctor: any, onSelect: () => void, isSelected: boolean }) {
-  const displayName = doctor.primary_practice_name || 'Dr. ' + doctor.id.substring(0, 5).toUpperCase();
+  const rawName = doctor.primary_practice_name || doctor.id.substring(0, 5).toUpperCase();
+  const displayName = /^dr\.?\s/i.test(rawName) ? rawName : `Dr. ${rawName}`;
   const specialty = doctor.specialization + (doctor.area_of_specialization ? ` & ${doctor.area_of_specialization}` : '');
   const languages = doctor.languages?.length ? doctor.languages.join(', ') : 'English';
   
@@ -29,7 +30,7 @@ export default function DoctorCard({ doctor, onSelect, isSelected }: { doctor: a
               <i className="fa-solid fa-briefcase medical-icon"></i> {doctor.years_experience || 0} yrs exp
             </span>
             <span className="meta-item">
-              <i className="fa-solid fa-location-dot medical-icon"></i> {doctor.postal_code || 'Online'}
+              <i className="fa-solid fa-location-dot medical-icon"></i> {doctor.city || 'Online'}
             </span>
             <span className="meta-item">
               <i className="fa-solid fa-comments medical-icon"></i> {languages}

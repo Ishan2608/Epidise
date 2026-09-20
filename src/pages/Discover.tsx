@@ -16,8 +16,9 @@ export default function Discover() {
     setSpecialtyFilter,
     maxFee,
     setMaxFee,
-    genderFilter,        // <-- Add this
-    setGenderFilter      // <-- Add this
+    genderFilter,
+    setGenderFilter,
+    languageFilter, setLanguageFilter
   } = useDiscoverDoctors();
   
   // UI State
@@ -64,8 +65,10 @@ export default function Discover() {
             setSpecialtyFilter={setSpecialtyFilter}
             maxFee={maxFee}
             setMaxFee={setMaxFee}
-            genderFilter={genderFilter}       // <-- Add this
-            setGenderFilter={setGenderFilter} // <-- Add this
+            genderFilter={genderFilter}
+            setGenderFilter={setGenderFilter}
+            languageFilter={languageFilter}
+            setLanguageFilter={setLanguageFilter}
           />
         </aside>
 

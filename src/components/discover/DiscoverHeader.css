@@ -31,7 +31,7 @@
 }
 
 .global-search-container:focus-within {
-  border-color: #2563eb;
+  border-color: var(--btn-prim);
   box-shadow: 0 4px 20px rgba(37, 99, 235, 0.1);
 }
 

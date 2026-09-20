@@ -21,6 +21,13 @@
   display: none;
 }
 
+.empty-booking-state {
+  padding: 40px 24px;
+  text-align: center;
+  border-radius: 20px;
+  color: var(--dark-gray);
+}
+
 /* 2. Tablet & Small Desktop Layout (1200px threshold) */
 @media (max-width: 1200px) {
   .discover-grid {
@@ -108,14 +115,14 @@
 }
 
 .mobile-filter-toggle-btn i {
-  color: #2563eb;
+  color: var(--btn-prim);
   font-size: 0.9rem;
 }
 
 .mobile-filter-toggle-btn:hover {
   background-color: #f8fafc;
-  border-color: #2563eb;
-  color: #2563eb;
+  border-color: var(--btn-prim);
+  color: var(--btn-prim);
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
 }
 
@@ -128,7 +135,8 @@
   justify-content: flex-end;
   align-items: center;
   gap: 8px;
-  width: 100%;
+  width: auto;
+  align-self: flex-end;
   background-color: #f1f5f9;
   color: #334155;
   border: 1px solid #e2e8f0;
@@ -153,7 +161,7 @@
 
 /* Hide mobile filter toggle and close buttons on desktop */
 @media (min-width: 1201px) {
-  .mobile-filter-btn,
+  .mobile-filter-toggle-btn,
   .filter-close-btn {
     display: none !important;
   }

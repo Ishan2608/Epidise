@@ -1,7 +1,7 @@
 .booking-panel {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid #e2e8f0;
+  background: var(--prim-light);
+  border-radius: 20px;
+  border: 1px solid var(--btn-prim);
   padding: 24px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   display: flex;
@@ -28,7 +28,7 @@
 }
 
 .purple-banner {
-  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+  background: var(--prim-dark);
   color: white;
   padding: 16px;
   border-radius: 12px;
@@ -64,8 +64,8 @@
 }
 
 .dynamic-day-btn.selected {
-  background: #2563eb;
-  border-color: #2563eb;
+  background: var(--btn-prim);
+  border-color: var(--btn-prim);
   color: white;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .dynamic-day-btn.selected .day-name {
-  color: #eff6ff;
+  color: var(--prim-light);
 }
 
 .day-num {
@@ -123,9 +123,9 @@
 }
 
 .slot-btn.selected {
-  background: #eff6ff;
-  border-color: #2563eb;
-  color: #2563eb;
+  background: var(--prim-light);
+  border-color: var(--btn-prim);
+  color: var(--btn-prim);
   font-weight: 600;
 }
 
@@ -148,7 +148,7 @@
 
 .proceed-btn {
   width: 100%;
-  background: #2563eb;
+  background: var(--btn-prim);
   color: white;
   border: none;
   padding: 12px;
@@ -181,7 +181,7 @@
 }
 
 .rating-badge {
-  background: #2563eb;
+  background: var(--btn-prim);
   color: white;
   padding: 4px 10px;
   border-radius: 12px;
@@ -206,8 +206,8 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: #e0e7ff;
-  color: #4f46e5;
+  background: var(--prim-light);
+  color: var(--btn-prim);
   display: flex;
   align-items: center;
   justify-content: center;

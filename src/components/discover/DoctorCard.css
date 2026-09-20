@@ -4,7 +4,7 @@
   gap: 16px;
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 20px;
   margin-bottom: 15px;
   cursor: pointer;
@@ -18,8 +18,8 @@
 }
 
 .doctor-card.selected {
-  border: 1.5px solid #2563eb; 
-  background-color: #f8faff;
+  border: 1.5px solid var(--btn-prim); 
+  background-color: var(--prim-light);
 }
 
 /* --- Top Info Section --- */
@@ -42,7 +42,7 @@
 
 .avatar-placeholder {
   background-color: #e0e7ff;
-  color: #4f46e5;
+  color: var(--btn-prim);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,7 +70,7 @@
 }
 
 .medical-icon {
-  color: #3b82f6;
+  color: var(--btn-prim);
   margin-right: 4px;
 }
 
@@ -106,8 +106,8 @@
 }
 
 .view-slots-btn {
-  background-color: #e0e7ff;
-  color: #4f46e5;
+  background-color: var(--prim-light);
+  color: var(--prim-dark);
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -117,11 +117,11 @@
 }
 
 .view-slots-btn:hover {
-  background-color: #c7d2fe;
+  background-color: var(--btn-prim-hover);
 }
 
 .doctor-card.selected .view-slots-btn {
-  background-color: #4f46e5;
+  background-color: var(--btn-prim);
   color: #ffffff;
 }
 
