@@ -118,6 +118,7 @@
 
 .view-slots-btn:hover {
   background-color: var(--btn-prim-hover);
+  color: white;
 }
 
 .doctor-card.selected .view-slots-btn {
