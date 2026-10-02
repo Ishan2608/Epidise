@@ -109,6 +109,12 @@ export default function DocKYC() {
       .from('doctors')
       .update({
         kyc_status: 'verified',
+        aadhaar_name: aadhaarName,
+        aadhaar_number: aadhaarNumber,
+        registration_number: registrationNumber,
+        medical_college_name: medicalCollegeName,
+        degree_title: degreeTitle,
+        graduation_year: Number(graduationYear),
         city: practiceCity,
         postal_code: practicePostalCode
       })

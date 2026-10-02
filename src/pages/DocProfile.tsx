@@ -5,7 +5,6 @@ import { useAuthStore } from '../stores/authStore';
 import './doc.css';
 
 interface DoctorProfileData {
-  primary_practice_name: string | null;
   specialization: string;
   area_of_specialization: string | null;
   years_experience: number;
@@ -14,54 +13,79 @@ interface DoctorProfileData {
   rating_average: number;
   rating_count: number;
   city: string | null;
+  postal_code: string | null;
   is_active: boolean;
   kyc_status: string;
   profile_completed: boolean;
+  registration_number: string | null;
 }
 
 interface UserProfileData {
   full_name: string | null;
+  email: string | null;
+  phone: string | null;
   profile_picture_url: string | null;
 }
 
 export default function DocProfile() {
-  const { user } = useAuthStore();
+  const { user, refresh, signOut } = useAuthStore();
   const navigate = useNavigate();
 
   const [doctorData, setDoctorData] = useState<DoctorProfileData | null>(null);
   const [userData, setUserData] = useState<UserProfileData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [togglingAvailability, setTogglingAvailability] = useState(false);
+
+  async function loadProfile() {
+    if (!user) return;
+
+    const { data: doctorRow } = await supabase
+      .from('doctors')
+      .select('specialization, area_of_specialization, years_experience, languages, consultation_fee, rating_average, rating_count, city, postal_code, is_active, kyc_status, profile_completed, registration_number')
+      .eq('user_id', user.id)
+      .single();
+
+    const { data: userRow } = await supabase
+      .from('users')
+      .select('full_name, phone, profile_picture_url')
+      .eq('id', user.id)
+      .single();
+
+    setDoctorData(doctorRow);
+    setUserData(userRow ? { ...userRow, email: user.email ?? null } : null);
+    setLoading(false);
+  }
 
   useEffect(() => {
-    async function loadProfile() {
-      if (!user) return;
-
-      const { data: doctorRow } = await supabase
-        .from('doctors')
-        .select('primary_practice_name, specialization, area_of_specialization, years_experience, languages, consultation_fee, rating_average, rating_count, city, is_active, kyc_status, profile_completed')
-        .eq('user_id', user.id)
-        .single();
-
-      const { data: userRow } = await supabase
-        .from('users')
-        .select('full_name, profile_picture_url')
-        .eq('id', user.id)
-        .single();
-
-      setDoctorData(doctorRow);
-      setUserData(userRow);
-      setLoading(false);
-    }
-
     loadProfile();
   }, [user]);
 
+  async function handleToggleAvailability() {
+    if (!user || !doctorData) return;
+    setTogglingAvailability(true);
+
+    const newValue = !doctorData.is_active;
+    const { error } = await supabase
+      .from('doctors')
+      .update({ is_active: newValue })
+      .eq('user_id', user.id);
+
+    if (!error) {
+      setDoctorData({ ...doctorData, is_active: newValue });
+    }
+
+    setTogglingAvailability(false);
+  }
+
+  async function handleLogout() {
+    await signOut();
+    navigate('/for-doctors');
+  }
+
   if (loading) {
     return (
-      <div className="doc-page">
-        <div className="doc-card">
-          <p className="doc-subtitle">Loading your profile...</p>
-        </div>
+      <div className="doc-dashboard">
+        <p className="doc-subtitle">Loading your profile...</p>
       </div>
     );
   }
@@ -71,8 +95,15 @@ export default function DocProfile() {
   const profileDone = doctorData?.profile_completed === true;
 
   return (
-    <div className="doc-page">
-      <div className="doc-card">
+    <div className="doc-dashboard">
+      <div className="doc-dashboard-topbar">
+        <h1 className="doc-heading">My Profile</h1>
+        <button className="doc-logout-btn" onClick={handleLogout}>
+          <i className="fa-solid fa-right-from-bracket"></i> Logout
+        </button>
+      </div>
+
+      <div className="doc-profile-card">
         <div className="doc-profile-header">
           {userData?.profile_picture_url ? (
             <img src={userData.profile_picture_url} alt={displayName} className="doc-profile-avatar" />
@@ -82,89 +113,125 @@ export default function DocProfile() {
             </div>
           )}
           <div>
-            <h1 className="doc-heading">{displayName}</h1>
-            <p className="doc-subtitle">
+            <h2 className="doc-heading" style={{ fontSize: '1.4rem', marginBottom: 4 }}>{displayName}</h2>
+            <p className="doc-subtitle" style={{ marginBottom: 8 }}>
               {doctorData?.specialization || 'Specialization not set'}
               {doctorData?.area_of_specialization ? ` & ${doctorData.area_of_specialization}` : ''}
             </p>
+            <div className="doc-status-row" style={{ marginBottom: 0 }}>
+              <span className={kycDone ? 'doc-status doc-status-verified' : 'doc-status doc-status-review'}>
+                <i className="fa-solid fa-shield-halved"></i> {kycDone ? 'KYC Verified' : `KYC: ${doctorData?.kyc_status ?? 'not started'}`}
+              </span>
+            </div>
           </div>
         </div>
 
-        {(!kycDone || !profileDone) && (
-          <div className="doc-section">
-            <h3 className="doc-section-heading">Finish setting up your account</h3>
+        <div className="doc-stats-row">
+          <div className="doc-stat-block">
+            <span className="doc-stat-block-value">{doctorData?.years_experience ?? 0}</span>
+            <span className="doc-stat-block-label">Years Experience</span>
+          </div>
+          <div className="doc-stat-block">
+            <span className="doc-stat-block-value">{doctorData?.rating_average ?? 0}</span>
+            <span className="doc-stat-block-label">Rating ({doctorData?.rating_count ?? 0} reviews)</span>
+          </div>
+          <div className="doc-stat-block">
+            <span className="doc-stat-block-value">{doctorData?.consultation_fee ? `₹${doctorData.consultation_fee}` : '—'}</span>
+            <span className="doc-stat-block-label">Consultation Fee</span>
+          </div>
+        </div>
+      </div>
 
-            {!kycDone && (
-              <div className="doc-onboarding-item">
-                <div>
-                  <p className="doc-onboarding-title">Complete KYC Verification</p>
-                  <p className="doc-subtitle">Confirms your identity and medical credentials.</p>
-                </div>
-                <button className="doc-secondary-btn" onClick={() => navigate('/for-doctors/kyc')}>
-                  Start KYC
-                </button>
+      {(!kycDone || !profileDone) && (
+        <div className="doc-profile-card">
+          <h3 className="doc-card-title"><i className="fa-solid fa-list-check"></i> Finish setting up your account</h3>
+
+          {!kycDone && (
+            <div className="doc-onboarding-item">
+              <div>
+                <p className="doc-onboarding-title">Complete KYC Verification</p>
+                <p className="doc-subtitle">Confirms your identity and medical credentials.</p>
               </div>
-            )}
+              <button className="doc-secondary-btn" style={{ width: 'auto', margin: 0 }} onClick={() => navigate('/for-doctors/kyc')}>
+                Start KYC
+              </button>
+            </div>
+          )}
 
-            {!profileDone && (
-              <div className="doc-onboarding-item">
-                <div>
-                  <p className="doc-onboarding-title">Complete Practice Profile</p>
-                  <p className="doc-subtitle">Specialization, languages, fee and city — needed to appear on Discover.</p>
-                </div>
-                <button className="doc-secondary-btn" onClick={() => navigate('/for-doctors/profile-setup')}>
-                  Complete Profile
-                </button>
+          {!profileDone && (
+            <div className="doc-onboarding-item">
+              <div>
+                <p className="doc-onboarding-title">Complete Practice Profile</p>
+                <p className="doc-subtitle">Specialization, languages, fee and city — needed to appear on Discover.</p>
               </div>
-            )}
-          </div>
-        )}
-
-        <div className="doc-status-row">
-          <span className={kycDone ? 'doc-status doc-status-verified' : 'doc-status doc-status-review'}>
-            <i className="fa-solid fa-shield-halved"></i> KYC: {doctorData?.kyc_status ?? 'not_started'}
-          </span>
-          <span className={doctorData?.is_active ? 'doc-status doc-status-verified' : 'doc-status doc-status-review'}>
-            <i className="fa-solid fa-circle"></i> {doctorData?.is_active ? 'Accepting appointments' : 'On holiday'}
-          </span>
+              <button className="doc-secondary-btn" style={{ width: 'auto', margin: 0 }} onClick={() => navigate('/for-doctors/profile-setup')}>
+                Complete Profile
+              </button>
+            </div>
+          )}
         </div>
+      )}
 
-        <div className="doc-section">
-          <h3 className="doc-section-heading">Practice Details</h3>
-          <div className="doc-form-grid">
+      <div className="doc-dashboard-grid">
+        <div className="doc-profile-card">
+          <h3 className="doc-card-title"><i className="fa-solid fa-calendar-check"></i> Availability</h3>
+          <div className="doc-toggle-row">
             <div>
-              <p className="doc-subtitle">Experience</p>
-              <p>{doctorData?.years_experience ?? 0} years</p>
+              <p className="doc-onboarding-title">{doctorData?.is_active ? 'Accepting Appointments' : 'On Holiday'}</p>
+              <p className="doc-subtitle" style={{ marginBottom: 0 }}>
+                {doctorData?.is_active ? 'Patients can book new slots with you.' : 'Your profile is hidden from new bookings.'}
+              </p>
             </div>
-            <div>
-              <p className="doc-subtitle">Consultation Fee</p>
-              <p>{doctorData?.consultation_fee ? `₹${doctorData.consultation_fee}` : 'Not set'}</p>
-            </div>
-            <div>
-              <p className="doc-subtitle">City</p>
-              <p>{doctorData?.city || 'Not set'}</p>
-            </div>
-            <div>
-              <p className="doc-subtitle">Languages</p>
-              <p>{doctorData?.languages?.join(', ') || 'Not set'}</p>
-            </div>
-            <div>
-              <p className="doc-subtitle">Rating</p>
-              <p>{doctorData?.rating_average ?? 0} ({doctorData?.rating_count ?? 0} reviews)</p>
-            </div>
+            <button
+              className={doctorData?.is_active ? 'doc-toggle-switch on' : 'doc-toggle-switch'}
+              onClick={handleToggleAvailability}
+              disabled={togglingAvailability}
+            />
           </div>
         </div>
 
-        <div className="doc-section">
-          <h3 className="doc-section-heading">Upcoming Appointments</h3>
-          <p className="doc-subtitle">Appointment booking data isn't wired up yet.</p>
+        <div className="doc-profile-card">
+          <h3 className="doc-card-title"><i className="fa-solid fa-id-card"></i> Account Details</h3>
+          <div className="doc-detail-row">
+            <span className="doc-detail-label">Email</span>
+            <span className="doc-detail-value">{userData?.email || '—'}</span>
+          </div>
+          <div className="doc-detail-row">
+            <span className="doc-detail-label">Phone</span>
+            <span className="doc-detail-value">{userData?.phone || '—'}</span>
+          </div>
+          <div className="doc-detail-row">
+            <span className="doc-detail-label">Registration No.</span>
+            <span className="doc-detail-value">{doctorData?.registration_number || '—'}</span>
+          </div>
         </div>
 
-        {profileDone && (
+        <div className="doc-profile-card">
+          <h3 className="doc-card-title"><i className="fa-solid fa-notes-medical"></i> Practice Details</h3>
+          <div className="doc-detail-row">
+            <span className="doc-detail-label">City</span>
+            <span className="doc-detail-value">{doctorData?.city || 'Not set'}</span>
+          </div>
+          <div className="doc-detail-row">
+            <span className="doc-detail-label">Postal Code</span>
+            <span className="doc-detail-value">{doctorData?.postal_code || 'Not set'}</span>
+          </div>
+          <div className="doc-detail-row">
+            <span className="doc-detail-label">Languages</span>
+            <span className="doc-detail-value">{doctorData?.languages?.join(', ') || 'Not set'}</span>
+          </div>
           <button className="doc-secondary-btn" onClick={() => navigate('/for-doctors/profile-setup')}>
             Edit Practice Profile
           </button>
-        )}
+        </div>
+
+        <div className="doc-profile-card">
+          <h3 className="doc-card-title"><i className="fa-solid fa-calendar-days"></i> Upcoming Appointments</h3>
+          <div className="doc-empty-state">
+            <i className="fa-solid fa-calendar-xmark" style={{ fontSize: '1.5rem', marginBottom: 8, display: 'block' }}></i>
+            Appointment booking isn't wired up yet.
+          </div>
+        </div>
       </div>
     </div>
   );

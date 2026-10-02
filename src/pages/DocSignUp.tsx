@@ -64,6 +64,18 @@ export default function DocSignUp() {
     setSaving(true);
     setError(null);
 
+    const { data: existingPhone } = await supabase
+      .from('users')
+      .select('id')
+      .eq('phone', phone)
+      .maybeSingle();
+
+    if (existingPhone) {
+      setSaving(false);
+      setError('An account with this phone number already exists.');
+      return;
+    }
+
     const { data: authData, error: authError } = await supabase.auth.signUp({
       email,
       password
@@ -93,7 +105,7 @@ export default function DocSignUp() {
     const { error: doctorsError } = await supabase.from('doctors').insert({
       user_id: newUserId,
       years_experience: Number(experience),
-      registration_number: '',
+      registration_number: null,
       city,
       postal_code: postalCode
     });
