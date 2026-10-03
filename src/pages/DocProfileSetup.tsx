@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { supabase } from '../services/supabase';
 import { useAuthStore } from '../stores/authStore';
+import ScheduleSection from '../components/doctor/ScheduleSection';
 import './doc.css';
 
 export default function DocProfileSetup() {
@@ -19,6 +20,7 @@ export default function DocProfileSetup() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loadingExisting, setLoadingExisting] = useState(true);
+  const [activeTab, setActiveTab] = useState<'details' | 'availability'>('details');
 
   useEffect(() => {
     async function loadExisting() {
@@ -103,9 +105,30 @@ export default function DocProfileSetup() {
         <div className="doc-logo">
           <i className="fa-solid fa-stethoscope"></i>
         </div>
+        <button className="doc-back-link" style={{ margin: '0 0 16px 0' }} onClick={() => navigate('/doctor-profile')}>
+          <i className="fa-solid fa-arrow-left"></i> Back to Profile
+        </button>
+
         <h1 className="doc-heading">Complete Your Practice Profile</h1>
         <p className="doc-subtitle">These details are shown to patients browsing Epidise and used for Discover filtering.</p>
 
+        <div className="doc-mode-toggle">
+          <button
+            className={activeTab === 'details' ? 'doc-mode-tab doc-mode-tab-active' : 'doc-mode-tab'}
+            onClick={() => setActiveTab('details')}
+          >
+            Practice Details
+          </button>
+          <button
+            className={activeTab === 'availability' ? 'doc-mode-tab doc-mode-tab-active' : 'doc-mode-tab'}
+            onClick={() => setActiveTab('availability')}
+          >
+            Availability
+          </button>
+        </div>
+
+        {activeTab === 'details' && (
+        <div>
         <div className="doc-field">
           <label>Specialization<span className="required">*</span></label>
           <div className="doc-input-wrapper">
@@ -181,6 +204,10 @@ export default function DocProfileSetup() {
         <button className="doc-submit-btn" onClick={handleSubmit} disabled={!isFormValid || saving || loadingExisting}>
           {saving ? 'Saving...' : 'Complete Profile'}
         </button>
+        </div>
+        )}
+
+        {activeTab === 'availability' && <ScheduleSection />}
       </div>
     </div>
   );

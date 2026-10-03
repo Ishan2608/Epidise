@@ -5,6 +5,8 @@ import { useAuthStore } from '../stores/authStore';
 import './doc.css';
 
 interface DoctorProfileData {
+  id: string;
+  isavailable: boolean;
   specialization: string;
   area_of_specialization: string | null;
   years_experience: number;
@@ -20,6 +22,15 @@ interface DoctorProfileData {
   registration_number: string | null;
 }
 
+interface AppointmentRow {
+  id: string;
+  start_time: string;
+  end_time: string;
+  status: string;
+  symptoms: string | null;
+  patientName: string;
+}
+
 interface UserProfileData {
   full_name: string | null;
   email: string | null;
@@ -33,6 +44,8 @@ export default function DocProfile() {
 
   const [doctorData, setDoctorData] = useState<DoctorProfileData | null>(null);
   const [userData, setUserData] = useState<UserProfileData | null>(null);
+  const [hasSchedule, setHasSchedule] = useState(false);
+  const [upcomingAppointments, setUpcomingAppointments] = useState<AppointmentRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [togglingAvailability, setTogglingAvailability] = useState(false);
 
@@ -41,7 +54,7 @@ export default function DocProfile() {
 
     const { data: doctorRow } = await supabase
       .from('doctors')
-      .select('specialization, area_of_specialization, years_experience, languages, consultation_fee, rating_average, rating_count, city, postal_code, is_active, kyc_status, profile_completed, registration_number')
+      .select('id, specialization, area_of_specialization, years_experience, languages, consultation_fee, rating_average, rating_count, city, postal_code, is_active, isavailable, kyc_status, profile_completed, registration_number')
       .eq('user_id', user.id)
       .single();
 
@@ -53,6 +66,52 @@ export default function DocProfile() {
 
     setDoctorData(doctorRow);
     setUserData(userRow ? { ...userRow, email: user.email ?? null } : null);
+
+    if (doctorRow) {
+      if (doctorRow.isavailable) {
+        setHasSchedule(true);
+      } else {
+        const { data: availabilityRows } = await supabase
+          .from('weekly_availability')
+          .select('id')
+          .eq('doctor_id', doctorRow.id)
+          .limit(1);
+
+        setHasSchedule((availabilityRows?.length ?? 0) > 0);
+      }
+
+      const { data: appointmentRows } = await supabase
+        .from('appointments')
+        .select('id, user_id, start_time, end_time, status, symptoms')
+        .eq('doctor_id', doctorRow.id)
+        .eq('status', 'scheduled')
+        .gte('start_time', new Date().toISOString())
+        .order('start_time', { ascending: true })
+        .limit(5);
+
+      if (appointmentRows?.length) {
+        const patientIds = [...new Set(appointmentRows.map(a => a.user_id))];
+
+        const { data: patientRows } = await supabase
+          .from('users')
+          .select('id, full_name')
+          .in('id', patientIds);
+
+        const nameById = new Map((patientRows ?? []).map(p => [p.id, p.full_name]));
+
+        setUpcomingAppointments(
+          appointmentRows.map(a => ({
+            id: a.id,
+            start_time: a.start_time,
+            end_time: a.end_time,
+            status: a.status,
+            symptoms: a.symptoms,
+            patientName: nameById.get(a.user_id) || 'Patient'
+          }))
+        );
+      }
+    }
+
     setLoading(false);
   }
 
@@ -227,10 +286,43 @@ export default function DocProfile() {
 
         <div className="doc-profile-card">
           <h3 className="doc-card-title"><i className="fa-solid fa-calendar-days"></i> Upcoming Appointments</h3>
-          <div className="doc-empty-state">
-            <i className="fa-solid fa-calendar-xmark" style={{ fontSize: '1.5rem', marginBottom: 8, display: 'block' }}></i>
-            Appointment booking isn't wired up yet.
-          </div>
+          {!kycDone ? (
+            <div className="doc-empty-state">
+              <i className="fa-solid fa-shield-halved" style={{ fontSize: '1.5rem', marginBottom: 8, display: 'block' }}></i>
+              Complete KYC to start accepting appointments.
+              <div>
+                <button className="doc-secondary-btn" onClick={() => navigate('/for-doctors/kyc')}>
+                  Complete KYC
+                </button>
+              </div>
+            </div>
+          ) : !hasSchedule ? (
+            <div className="doc-empty-state">
+              <i className="fa-solid fa-calendar-plus" style={{ fontSize: '1.5rem', marginBottom: 8, display: 'block' }}></i>
+              Set your availability to start accepting appointments.
+              <div>
+                <button className="doc-secondary-btn" onClick={() => navigate('/for-doctors/profile-setup')}>
+                  Set Timings
+                </button>
+              </div>
+            </div>
+          ) : upcomingAppointments.length > 0 ? (
+            <div>
+              {upcomingAppointments.map(appt => (
+                <div className="doc-detail-row" key={appt.id}>
+                  <span className="doc-detail-label">
+                    {appt.patientName} — {new Date(appt.start_time).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}
+                  </span>
+                  <span className="doc-detail-value">{appt.status}</span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="doc-empty-state">
+              <i className="fa-solid fa-calendar-xmark" style={{ fontSize: '1.5rem', marginBottom: 8, display: 'block' }}></i>
+              No upcoming appointments.
+            </div>
+          )}
         </div>
       </div>
     </div>
