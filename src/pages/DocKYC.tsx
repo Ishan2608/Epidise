@@ -128,7 +128,7 @@ export default function DocKYC() {
     }
 
     await refresh();
-    navigate('/doctor-profile');
+    navigate('/for-doctors/profile');
   }
 
   const qualificationStepValid = medicalCollegeName.trim().length > 0 && degreeTitle.trim().length > 0 && graduationYear.trim().length > 0 && qualificationUploaded;

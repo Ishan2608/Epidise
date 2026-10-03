@@ -33,7 +33,7 @@ export default function App() {
         <Route element={<DoctorRoute />}>
           <Route path="/for-doctors/kyc" element={<DocKYC />} />
           <Route path="/for-doctors/profile-setup" element={<DocProfileSetup />} />
-          <Route path="/doctor-profile" element={<DocProfile />} />
+          <Route path="/for-doctors/profile" element={<DocProfile />} />
         </Route>
       </Routes>
 

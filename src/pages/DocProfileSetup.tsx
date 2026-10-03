@@ -96,7 +96,7 @@ export default function DocProfileSetup() {
     }
 
     await refresh();
-    navigate('/doctor-profile');
+    navigate('/for-doctors/profile');
   }
 
   return (
@@ -105,7 +105,7 @@ export default function DocProfileSetup() {
         <div className="doc-logo">
           <i className="fa-solid fa-stethoscope"></i>
         </div>
-        <button className="doc-back-link" style={{ margin: '0 0 16px 0' }} onClick={() => navigate('/doctor-profile')}>
+        <button className="doc-back-link" style={{ margin: '0 0 16px 0' }} onClick={() => navigate('/for-doctors/profile')}>
           <i className="fa-solid fa-arrow-left"></i> Back to Profile
         </button>
 

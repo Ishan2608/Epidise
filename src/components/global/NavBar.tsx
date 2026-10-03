@@ -7,8 +7,7 @@ export default function NavBar() {
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
-  const isForDoctorsActive =
-    location.pathname.startsWith('/for-doctors') || location.pathname === '/doctor-profile';
+  const isForDoctorsActive = location.pathname.startsWith('/for-doctors');
 
   return (
     <>

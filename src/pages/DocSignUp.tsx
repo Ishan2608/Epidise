@@ -15,7 +15,7 @@ export default function DocSignUp() {
 
   useEffect(() => {
     if (!authLoading && user && role === 'doctor') {
-      navigate('/doctor-profile', { replace: true });
+      navigate('/for-doctors/profile', { replace: true });
     }
   }, [authLoading, user, role]);
   const [mode, setMode] = useState<'signup' | 'login'>('signup');
@@ -146,7 +146,7 @@ export default function DocSignUp() {
       return;
     }
 
-    navigate('/doctor-profile');
+    navigate('/for-doctors/profile');
   }
 
   async function handlePhotoContinue() {
@@ -366,7 +366,7 @@ export default function DocSignUp() {
             <h2 className="doc-heading">Welcome to Epidise Community!</h2>
             <p className="doc-subtitle">Your doctor profile has been created. To start consulting with patients and receiving appointments, you need to complete the KYC verification process.</p>
             <p className="doc-subtitle">KYC verification typically takes 8-15 minutes to complete.</p>
-            <button className="doc-submit-btn" onClick={() => navigate('/doctor-profile')}>Go to My Profile</button>
+            <button className="doc-submit-btn" onClick={() => navigate('/for-doctors/profile')}>Go to My Profile</button>
           </div>
         )}
           </div>
