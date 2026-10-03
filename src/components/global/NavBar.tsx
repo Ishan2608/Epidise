@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 
 export default function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const isForDoctorsActive =
+    location.pathname.startsWith('/for-doctors') || location.pathname === '/doctor-profile';
 
   return (
     <>
@@ -29,7 +33,7 @@ export default function NavBar() {
               <NavLink to="/discover" className="nav-link">Discover</NavLink>
             </li>
             <li className="menu-item">
-              <NavLink to="/for-doctors" className="nav-link">For Doctors</NavLink>
+              <Link to="/for-doctors" className={isForDoctorsActive ? 'nav-link active' : 'nav-link'}>For Doctors</Link>
             </li>
           </ul>
         </div>
@@ -55,11 +59,11 @@ export default function NavBar() {
       </nav>
 
       {/* Mobile Navigation Drawer */}
-      <div 
-        className={`body-overlay ${isMobileMenuOpen ? 'active' : ''}`} 
+      <div
+        className={`body-overlay ${isMobileMenuOpen ? 'active' : ''}`}
         onClick={toggleMenu}
       ></div>
-      
+
       <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
         <div className="mobile-nav-header">
           <span className="close-btn" onClick={toggleMenu}>&times;</span>
@@ -75,15 +79,15 @@ export default function NavBar() {
             <NavLink to="/discover" className="nav-link" onClick={toggleMenu}>Discover</NavLink>
           </li>
           <li className="menu-item">
-            <NavLink to="/for-doctors" className="nav-link" onClick={toggleMenu}>For Doctors</NavLink>
+            <Link to="/for-doctors" className={isForDoctorsActive ? 'nav-link active' : 'nav-link'} onClick={toggleMenu}>For Doctors</Link>
           </li>
           <li className="menu-item" style={{ marginTop: '10px' }}>
-            <a 
-              href="https://forms.gle/HB9g4WkWFZyjuMmm7" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="partner-up" 
-              onClick={toggleMenu} 
+            <a
+              href="https://forms.gle/HB9g4WkWFZyjuMmm7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="partner-up"
+              onClick={toggleMenu}
               style={{ display: 'inline-block', textDecoration: 'none' }}
             >
               Partner Up
