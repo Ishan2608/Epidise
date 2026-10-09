@@ -1,0 +1,1 @@
+export const EPIDISE_APP_URL = 'REPLACE_WITH_APP_LINK';

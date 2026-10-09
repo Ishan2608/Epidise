@@ -6,7 +6,7 @@ import { supabase } from '../services/supabase';
 import { useAuthStore } from '../stores/authStore';
 import './doc.css';
 
-const EPIDISE_APP_URL = 'REPLACE_WITH_APP_LINK';
+import { EPIDISE_APP_URL } from '../constants/constants';
 
 interface DoctorProfileData {
   id: string;
