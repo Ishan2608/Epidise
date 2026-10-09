@@ -675,3 +675,34 @@
     padding: 24px;
   }
 }
+
+.doc-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.doc-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+
+.doc-modal .doc-logo {
+  margin: 0 auto 20px auto;
+}
+
+.doc-modal-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}

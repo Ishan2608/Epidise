@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShieldHalved } from '@fortawesome/free-solid-svg-icons';
 import { supabase } from '../services/supabase';
 import { useAuthStore } from '../stores/authStore';
 import './doc.css';
+
+const EPIDISE_APP_URL = 'REPLACE_WITH_APP_LINK';
 
 interface DoctorProfileData {
   id: string;
@@ -44,6 +48,7 @@ export default function DocProfile() {
 
   const [doctorData, setDoctorData] = useState<DoctorProfileData | null>(null);
   const [userData, setUserData] = useState<UserProfileData | null>(null);
+  const [showKycModal, setShowKycModal] = useState(false);
   const [hasSchedule, setHasSchedule] = useState(false);
   const [upcomingAppointments, setUpcomingAppointments] = useState<AppointmentRow[]>([]);
   const [loading, setLoading] = useState(true);
@@ -211,7 +216,7 @@ export default function DocProfile() {
                 <p className="doc-onboarding-title">Complete KYC Verification</p>
                 <p className="doc-subtitle">Confirms your identity and medical credentials.</p>
               </div>
-              <button className="doc-secondary-btn" style={{ width: 'auto', margin: 0 }} onClick={() => navigate('/for-doctors/kyc')}>
+              <button className="doc-secondary-btn" style={{ width: 'auto', margin: 0 }} onClick={() => setShowKycModal(true)}>
                 Start KYC
               </button>
             </div>
@@ -291,7 +296,7 @@ export default function DocProfile() {
               <i className="fa-solid fa-shield-halved" style={{ fontSize: '1.5rem', marginBottom: 8, display: 'block' }}></i>
               Complete KYC to start accepting appointments.
               <div>
-                <button className="doc-secondary-btn" onClick={() => navigate('/for-doctors/kyc')}>
+                <button className="doc-secondary-btn" onClick={() => setShowKycModal(true)}>
                   Complete KYC
                 </button>
               </div>
@@ -325,6 +330,24 @@ export default function DocProfile() {
           )}
         </div>
       </div>
+
+      {showKycModal && (
+        <div className="doc-modal-overlay" onClick={() => setShowKycModal(false)}>
+          <div className="doc-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="doc-logo">
+              <FontAwesomeIcon icon={faShieldHalved} />
+            </div>
+            <h2 className="doc-heading" style={{ fontSize: '1.4rem' }}>Complete KYC in the Epidise App</h2>
+            <p className="doc-subtitle">
+              KYC verification is done through the Epidise mobile app. Open the app to verify your identity and credentials.
+            </p>
+            <a className="doc-submit-btn doc-modal-link" href={EPIDISE_APP_URL} target="_blank" rel="noopener noreferrer">
+              Open Epidise App
+            </a>
+            <button className="doc-back-link" onClick={() => setShowKycModal(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
