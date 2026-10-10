@@ -174,3 +174,8 @@
     display: flex;
   }
 }
+
+.discover-list,
+.discover-booking {
+  min-width: 0;
+}
