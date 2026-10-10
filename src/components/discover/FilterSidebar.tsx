@@ -36,6 +36,24 @@ export default function FilterSidebar({
   const [specialtyInput, setSpecialtyInput] = useState('');
   const [languageInput, setLanguageInput] = useState('');
 
+  const hasActiveFilters =
+    userLocation.length > 0 ||
+    specialtyFilter.length > 0 ||
+    languageFilter.length > 0 ||
+    maxFee !== 1500 ||
+    genderFilter !== 'Any';
+
+  const resetFilters = () => {
+    setUserLocation([]);
+    setSpecialtyFilter([]);
+    setLanguageFilter([]);
+    setMaxFee(1500);
+    setGenderFilter('Any');
+    setCityInput('');
+    setSpecialtyInput('');
+    setLanguageInput('');
+  };
+
   const toggleGroup = (key: GroupKey) => {
     setOpenGroups(prev => ({ ...prev, [key]: !prev[key] }));
   };
@@ -70,6 +88,17 @@ export default function FilterSidebar({
 
   return (
     <div className="filter-sidebar">
+
+      <div className="filter-reset-row">
+        <button
+          type="button"
+          className="filter-reset-btn"
+          onClick={resetFilters}
+          disabled={!hasActiveFilters}
+        >
+          Reset filters
+        </button>
+      </div>
 
       <div className="filter-group">
         <div className="filter-header" onClick={() => toggleGroup('gender')}>

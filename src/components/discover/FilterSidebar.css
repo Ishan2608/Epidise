@@ -154,3 +154,32 @@
   color: inherit;
   font: inherit;
 }
+
+.filter-reset-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.filter-reset-btn {
+  background: none;
+  border: 1px solid var(--light-gray);
+  color: var(--prim-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-reset-btn:hover:not(:disabled) {
+  border-color: var(--btn-prim);
+  color: var(--btn-prim);
+}
+
+.filter-reset-btn:disabled {
+  color: var(--dark-gray);
+  opacity: 0.5;
+  cursor: not-allowed;
+}
