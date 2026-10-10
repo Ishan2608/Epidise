@@ -1,6 +1,11 @@
 import './DiscoverHeader.css';
 
-export default function DiscoverHeader() {
+interface DiscoverHeaderProps {
+  searchQuery: string;
+  onSearchChange: (value: string) => void;
+}
+
+export default function DiscoverHeader({ searchQuery, onSearchChange }: DiscoverHeaderProps) {
   return (
     <div className="discover-header">
       <div className="header-titles">
@@ -14,6 +19,8 @@ export default function DiscoverHeader() {
           type="text" 
           placeholder="Search for your preferred Dermatologist" 
           className="global-search-input"
+          value={searchQuery}
+          onChange={(e) => onSearchChange(e.target.value)}
         />
       </div>
     </div>

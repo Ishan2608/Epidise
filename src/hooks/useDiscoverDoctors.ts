@@ -26,6 +26,7 @@ export function useDiscoverDoctors() {
   const [languageFilter, setLanguageFilter] = useState<string[]>([]);
   const [maxFee, setMaxFee] = useState(1500);
   const [genderFilter, setGenderFilter] = useState('Any');
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     let isMounted = true;
@@ -62,7 +63,22 @@ export function useDiscoverDoctors() {
   }, []);
 
   const doctors = useMemo(() => {
+    const searchTerms = searchQuery
+      .trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(term => term && term !== 'dr' && term !== 'dr.');
+
     return allDoctors.filter(doc => {
+      const searchableText = normalizeList([
+        doc.primary_practice_name,
+        doc.specialization,
+        doc.area_of_specialization,
+        doc.city,
+        ...(Array.isArray(doc.languages) ? doc.languages : [])
+      ]).join(' ').toLowerCase();
+      const matchSearch = searchTerms.every(term => searchableText.includes(term));
+
       const cities = normalizeList([doc.city]);
       const matchLocation = matchesAnyFilter(userLocation, cities);
 
@@ -79,9 +95,9 @@ export function useDiscoverDoctors() {
         ? true
         : doc.gender?.toUpperCase() === genderFilter;
 
-      return matchLocation && matchSpecialty && matchLanguage && matchFee && matchGender;
+      return matchSearch && matchLocation && matchSpecialty && matchLanguage && matchFee && matchGender;
     });
-  }, [allDoctors, userLocation, specialtyFilter, languageFilter, maxFee, genderFilter]);
+  }, [allDoctors, searchQuery, userLocation, specialtyFilter, languageFilter, maxFee, genderFilter]);
 
   return {
     doctors,
@@ -96,6 +112,8 @@ export function useDiscoverDoctors() {
     maxFee,
     setMaxFee,
     genderFilter,
-    setGenderFilter
+    setGenderFilter,
+    searchQuery,
+    setSearchQuery
   };
 }

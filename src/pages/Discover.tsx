@@ -18,7 +18,8 @@ export default function Discover() {
     setMaxFee,
     genderFilter,
     setGenderFilter,
-    languageFilter, setLanguageFilter
+    languageFilter, setLanguageFilter,
+    searchQuery, setSearchQuery
   } = useDiscoverDoctors();
   
   // UI State
@@ -40,7 +41,7 @@ export default function Discover() {
     <div className="discover-layout">
       {/* Top Search & Header */}
       <div className="discover-header-area">
-        <DiscoverHeader />
+        <DiscoverHeader searchQuery={searchQuery} onSearchChange={setSearchQuery} />
         {/* Mobile Filter Toggle */}
         <button 
           className="mobile-filter-toggle-btn"
@@ -81,6 +82,8 @@ export default function Discover() {
         <main className="discover-list">
           {loading ? (
             <p>Loading specialists...</p>
+          ) : doctors.length === 0 ? (
+            <p>No doctors match your search or filters.</p>
           ) : (
             doctors.map((doc: any) => (
               <DoctorCard 
