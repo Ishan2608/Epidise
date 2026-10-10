@@ -141,3 +141,13 @@
     width: 100%;
   }
 }
+
+
+@media (max-width: 450px) {
+  .doctor-info-section {
+    flex-direction: column;
+  }
+  .doctor-card {
+    margin-bottom: 0;
+  }
+}

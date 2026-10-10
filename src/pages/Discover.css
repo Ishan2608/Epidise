@@ -179,3 +179,10 @@
 .discover-booking {
   min-width: 0;
 }
+
+@media (max-width: 450px) {
+  .discover-list {
+    padding: 0;
+    margin: 0;
+  }
+}
