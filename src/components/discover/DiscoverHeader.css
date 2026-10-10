@@ -1,7 +1,7 @@
 .discover-header {
   text-align: center;
-  margin-bottom: 40px;
-  padding: 40px 20px 20px 20px;
+  margin-bottom: 20px;
+  padding: 30px 20px 20px 20px;
 }
 
 .header-titles h1 {
@@ -42,6 +42,8 @@
 }
 
 .global-search-input {
+  min-width: 0;
+  text-overflow: ellipsis;
   flex-grow: 1;
   border: none;
   outline: none;
@@ -66,5 +68,12 @@
   
   .global-search-container {
     padding: 10px 20px;
+  }
+  .global-search-input {
+    padding: 10px 0;
+  }
+
+  .search-icon {
+    margin-right: 10px;
   }
 }
