@@ -101,13 +101,14 @@
 }
 
 .slots-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 20px;
 }
 
 .slot-btn {
+  flex: 0 0 80px;
   background: #ffffff;
   border: 1px solid #cbd5e1;
   padding: 10px 4px;
