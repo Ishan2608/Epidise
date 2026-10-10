@@ -1,4 +1,7 @@
+import { useModalStore } from '../../stores/modalStore';
+
 export default function HomeHeader() {
+  const openComingSoon = useModalStore((state) => state.openComingSoon);
   return (
     <header id="home-header">
       <div id="wrapper" className="flex-row-even-stretch">
@@ -7,8 +10,8 @@ export default function HomeHeader() {
           <h1 id="home-heading" className="txt-4xl"> Connect with skin care experts anytime, anywhere, with Epidise. </h1>
           <p className="txt-lg" id="home-header-para"> Doctor Tak Race? Ab No Stress, Epidise Is The Place. </p>
           <div className="download-btns flex-row-start">
-            <img className="d-btn" src="./assets/google-play-btn.svg" alt="Google Play" />
-            <img className="d-btn" src="./assets/apple-store-btn.svg" alt="Apple Store" />
+            <img className="d-btn" src="./assets/google-play-btn.svg" alt="Google Play" onClick={openComingSoon} />
+            <img className="d-btn" src="./assets/apple-store-btn.svg" alt="Apple Store" onClick={openComingSoon} />
           </div>
         </div>
 

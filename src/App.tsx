@@ -6,6 +6,7 @@ import DoctorRoute from './routes/DoctorRoute';
 import PatientRoute from './routes/PatientRoute';
 import NavBar from './components/global/NavBar';
 import Footer from './components/global/Footer';
+import GlobalModal from './components/global/GlobalModal';
 
 import Home from './pages/Home';
 import Discover from './pages/Discover';
@@ -36,6 +37,7 @@ export default function App() {
       </Routes>
 
       <Footer />
+      <GlobalModal />
     </BrowserRouter>
   );
 }

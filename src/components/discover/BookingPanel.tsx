@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMobileScreenButton } from '@fortawesome/free-solid-svg-icons';
 import { supabase } from '../../services/supabase';
 import { EPIDISE_APP_URL } from '../../constants/constants';
+import { useModalStore } from '../../stores/modalStore';
 import './BookingPanel.css';
 
 export default function BookingPanel({ doctor }: { doctor: any }) {
@@ -12,7 +11,7 @@ export default function BookingPanel({ doctor }: { doctor: any }) {
   const [reviews, setReviews] = useState<any[]>([]);
   const [availableSlots, setAvailableSlots] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [showAppModal, setShowAppModal] = useState(false);
+  const openModal = useModalStore((state) => state.open);
 
   // Generate next 7 days to match weekly availability day names (e.g., "Monday", "Tuesday")
   const next7Days = Array.from({ length: 7 }, (_, i) => {
@@ -165,7 +164,12 @@ export default function BookingPanel({ doctor }: { doctor: any }) {
         <button 
           className="proceed-btn" 
           disabled={!selectedSlot}
-          onClick={() => setShowAppModal(true)}
+          onClick={() => openModal({
+            title: 'Book in the Epidise App',
+            message: 'Appointments can be booked from the Epidise mobile app. Open the app to confirm your slot and complete payment.',
+            actionLabel: 'Open Epidise App',
+            actionHref: EPIDISE_APP_URL
+          })}
         >
           Book Appointment
         </button>
@@ -197,27 +201,6 @@ export default function BookingPanel({ doctor }: { doctor: any }) {
           )}
         </div>
       </div>
-
-      {showAppModal && (
-        <>
-          <div className="overlay" style={{ display: 'block' }} onClick={() => setShowAppModal(false)}></div>
-          <div className="modal" style={{ display: 'block' }}>
-            <div className="modal-content">
-              <button className="close-modal" onClick={() => setShowAppModal(false)}>&times;</button>
-              <div className="modal-inner">
-                <FontAwesomeIcon icon={faMobileScreenButton} />
-                <h3>Book in the Epidise App</h3>
-                <p>
-                  Appointments can be booked from the Epidise mobile app. Open the app to confirm your slot and complete payment.
-                </p>
-                <a href={EPIDISE_APP_URL} target="_blank" rel="noopener noreferrer">
-                  <button className="partner-up">Open Epidise App</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
 
     </div>
   );

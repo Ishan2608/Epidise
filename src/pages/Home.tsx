@@ -7,6 +7,7 @@ import AppFeatures from '../components/home/AppFeatures';
 import EasySection from '../components/home/EasySection';
 import DpiitCertificateSection from '../components/home/DpiitCertificateSection';
 import DownloadSection from '../components/global/DownloadSection';
+import { useModalStore } from '../stores/modalStore';
 
 export default function Home() {
   return (
